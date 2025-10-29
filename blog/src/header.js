@@ -1,9 +1,9 @@
-import image1 from './assets/34884.jpg'
+ 
 import './App.css'
 export default function Header(){
     return(
         <div className="header-container">
-            <div><img src={image1}  height={70}/></div>
+            <div><img src= "/assets/34884.jpg"  height={70}/></div>
            
          <div className='info'>
          <span>Home</span>

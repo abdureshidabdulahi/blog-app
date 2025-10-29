@@ -1,5 +1,5 @@
 import './App.css'
-
+import Blogs from './blog'
 
 export default function AllBlogs(){
     return(
@@ -12,7 +12,10 @@ export default function AllBlogs(){
             Dive in and explore what’s new!
                   </p>
            </div>
-           
+          <div className='blogs'>
+             <Blogs />
+          </div>
+
         </div>
     )
 }
