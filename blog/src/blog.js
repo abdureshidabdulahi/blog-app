@@ -11,7 +11,7 @@ export default function Blogs(){
         <h3>{element.category}</h3>
         <h2>{element.name}</h2>
         <div className="acount">
-        <AccountCircleIcon   style={{fontSize:'20px'}}/>
+        <AccountCircleIcon   style={{width:'40px',height:'40px',}}/>
         <div className="nameAndDate">
             <p>{element["acount-name"]}</p>
             <p>{element.date}</p>

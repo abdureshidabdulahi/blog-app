@@ -182,8 +182,81 @@
  .nameAndDate{
   display: flex;
   flex-direction: column;
-   padding: 0 5px;
+   padding: 5px 0;
  }
+ .nameAndDate p{
+  padding: 3px 0;
+ }
+ .footer{
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  gap: 15px;
+ }
+ .footer-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 255, 0.767);
+ }
+ /* .footer
+ .list-one,
+ .list-two,
+ .list-three,
+ .list-four h1{
+width: 100%;
+text-align: center;
+padding: 10px 0;
+ }
+ .footer
+ .list-one,
+ .list-two,
+ .list-three,
+ .list-four ul {
+   
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  justify-content: start;
+  
+ }
+  .list-one,
+ .list-two,
+ .list-three,
+ .list-four  li{
+  list-style-type: none;
+  border: 2px solid red;
+ } */
+  .list-one,
+  .list-two,
+  .list-three,
+  .list-four{
+    width: 300px;
+    height: fit-content;
+    /* border: 2px solid black; */
+    padding: 15px;
+  }
+   .list-one h1,
+  .list-two h1,
+  .list-three h1,
+  .list-four h1{
+    color: white;
+    font-weight: 600;
+    padding: 5px 0;
+    text-align: start;
+  }
+
+ .list-one ul li,
+  .list-two ul li,
+  .list-three ul li,
+  .list-four ul li{
+    list-style: none;
+    padding: 5px;
+    color: white;
+    font-weight:  500;
+  }
+
 
  
  
