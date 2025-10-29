@@ -121,4 +121,26 @@
   border: none;
   border-radius: 5px;
  }
+ .allBlogs-container{
+
+ }
+ .titleInfo{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+
+ }
+ .titleInfo h1,p{
+  width: 100%;
+  text-align: center;
+ 
+
+ }
+ .titleInfo p{
+   font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.562);
+ }
+
+ 
  
