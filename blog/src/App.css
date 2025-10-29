@@ -141,11 +141,48 @@
    font-family: sans-serif;
   color: rgba(0, 0, 0, 0.562);
  }
- .blogs{
+ .blogs-container{
   width:100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+   align-items: center;
+  justify-content: center;
+  
+  /* flex-wrap: wrap; */
+  /* gap: 15px; */
+ }
+ .image-tittle{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(214, 227, 237);
+  border-radius: 5px;
+ 
+ }
+ .image-tittle h3{
+  color: rgba(1, 1, 255, 0.671);
+  font-family: serif;
+  display: flex;
+  align-items: start;
+  padding: 5px 0;
+ }
+ .image-tittle h1{
+ font-family: monospace;
+ padding: 5px 0;
+ }
+ .acount{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 5px 0;
+  height: fit-content;
+  width: fit-content;
+ }
+ .nameAndDate{
+  display: flex;
+  flex-direction: column;
+   padding: 0 5px;
  }
 
  
