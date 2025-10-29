@@ -95,9 +95,11 @@
  }
  .twinButtons .two:hover{
   background-color:  rgba(255, 68, 0, 0.094);
+  cursor: pointer;
  }
  .twinButtons .one:hover{
   background-color:  rgb(255, 68, 0);
+  cursor: pointer;
  }
 
 
@@ -110,6 +112,13 @@
   height: 40px;
   font-size: 20px;
   padding: 5px 10px;
-  border: 2px solid rgba(255, 68, 0, 0.84);
-  outline: none;
+   border: 1px solid black;
+   border-radius: 5px;
+  
  }
+ .search input:focus{
+  outline:  2px solid rgba(255, 68, 0, 0.84);
+  border: none;
+  border-radius: 5px;
+ }
+ 
