@@ -63,13 +63,13 @@ export let images = [
             name:'banny',
             'acount-name':'Samir',
             date:'29-10-2025'
-        },
-        {
-            located:'./assets/pexels-pixabay-208773.jpg',
-            category:'animal',
-            name:'witesh',
-            'acount-name':'Sabir',
-             date:'29-10-2025'
         }
+        // {
+        //     located:'./assets/pexels-pixabay-208773.jpg',
+        //     category:'animal',
+        //     name:'witesh',
+        //     'acount-name':'Sabir',
+        //      date:'29-10-2025'
+        // }
 
 ]

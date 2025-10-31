@@ -6,7 +6,7 @@ export default function Footer(){
             <div className="footer">
 
             <div className="list-one">
-                <h1>About</h1>
+                <h3>About</h3>
                 <ul>
                     <li>
                         Blog is your trusted source
@@ -20,7 +20,7 @@ export default function Footer(){
             </div>
            
              <div className="list-two">
-                 <h1>Quick links</h1>
+                 <h3>Quick links</h3>
                 <ul>
                      <li><links>Home</links></li>
                       <li><links>Blogs</links></li>
@@ -29,7 +29,7 @@ export default function Footer(){
                 </ul>
              </div>
              <div className="list-three">
-                 <h1>Categories</h1>
+                 <h3>Categories</h3>
                 <ul>
                      <li><links>Technology</links></li>
                       <li><links>Life Style</links></li>
@@ -38,7 +38,7 @@ export default function Footer(){
                 </ul>
              </div>
              <div className="list-four">
-                 <h1>Resources</h1>
+                 <h3>Resources</h3>
                 <ul>
                      <li><links>Help center</links></li>
                       <li><links>Documentation</links></li>
@@ -47,7 +47,7 @@ export default function Footer(){
                 </ul>
              </div>
              </div>
-             <p>@compywrite</p>
+             <p className='rights'>&copy; 2025 <span>shiera_backend</span>.All rights reserved</p>
         </div>
     )
 }

@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
  }
+ .body{
+  position: relative;
+ }
 
  .header-container{
   width:100%;
@@ -12,6 +15,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
 
  }
  .info{
@@ -156,7 +162,7 @@
   flex-direction: column;
   padding: 10px;
   margin: 10px;
-  background-color: rgb(214, 227, 237);
+  background-color: rgba(0, 0, 0, 0.046);
   border-radius: 5px;
  
  }
@@ -183,51 +189,32 @@
   display: flex;
   flex-direction: column;
    padding: 5px 0;
+   
  }
  .nameAndDate p{
   padding: 3px 0;
+  width: 100%;
+  text-align: start;
+  font-weight: bold;
+
  }
  .footer{
   display: flex;
   /* align-items: center; */
   justify-content: space-between;
   gap: 15px;
+  /* padding: 20px; */
+  
  }
  .footer-container{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 255, 0.767);
+  background-color: rgb(2, 92, 165);
+  padding: 30px;
  }
- /* .footer
- .list-one,
- .list-two,
- .list-three,
- .list-four h1{
-width: 100%;
-text-align: center;
-padding: 10px 0;
- }
- .footer
- .list-one,
- .list-two,
- .list-three,
- .list-four ul {
-   
-  display: flex;
-  flex-direction: column;
-  border: 2px solid black;
-  justify-content: start;
-  
- }
-  .list-one,
- .list-two,
- .list-three,
- .list-four  li{
-  list-style-type: none;
-  border: 2px solid red;
- } */
+ 
   .list-one,
   .list-two,
   .list-three,
@@ -237,14 +224,15 @@ padding: 10px 0;
     /* border: 2px solid black; */
     padding: 15px;
   }
-   .list-one h1,
-  .list-two h1,
-  .list-three h1,
-  .list-four h1{
+   .list-one h3,
+  .list-two h3,
+  .list-three h3,
+  .list-four h3{
     color: white;
     font-weight: 600;
-    padding: 5px 0;
+    padding: 10px 0;
     text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
  .list-one ul li,
@@ -255,6 +243,16 @@ padding: 10px 0;
     padding: 5px;
     color: white;
     font-weight:  500;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .rights{
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .rights span{
+    color: white;
+    font-weight: bold;
   }
 
 
