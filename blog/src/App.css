@@ -254,6 +254,24 @@
     color: white;
     font-weight: bold;
   }
+  .about-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .about-container h1{
+    display: flex;
+    text-align: center;
+    width: 100%;
+  }
+  .about-container h1 span{
+    color: red;
+    
+    
+  }
+  .about-container p{
+    width: 100%;
+    text-align: center;
+  }
 
 
  
