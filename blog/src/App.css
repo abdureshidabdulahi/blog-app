@@ -3,9 +3,9 @@
   padding: 0;
   box-sizing: border-box;
  }
- .body{
+ /* .body{
   position: relative;
- }
+ } */
 
  .header-container{
   width:100%;
@@ -15,9 +15,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  position: absolute;
+  position: sticky;
   top: 0;
   z-index: 1000;
+  background: white;
 
  }
  .info{
@@ -292,24 +293,6 @@
   
 }
  
-.login-container{
-  width: 100%;
-}
-.login{
-  width: fit-content;
-  height: fit-content;
-  padding: 20px;
-  margin: 5px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  box-shadow: 1px 2px 3px black;
-  
-}
-.login input,h3,p,button{
-  width:400px ;
-  height:40px;
-
-}
+ 
  
  
