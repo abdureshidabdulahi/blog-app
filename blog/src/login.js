@@ -6,9 +6,9 @@ export default function Login(){
             <div className="login">
             <h3>Login Into Your Account</h3>
             <input type="text" placeholder="Your Email" className='login-input'/>
-            <input type="text" placeholder="Your password" className='login-input'/>
-            <button className='login-button'>SignIn</button>
-            <p>Don't Have Account? <span>Register Here</span></p>
+            <input type="password" placeholder="Your password" className='login-input'/>
+            <button className='login-button'>Signin</button>
+            <p>Don't Have Account? <span className='register'>Register Here</span></p>
             </div>
         </div>
     )

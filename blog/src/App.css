@@ -290,15 +290,18 @@
 }
 .login-container{
     width: 100%;
+    
 }
 .login{
   width: 50%;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  box-shadow:  3px 3px 10px black;
   gap: 15px;
   padding: 20px;
+  border-radius: 10px;
 }
 .login h3{
    margin: 0 auto;
@@ -313,6 +316,25 @@
   border: 0;
   color: white;
   font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+ }
+ .login .login-input{
+  border-radius: 5px;
+  border:  1px solid black;
+  font-size: 18px;
+ }
+ .login .login-input:focus{
+  outline: 2px solid red;
+  border: none;
+ }
+ .login .register{
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+ }
+ .login p{
+  font-size: 20px;
  }
  
  
