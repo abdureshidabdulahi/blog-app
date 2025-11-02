@@ -3,10 +3,6 @@
   padding: 0;
   box-sizing: border-box;
  }
- /* .body{
-  position: relative;
- } */
-
  .header-container{
   width:100%;
   height: 70px;
@@ -292,6 +288,32 @@
  
   
 }
+.login-container{
+    width: 100%;
+}
+.login{
+  width: 50%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  gap: 15px;
+  padding: 20px;
+}
+.login h3{
+   margin: 0 auto;
+}
+ .login .login-input,.login-button{
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+ }
+ .login .login-button{
+  background-color: red;
+  border: 0;
+  color: white;
+  font-weight: bold;
+ }
  
  
  
