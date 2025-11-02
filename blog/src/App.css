@@ -290,6 +290,7 @@
 }
 .login-container{
     width: 100%;
+    font-family: sans-serif;
     
 }
 .login{
@@ -308,34 +309,80 @@
 }
  .login .login-input,.login-button{
   width: 80%;
-  padding: 10px;
+  padding: 15px;
   margin: 0 auto;
  }
  .login .login-button{
-  background-color: red;
+  background-color: rgba(255, 60, 0, 0.881);
   border: 0;
   color: white;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 16px;
   cursor: pointer;
  }
  .login .login-input{
   border-radius: 5px;
   border:  1px solid black;
-  font-size: 18px;
+  font-size: 16px;
  }
  .login .login-input:focus{
-  outline: 2px solid red;
+  outline: 2px solid rgba(255, 0, 0, 0.628);
   border: none;
  }
  .login .register{
   color: red;
-  font-size: 20px;
+  
   cursor: pointer;
  }
- .login p{
-  font-size: 20px;
+ .createAcount-container{
+  width: 100%;
+  
  }
+ .create{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  font-family: sans-serif;
+  margin: 10px auto;
+  padding: 20px;
+  gap: 15px;
+  box-shadow: 1px 2px 5px black;
+ }
+ .create .create-buttonOne,.create-buttonTwo,h3,.create-input{
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+ }
+ .create .create-input{
+  border-radius: 5px;
+  border: 1px solid black;
+
+ }
+ .create .create-input:focus{
+  outline: 2px solid red;
+    border: none;
+ }
+ .create h3{
+  text-align: center;
+ }
+ .create .create-buttonOne{
+  background-color: rgba(117, 117, 2, 0.155);
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+ }
+ .create .create-buttonTwo{
+  background-color: rgba(255, 60, 0, 0.895);
+  border: none;
+  color: white;
+  font-size: 16px;
+ }
+ .create .loginhere{
+  color: red;
+  cursor: pointer;
+ }
+  
+ 
  
  
  

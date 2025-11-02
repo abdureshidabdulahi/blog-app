@@ -6,6 +6,7 @@ import AllBlogs from './blogsAll';
 import Footer from './footer'
 import About from './about';
 import Login from './login';
+import CreateAcount from './createAcount';
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
       <About/>
       <Footer />
       <Login/>
+      <CreateAcount/>
     </div>
   );
 }
