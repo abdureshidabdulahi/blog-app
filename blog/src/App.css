@@ -25,7 +25,7 @@
  }
  .info span{
   font-size: 20px;
-  font-family:,sans-serif;
+  font-family:sans-serif;
   color: rgb(70, 69, 69);
   cursor: pointer;
  }
@@ -124,9 +124,7 @@
   border: none;
   border-radius: 5px;
  }
- .allBlogs-container{
-
- }
+  
  .titleInfo{
   display: flex;
   flex-direction: column;
@@ -381,7 +379,10 @@
   color: red;
   cursor: pointer;
  }
-  
+  a:active{
+    color: red;
+    
+  }
  
  
  

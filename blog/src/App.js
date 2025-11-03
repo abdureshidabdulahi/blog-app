@@ -1,5 +1,6 @@
 
 import './App.css';
+import { Route,Routes } from 'react-router-dom';
 import Header from './header';
 import Home from './home';
 import AllBlogs from './blogsAll';
@@ -11,12 +12,18 @@ function App() {
   return (
     <div className="App">
        <Header/>
-       <Home />
-       <AllBlogs/>
-      <About/>
-      <Footer />
-      <Login/>
-      <CreateAcount/>
+       <Routes>
+        <Route path='/' element={
+          <>
+          <Home/>
+          <AllBlogs heading={'Latest Blogs'}/>
+          <Footer/>
+          </>
+          
+          }/>
+       
+       </Routes>
+       
     </div>
   );
 }
