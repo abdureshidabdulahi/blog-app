@@ -40,14 +40,16 @@ export let images = [
             category:'animal',
             name:'Jonny',
             'acount-name':'Mike',
-            date:'29-10-2025'
+            date:'29-10-2025',
+            description: 'Pets are domesticated animals kept for companionship,  emotional support, or enjoyment rather than for work or food. Common examples include dogs, cats, birds, and fish.'
         },
         {
             located:'./assets/lloyd-henneman-mBRfYA0dYYE-unsplash.jpg',
             category:'animal',
             name:'caty',
             'acount-name':'Dahir',
-            date:'29-10-2025'
+            date:'29-10-2025',
+            description:'Pets are domesticated animals kept for companionship, emotional support, or enjoyment rather than for work or food. Common examples include dogs, cats, birds, and fish.'
 
         },
         {
@@ -62,7 +64,8 @@ export let images = [
             category:'animal',
             name:'banny',
             'acount-name':'Samir',
-            date:'29-10-2025'
+            date:'29-10-2025',
+            description:'Pets are domesticated animals kept for companionship, emotional support, or enjoyment rather than for work or food. Common examples include dogs, cats, birds, and fish.'
         }
         // {
         //     located:'./assets/pexels-pixabay-208773.jpg',
