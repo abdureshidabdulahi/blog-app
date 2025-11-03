@@ -21,7 +21,21 @@ function App() {
           </>
           
           }/>
-       
+       <Route path='blogs' element={ 
+        <>
+         <Home/>
+         <AllBlogs heading={'All Blogs'}/>
+          <Footer/>
+        </> 
+       }
+       />
+       <Route path='about' element={
+        <>
+        <About/>
+         <Footer/>
+        </>
+       }
+       />
        </Routes>
        
     </div>

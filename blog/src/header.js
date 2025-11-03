@@ -7,9 +7,9 @@ export default function Header(){
             <div><img src= "/assets/34884.jpg"  height={70}/></div>
            
          <div className='info'>
-         <span><NavLink to='/'>Home</NavLink></span>
-            <span>Blogs</span>
-           <span>About</span>
+         <NavLink to='/' className='home'>Home</NavLink>
+            <NavLink to='blogs' className='blogs'>Blogs</NavLink>
+           <NavLink to='about' className='about'>About</NavLink>
          </div>
             <div><button className='signin'>Signin</button></div>
            

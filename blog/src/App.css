@@ -29,9 +29,7 @@
   color: rgb(70, 69, 69);
   cursor: pointer;
  }
- .info span:hover{
-  color: red;
- }
+ 
  .signin{
   border: none;
   padding: 10px 25px;
@@ -149,16 +147,19 @@
    align-items: center;
   justify-content: center;
   
-  /* flex-wrap: wrap; */
-  /* gap: 15px; */
+  
+ 
  }
  .image-tittle{
   display: flex;
   flex-direction: column;
+  justify-content: start;
   padding: 10px;
   margin: 10px;
   background-color: rgba(0, 0, 0, 0.046);
   border-radius: 5px;
+  color: black;
+  cursor: pointer;
  
  }
  .image-tittle h3{
@@ -166,7 +167,9 @@
   font-family: sans-serif;
   display: flex;
   align-items: start;
+  justify-content: start;
   padding: 5px 0;
+  width: 100%;
  }
  .image-tittle h1{
  font-family: monospace;
@@ -180,7 +183,7 @@
   height: fit-content;
   width: fit-content;
  }
- .nameAndDate{
+ .nameAndDate{ 
   display: flex;
   flex-direction: column;
    padding: 5px 0;
@@ -194,12 +197,9 @@
 
  }
  .footer{
-  display: flex;
-  /* align-items: center; */
+  display: flex; 
   justify-content: space-between;
-  gap: 15px;
-  /* padding: 20px; */
-  
+  gap: 15px; 
  }
  .footer-container{
   display: flex;
@@ -379,9 +379,18 @@
   color: red;
   cursor: pointer;
  }
-  a:active{
-    color: red;
+  .home,.about,.blogs{
+     text-decoration: none;
+     color: black;
+     font-family: sans-serif;
+     font-size: 16px;
+     
     
+  }
+  .home:hover,.about:hover,.blogs:hover{
+    color: red;
+    cursor: pointer;
+
   }
  
  
