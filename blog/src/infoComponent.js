@@ -1,7 +1,15 @@
+import {images} from './data.jsx'
 export default function InformationAboutPic(){
-    return(
+    let result = images.map((items)=>(
+        <div className='informationAboutPic'>
+            <img src={items.located}  width={400} height={200}/>
+            <p>{items.description}</p>
+
+        </div>
+    ))
+    return( 
         <div className="information-container">
-            <img src=""
+            {result}
 
         </div>
     )

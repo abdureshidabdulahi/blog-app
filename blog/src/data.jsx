@@ -4,7 +4,8 @@ export let images = [
             category:'juice',
             name:'Orange-juice',
             'acount-name':'Maryam',
-            date:'29-10-2025'
+            date:'29-10-2025',
+            description:'Juice is a natural liquid extracted from fruits or vegetables. It can be consumed fresh or processed for longer storage.'
 
         },
         {
@@ -12,28 +13,32 @@ export let images = [
             category:'juice',
             name:'Avocado juice',
             'acount-name':'Rashka',
-            date:'29-10-2025'
+            date:'29-10-2025',
+            description:'Juice is a natural liquid extracted from fruits or vegetables. It can be consumed fresh or processed for longer storage.'
         },
         {
             located:'./assets/becca-tapert-vzU4qT_jhEQ-unsplash.jpg',
             category:'coffee',
             name:'makiyato',
             'acount-name':'Mohamed',
-             date:'29-10-2025'
+             date:'29-10-2025',
+             description:'Coffee is a brewed drink made from roasted coffee beans, known for its rich aroma and caffeine content. It is one of the most popular beverages worldwide.'
         },
         {
             located:'./assets/davide-cantelli-TczSLeQmn9M-unsplash.jpg',
             category:'city',
             name:'Istanbul',
             'acount-name':'Farhan',
-            date:'29-10-2025'
+            date:'29-10-2025',
+            description:'A city is a large, densely populated area where people live and work, often serving as a hub for business, culture, education, and innovation.'
         },
         {
             located:'./assets/erick-chevez-WSD3UnbB6ZI-unsplash.jpg',
             category:'coffee',
             name:'Black coffee',
             'acount-name':'Amir',
-            date:'29-10-2025'
+            date:'29-10-2025',
+            description:'Coffee is a brewed drink made from roasted coffee beans, known for its rich aroma and caffeine content. It is one of the most popular beverages worldwide.'
         },
         {
             located:'./assets/golden dog.webp',
@@ -57,7 +62,8 @@ export let images = [
             category:'city',
             name:'Addis Ababa',
             'acount-name':'Usman',
-            date:'29-10-2025'
+            date:'29-10-2025',
+            description:'A city is a large, densely populated area where people live and work, often serving as a hub for business, culture, education, and innovation.'
         },
         {
             located:'./assets/pexels-larissa-barbosa-945746-1870376.jpg',

@@ -6,6 +6,7 @@ import Home from './home';
 import AllBlogs from './blogsAll';
 import Footer from './footer'
 import About from './about';
+import InformationAboutPic from './infoComponent';
 import Login from './login';
 import CreateAcount from './createAcount';
 function App() {
@@ -37,6 +38,7 @@ function App() {
        }
        />
        </Routes>
+       <InformationAboutPic/>
        
     </div>
   );
