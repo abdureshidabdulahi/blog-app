@@ -1,4 +1,4 @@
-import { dividerClasses } from "@mui/material/Divider"
+import './login.css'
 
 
 const LoginPage = ()=>{
@@ -16,11 +16,13 @@ const LoginPage = ()=>{
             </div>
            <div className="checkbox">
              <input type="checkbox" /> 
-            <p>Continue to accept this</p>
+            <p>Accept to continue this.</p>
            </div>
            <button>login</button>
+           <p>Don`t have account? <span>Signin here</span></p>
             </div>
          </div>
 
     )
 }
+export default LoginPage

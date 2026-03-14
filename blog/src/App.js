@@ -6,6 +6,7 @@ import Home from './components/home/home.jsx';
 import AllBlogs from './components/blogsAll.js';
 import Footer from './components/footer';
 import About from './components/about';
+import LoginPage from './components/pages/login/loginPage.js';
  
 function App() {
   return (
@@ -15,10 +16,8 @@ function App() {
         <Route path='/' element={
           <>
           <Home/>
-          <AllBlogs heading={'Latest Blogs'}/>
-         
-          </>
-          
+          <AllBlogs heading={'Latest Blogs'}/> 
+          </> 
           }/>
        <Route path='blogs' element={ 
         <>
@@ -28,13 +27,9 @@ function App() {
         </> 
        }
        />
-       <Route path='about' element={
-        <>
-        <About/>
-        
-        </>
-       }
-       />
+       <Route path='about' element={<About/>}/>
+        <Route path='signin' element={<LoginPage/>}/>
+     
        </Routes>
         <Footer/> 
        
