@@ -1,4 +1,4 @@
-import './App.css'
+ 
 import Blogs from './blog'
 
 export default function AllBlogs({heading}){

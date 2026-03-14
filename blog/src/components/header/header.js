@@ -1,7 +1,8 @@
  
-import './App.css'
-import { NavLink } from 'react-router-dom'
+ 
+import { NavLink, useNavigate } from 'react-router-dom'
 export default function Header(){
+    const navigate = useNavigate()
     return(
         <div className="header-container">
             <div><img src= "/assets/34884.jpg"  height={70}/></div>
@@ -11,7 +12,7 @@ export default function Header(){
             <NavLink to='blogs' className='blogs'>Blogs</NavLink>
            <NavLink to='about' className='about'>About</NavLink>
          </div>
-            <div><button className='signin'>Signin</button></div>
+            <div><button className='signin' onClick={()=>navigate('/signin')}>Signin</button></div>
            
         </div>
     )

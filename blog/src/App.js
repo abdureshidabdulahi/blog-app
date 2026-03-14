@@ -1,14 +1,12 @@
 
 import './App.css';
 import { Route,Routes } from 'react-router-dom';
-import Header from './header';
-import Home from './home';
-import AllBlogs from './blogsAll';
-import Footer from './footer'
-import About from './about';
-import InformationAboutPic from './infoComponent';
-import Login from './login';
-import CreateAcount from './createAcount';
+import Header from './components/header/header.js';
+import Home from './components/home/home.jsx';
+import AllBlogs from './components/blogsAll.js';
+import Footer from './components/footer';
+import About from './components/about';
+ 
 function App() {
   return (
     <div className="App">
@@ -18,7 +16,7 @@ function App() {
           <>
           <Home/>
           <AllBlogs heading={'Latest Blogs'}/>
-          <Footer/>
+         
           </>
           
           }/>
@@ -26,19 +24,19 @@ function App() {
         <>
          <Home/>
          <AllBlogs heading={'All Blogs'}/>
-          <Footer/>
+          
         </> 
        }
        />
        <Route path='about' element={
         <>
         <About/>
-         <Footer/>
+        
         </>
        }
        />
        </Routes>
-       <InformationAboutPic/>
+        <Footer/> 
        
     </div>
   );

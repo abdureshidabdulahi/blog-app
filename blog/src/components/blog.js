@@ -1,5 +1,5 @@
 import { images } from "./data"
-import './App.css'
+ 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 export default function Blogs(){
     let image = images.map((element)=>(
