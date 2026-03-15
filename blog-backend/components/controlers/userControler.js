@@ -1,13 +1,15 @@
-import userModel from "../models/userModel"
+import userModel from "../models/userModel.js"
 import jwt from 'jsonwebtoken'
 import validator from 'validator'
+import bcrypt from 'bcrypt'
 
 const createToken = (id)=>{
-    jwt.sign({id},process.env.SECRET_KEY)
+    return jwt.sign({id},process.env.SECRET_KEY)
 }
 const registerUser =async (req,res)=>{
     const {email,password,fristName,lastName} =req.body
-    const user = await userModel.findOne(email)
+   try {
+     const user = await userModel.findOne({email})
     if(user){
         console.log('sorry user already exist user another email')
     }
@@ -26,7 +28,12 @@ const registerUser =async (req,res)=>{
         password:hashPass
     })
     await newUser.save()
-    const token = createToken(user._id)
+    const token = createToken(newUser._id)
+    res.json({success:true,message:'user registered successfuly',token})
+   } catch (error) {
+    console.log(error)
+    res.json({success:false,message:'error,register can not function properly'})
+   }
 
         
 }
