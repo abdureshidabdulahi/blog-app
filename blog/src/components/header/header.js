@@ -5,7 +5,7 @@ export default function Header(){
     const navigate = useNavigate()
     return(
         <div className="header-container">
-            <div><img src= "/assets/34884.jpg"  height={70}/></div>
+            <div><img src= "/assets/34884.jpg"  height={70} alt='header-log' onClick={()=>navigate('/')}/></div>
            
          <div className='info'>
          <NavLink to='/' className='home'>Home</NavLink>
