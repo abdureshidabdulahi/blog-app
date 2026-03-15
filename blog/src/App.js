@@ -7,14 +7,19 @@ import AllBlogs from './components/blogsAll.js';
 import Footer from './components/footer';
 import About from './components/about';
 import LoginPage from './components/pages/login/loginPage.js';
+import { useState } from 'react';
+import { useContext } from 'react';
+import {storeContext} from './components/context/storeContext.js'
  
 function App() {
+  const {showlogin} =useContext(storeContext)
   return (
     <div className="App">
        <Header/>
        <Routes>
         <Route path='/' element={
           <>
+          {showlogin?<LoginPage/>:<></>}
           <Home/>
           <AllBlogs heading={'Latest Blogs'}/> 
           </> 
@@ -28,7 +33,7 @@ function App() {
        }
        />
        <Route path='about' element={<About/>}/>
-        <Route path='signin' element={<LoginPage/>}/>
+        
      
        </Routes>
         <Footer/> 

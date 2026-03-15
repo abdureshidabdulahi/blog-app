@@ -2,9 +2,11 @@ import { useState } from 'react'
 import './login.css'
 import axios from 'axios'
 import { useEffect } from 'react'
+import CloseIcon from '@mui/icons-material/Close';
 
 
-const LoginPage = ()=>{
+const LoginPage = ({showLogin})=>{
+    
     const [signin,setSignin] =useState('Login')
     const [data,setData] = useState({
         fristName:'',
@@ -19,8 +21,9 @@ const LoginPage = ()=>{
         const name = event.target.name
         setData({...data,[name]:value})
     }
-    const handleClick =async ()=>{
-        const url = 'http://localhost:5137/api/users'
+    const handleClick =async (event)=>{
+        event.preventDefault()
+        let url = 'http://localhost:5137/api/users'
         if(signin === 'Signin'){
             url +='/register'
         }
@@ -28,54 +31,74 @@ const LoginPage = ()=>{
             url +='/login'
         }
         const result = await axios.post(`${url}`,data)
-        const token = result.data
-        localStorage.setItem('token',token)
+        setData({
+            fristName:'',
+            lastName:'',
+            email:'',
+            password:'',
+            confirmPassword:'',
+
+        })
+        
+        const message = result.data.message
+        console.log(message)
+        const token = result.data.token
+        console.log(token)
+        // localStorage.setItem('token',token)
     }
      useEffect(()=>{
         console.log(data)
+        console.log(typeof(CloseIcon))
      })
     return(
          <div className="login-page">
-            <h1>{signin}</h1>
-            <div className="login">
+           
+            
+                  
+                 <form onSubmit={handleClick}>
+                   <div className='login-header'> 
+                    <h1>{signin}</h1>
+                    <p>{<CloseIcon/>}</p>
+                   </div>
 
-                {
+                       {
                     signin === 'Signin' ?
                     <>
                      <div>
                     <p>Enter fristName</p>
-                    <input type='text' placeholder='Enter fristName' name='fristName' value={data.fristName} onChange={onchangeHandler}/>
+                    <input type='text' placeholder='Enter fristName' name='fristName' value={data.fristName} onChange={onchangeHandler} required/>
                 </div>
                 <div>
                     <p>Enter lastName</p>
-                    <input type='text' placeholder='Enter lastName' name='lastName' value={data.lastName} onChange={onchangeHandler}/>
+                    <input type='text' placeholder='Enter lastName' name='lastName' value={data.lastName} onChange={onchangeHandler} required/>
                 </div>
                     </>:<></>
                 }
 
             <div>
                 <p>Email</p>
-                <input type="email" placeholder="Enter your Email" name='email' value={data.email} onChange={onchangeHandler}/>
+                <input type="email" placeholder="Enter your Email" name='email' value={data.email} onChange={onchangeHandler} required/>
             </div>
             <div>
                 <p>Password</p>
-                <input type="password" placeholder="Enter your Password" name='password' value={data.password} onChange={onchangeHandler}/>
+                <input type="password" placeholder="Enter your Password" name='password' value={data.password} onChange={onchangeHandler} required/>
             </div>
            {
             signin === 'Signin' ? <div>
                 <p>Confirm Password</p> 
-                <input type='password' placeholder='Confirm Password' name='confirmPassword' value={data.confirmPassword} onChange={onchangeHandler}/>
+                <input type='password' placeholder='Confirm Password' name='confirmPassword' value={data.confirmPassword} onChange={onchangeHandler} required/>
             </div> :<></>
            }
            <div className="checkbox">
-             <input type="checkbox" /> 
+             <input type="checkbox" required/> 
             <p>Accept to continue this.</p>
            </div>
-           <button onClick={()=>handleClick}>{signin}</button>
+           <button type='submit'>{signin}</button>
            {signin ==='Login'?<p>Don`t have account? <span onClick={()=>setSignin('Signin')}>Signin here</span></p>
            :<p>Already have account? <span onClick={()=>setSignin('Login')}>Login here</span></p>}
+                 </form>
             </div>
-         </div>
+         
 
     )
 }

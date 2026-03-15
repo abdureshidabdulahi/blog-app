@@ -12,14 +12,32 @@ body{
     margin-top: 7px;
 }
 
-.login{
+form{
     display: flex;
     flex-direction: column;
     padding: 15px;
     width: 30%;
+    box-shadow: 3px 3px 10px black;
+    place-self: center;
+    margin: 10px;
+    border-radius: 5px;
+    gap: 5px;
     
 }
-.login div{
+form .login-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+form .login-header p,h1{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+form div{
      
     display: flex;
     flex-direction: column;
@@ -27,12 +45,12 @@ body{
     justify-content: start;
     width: 80%;
 }
-.login div p{
+form div p{
     text-align: start;
     font-weight: 350;
     
 }
-.login div input{
+form div input{
     padding: 5px 10px;
     font-size: px;
     margin-top: 5px;
@@ -41,12 +59,12 @@ body{
     border: 1px solid;
      
 }
-.login div input:focus{
+form div input:focus{
     border: none;
     outline: 2px solid green;
     border-radius: 3px;
 }
-.login .checkbox{
+form .checkbox{
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -54,14 +72,14 @@ body{
     align-items: center;
     justify-content: center;
 }
-.login .checkbox input{
+form .checkbox input{
     width: fit-content;
 }
-.login .checkbox input:focus{
+form .checkbox input:focus{
     border: none;
     outline: none;
 }
-.login button{
+form button{
     width: 100%;
     background-color: tomato;
     border: none;
@@ -72,7 +90,7 @@ body{
     font-weight: 500;
     cursor: pointer;
 }
-.login span{
+form  span{
     color: tomato;
     cursor: pointer;
 }

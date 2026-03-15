@@ -7,7 +7,7 @@ const createToken = (id)=>{
     return jwt.sign({id},process.env.SECRET_KEY)
 }
 const registerUser =async (req,res)=>{
-    const {email,password,fristName,lastName} =req.body
+    const {email,password,fristName,lastName,confirmPassword} =req.body
    try {
      const user = await userModel.findOne({email})
     if(user){
@@ -18,6 +18,9 @@ const registerUser =async (req,res)=>{
     }
     if(password.length < 8){
         console.log('please enter strong password')
+    }
+    if(password !== confirmPassword){
+        return res.json({success:false,message:`password don't match`})
     }
     const salt = await bcrypt.genSalt(10)
     const hashPass = await bcrypt.hash(password,salt)
