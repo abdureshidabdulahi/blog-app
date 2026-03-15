@@ -1,12 +1,13 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './login.css'
 import axios from 'axios'
 import { useEffect } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
+import { storeContext } from '../../context/storeContext';
 
 
-const LoginPage = ({showLogin})=>{
-    
+const LoginPage = ()=>{
+    const {setshowlogin} =useContext(storeContext)
     const [signin,setSignin] =useState('Login')
     const [data,setData] = useState({
         fristName:'',
@@ -47,8 +48,7 @@ const LoginPage = ({showLogin})=>{
         // localStorage.setItem('token',token)
     }
      useEffect(()=>{
-        console.log(data)
-        console.log(typeof(CloseIcon))
+        console.log(data) 
      })
     return(
          <div className="login-page">
@@ -57,8 +57,8 @@ const LoginPage = ({showLogin})=>{
                   
                  <form onSubmit={handleClick}>
                    <div className='login-header'> 
-                    <h1>{signin}</h1>
-                    <p>{<CloseIcon/>}</p>
+                    <h1 className='login-title'>{signin}</h1>
+                    <p onClick={()=>setshowlogin(false)} className='login-title'>{<CloseIcon/>}</p>
                    </div>
 
                        {

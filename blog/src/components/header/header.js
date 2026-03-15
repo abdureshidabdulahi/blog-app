@@ -3,6 +3,8 @@
 import { useContext } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import {storeContext} from './../context/storeContext'
+import {HashLink} from 'react-router-hash-link'
+import './header.css'
 export default function Header(){
     const {setshowlogin} = useContext(storeContext)
     const navigate = useNavigate()
@@ -12,7 +14,7 @@ export default function Header(){
            
          <div className='info'>
          <NavLink to='/' className='home'>Home</NavLink>
-            <NavLink to='blogs' className='blogs'>Blogs</NavLink>
+            <HashLink to={'blogs#all-blogs'} className='blogs active'>Blogs</HashLink>
            <NavLink to='about' className='about'>About</NavLink>
          </div>
             <div><button className='signin' onClick={()=>setshowlogin(true)}>Signin</button></div>

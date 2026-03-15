@@ -1,16 +1,16 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
-body{
-    height: 100vh;
+ 
+.login-page{
+    position: fixed;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.244);
+    height: 100vh;
 }
-.login-page h1{
-    text-align: center;
-    margin-top: 7px;
-}
+ 
 
 form{
     display: flex;
@@ -22,6 +22,7 @@ form{
     margin: 10px;
     border-radius: 5px;
     gap: 5px;
+    background-color: white;
     
 }
 form .login-header{
@@ -31,10 +32,13 @@ form .login-header{
     align-items: center;
     width: 100%;
 }
-form .login-header p,h1{
+form .login-header .login-title{
     width: fit-content;
     display: flex;
     align-items: center;
+}
+form .login-header p{
+    cursor: pointer;
 }
 
 form div{
