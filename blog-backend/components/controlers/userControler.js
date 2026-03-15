@@ -39,15 +39,18 @@ const registerUser =async (req,res)=>{
 }
 
 const loginUser = async(req,res)=>{
+    const {email,password} =req.body
     try {
-        const user =await userModel.find({email:req.body.email})
+        const user =await userModel.findOne({email})
         if(!user){
-            console.log('user does not exist')
+           return  res.json({success:false,message:'user does not exist!!'})
         }
         const passMatch = await bcrypt.compare(user.password,password)
         if(!passMatch){
-            console.log('invlid cridentials')
+           return  res.json({success:false,messae:'invalid cridentials'})
         }
+        const token = createToken(user._id)
+        res.json({success:true,messae:'you are logedin',token})
 
 
     } catch (error) {
@@ -55,4 +58,4 @@ const loginUser = async(req,res)=>{
         res.json({success:false,message:'there is aproblem with the login'})
     }
 }
-export {registerUser}
+export {registerUser,loginUser}
