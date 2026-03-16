@@ -21,7 +21,23 @@ export default function Header(){
            <NavLink to='about' className='about'>About</NavLink>
          </div>
             <div>{
-                token?<div className='content-div'><p className='create-content'><CreateIcon/>Create Content</p><AccountCircleIcon className='profile'/></div>:<button className='signin' onClick={()=>setshowlogin(true)}>Signin</button>
+                token?<div className='profile-container'>
+                <div className='content-div'>
+                    <p className='create-content'>
+                        <CreateIcon/>Create Content</p>
+                        
+                        <AccountCircleIcon className='profile'/>
+                        </div>
+                        <div className='profile-lists'>
+                            <ul>
+                                <li>Profile</li>
+                                <li>Dashboard</li>
+                                <li>Settings</li>
+                                <li>Sign Out</li> 
+                            </ul>
+                            </div>
+                            </div>:
+                            <button className='signin' onClick={()=>setshowlogin(true)}>Signin</button>
                     }</div>
            
         </div>

@@ -20,10 +20,48 @@
     
 }
 .create-content:hover{
-    background-color: rgba(255, 99, 71, 0.532);
+    background-color: rgba(255, 0, 0, 0.532);
     border: 2px solid tomato; 
 }
 .profile{
     font-size: 50px !important;
     cursor: pointer;
+}
+.content-div{ 
+}
+.profile-container{
+    position: relative; 
+    padding: 5px;
+}
+.profile-lists{
+    display: none;
+    flex-direction: column; 
+    position: absolute; 
+     right: 30px; 
+     top: 40px;
+     background-color: rgb(255, 255, 255); 
+     border: 1px solid;
+     border-radius: 10px;
+   
+}
+.profile-lists ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    list-style: none;
+     padding: 10px; 
+     width: 200px;
+}
+.profile-lists ul li{
+    font-weight: bold; 
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+}
+.profile-lists ul li:hover{
+    background-color: rgba(0, 0, 0, 0.208);
+    border-radius: 5px;
+} 
+.content-div .profile:hover .profile-lists{
+    display: flex;
 }
