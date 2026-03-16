@@ -47,7 +47,7 @@
  .home-container{
   display: flex;
   flex-direction: column;
-  padding: 50px 0;
+  padding: 50px 0 0;
 
  }
  .home-container h1{
@@ -107,7 +107,7 @@
 
  .search{
   width: 50%;
-  margin: 50px auto;
+  margin:20px auto; 
  }
  .search input{
   width: 100%;

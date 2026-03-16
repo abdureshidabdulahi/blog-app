@@ -7,7 +7,7 @@ import { storeContext } from '../../context/storeContext';
 
 
 const LoginPage = ()=>{
-    const {setshowlogin} =useContext(storeContext)
+    const {setshowlogin,setToken} =useContext(storeContext)
     const [signin,setSignin] =useState('Login')
     const [data,setData] = useState({
         fristName:'',
@@ -40,12 +40,14 @@ const LoginPage = ()=>{
             confirmPassword:'',
 
         })
+        setshowlogin(false)
         
         const message = result.data.message
         console.log(message)
         const token = result.data.token
-        console.log(token)
-        // localStorage.setItem('token',token)
+        setToken(token)
+        console.log(token) 
+        localStorage.setItem('token',token)
     }
      useEffect(()=>{
         console.log(data) 

@@ -5,10 +5,14 @@
 }
  
 .login-page{
+    margin: 0;
+    display: flex;
+    justify-content: center;  
     position: fixed;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.244);
-    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    height: 100vh; 
+    
 }
  
 
@@ -17,12 +21,13 @@ form{
     flex-direction: column;
     padding: 15px;
     width: 30%;
-    box-shadow: 3px 3px 10px black;
-    place-self: center;
-    margin: 10px;
+    height: fit-content;
+    box-shadow: 3px 3px 10px black; 
+    margin-top: 10px;
     border-radius: 5px;
-    gap: 5px;
+    gap: 10px;
     background-color: white;
+
     
 }
 form .login-header{

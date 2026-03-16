@@ -1,3 +1,27 @@
 .active{
     color: tomato; 
 }
+ 
+.content-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.create-content{
+    border: 2px solid black;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.create-content:hover{
+    background-color: rgba(255, 99, 71, 0.532);
+    border: 2px solid tomato; 
+}
+.profile{
+    font-size: 33px;
+}

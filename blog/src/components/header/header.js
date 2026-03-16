@@ -2,11 +2,12 @@
  
 import { useContext } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import {storeContext} from './../context/storeContext'
-import {HashLink} from 'react-router-hash-link'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import CreateIcon from '@mui/icons-material/Create';
+import {storeContext} from './../context/storeContext' 
 import './header.css'
 export default function Header(){
-    const {setshowlogin} = useContext(storeContext)
+    const {setshowlogin,token} = useContext(storeContext)
     const navigate = useNavigate()
     return(
         <div className="header-container">
@@ -14,10 +15,14 @@ export default function Header(){
            
          <div className='info'>
          <NavLink to='/' className='home'>Home</NavLink>
-            <HashLink to={'blogs#all-blogs'} className='blogs active'>Blogs</HashLink>
+           {
+            token? <NavLink to={'blogs'} className='blogs'>Blogs</NavLink>:''
+           }
            <NavLink to='about' className='about'>About</NavLink>
          </div>
-            <div><button className='signin' onClick={()=>setshowlogin(true)}>Signin</button></div>
+            <div>{
+                token?<div className='content-div'><p className='create-content'><CreateIcon/>Create Content</p><AccountCircleIcon className='profile'/></div>:<button className='signin' onClick={()=>setshowlogin(true)}>Signin</button>
+                    }</div>
            
         </div>
     )

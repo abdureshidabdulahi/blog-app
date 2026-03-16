@@ -7,7 +7,7 @@ export default function Blogs(){
        <div className="image-tittle">
         <img src={element.located}  width={300} height={200} 
         style={{objectFit:'cover',objectPosition:'center',borderRadius:'5px',marginBottom:'7px'}}
-        />
+       alt="blog" />
         <h3>{element.category}</h3>
         <h2>{element.name}</h2>
         <div className="acount">

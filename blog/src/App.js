@@ -25,8 +25,7 @@ function App() {
           </> 
           }/>
        <Route path='blogs' element={ 
-        <>
-         <Home/>
+        <> 
          <AllBlogs heading={'All Blogs'}/>
           
         </> 
