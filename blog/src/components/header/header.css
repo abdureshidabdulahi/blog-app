@@ -27,41 +27,44 @@
     font-size: 50px !important;
     cursor: pointer;
 }
-.content-div{ 
-}
-.profile-container{
-    position: relative; 
-    padding: 5px;
-}
 .profile-lists{
-    display: none;
-    flex-direction: column; 
-    position: absolute; 
-     right: 30px; 
-     top: 40px;
-     background-color: rgb(255, 255, 255); 
-     border: 1px solid;
-     border-radius: 10px;
-   
+    position: relative; 
 }
-.profile-lists ul{
+.uls{ 
+    display: none;
+    position: absolute; 
+    border: 1px solid;
+    border-radius: 5px;
+    top: 30px; 
+    right: 30px;
+    background-color: white;
+     
+
+}
+.uls ul{
     display: flex;
     flex-direction: column;
-    gap: 10px; 
-    list-style: none;
-     padding: 10px; 
+    gap: 10px;
+     list-style: none;
      width: 200px;
+     padding: 10px;
+     height: fit-content;
+    
+
 }
-.profile-lists ul li{
-    font-weight: bold; 
-    padding: 10px;
-    color: black;
-    cursor: pointer;
+.uls ul li{
+     padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
 }
-.profile-lists ul li:hover{
-    background-color: rgba(0, 0, 0, 0.208);
+.uls ul li:hover{  
+    background-color: rgba(0, 0, 0, 0.212);
     border-radius: 5px;
-} 
-.content-div .profile:hover .profile-lists{
+   
+
+}
+.profile-lists:hover .uls{
     display: flex;
 }
+ 
+ 

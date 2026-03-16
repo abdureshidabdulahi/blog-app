@@ -26,16 +26,20 @@ export default function Header(){
                     <p className='create-content'>
                         <CreateIcon/>Create Content</p>
                         
-                        <AccountCircleIcon className='profile'/>
-                        </div>
+                        
+                       
                         <div className='profile-lists'>
-                            <ul>
+                            <AccountCircleIcon className='profile'/>
+                           <div className='uls'>
+                             <ul>
                                 <li>Profile</li>
                                 <li>Dashboard</li>
                                 <li>Settings</li>
                                 <li>Sign Out</li> 
                             </ul>
+                           </div>
                             </div>
+                             </div>
                             </div>:
                             <button className='signin' onClick={()=>setshowlogin(true)}>Signin</button>
                     }</div>
