@@ -6,6 +6,7 @@ import Home from './components/home/home.jsx';
 import AllBlogs from './components/blogsAll.js';
 import Footer from './components/footer';
 import About from './components/about';
+import ProfilePage from './components/pages/profile/profilePage.js';
 import LoginPage from './components/pages/login/loginPage.js'; 
 import { useContext } from 'react';
 import {storeContext} from './components/context/storeContext.js'
@@ -32,6 +33,7 @@ function App() {
        }
        />
        <Route path='about' element={<About/>}/>
+       <Route path='profile'  element={<ProfilePage/>}/>
         
      
        </Routes>

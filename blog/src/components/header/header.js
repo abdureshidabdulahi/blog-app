@@ -32,7 +32,7 @@ export default function Header(){
                             <AccountCircleIcon className='profile'/>
                            <div className='uls'>
                              <ul>
-                                <li>Profile</li>
+                                <li onClick={()=>navigate('/profile')}>Profile</li>
                                 <li>Dashboard</li>
                                 <li>Settings</li>
                                 <li>Sign Out</li> 
