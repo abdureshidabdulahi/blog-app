@@ -3,7 +3,60 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.profile-page{
+    display: flex;
+}
 .profile-blogs{
     display: flex;
-    
+    border-right: 2px solid;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 10px;
+}
+.profile-blogs h2{
+    text-align: center;
+    width: 100px;
+    place-self: center;
+}
+.profile-blogs h2::after{
+    display: flex;
+    content: '';
+    height: 2px;
+    width: 100px;
+    background-color: tomato;   
+    place-self: center;
+}
+.profile-profile{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    gap: 10px;
+}
+.profile-profile img{ 
+    border-radius: 50%;
+}
+.profile-profile p{
+    padding: 5px;
+}
+.profile-profile .bio{
+    width: 200px;
+    height: 100px;
+    border: 1px solid;
+}
+.profile-profile button{
+    padding: 5px 10px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: 1px solid;
+    cursor: pointer;
+
+}
+.profile-profile button:hover{
+background-color: rgba(255, 99, 71, 0.644);
+border: 1px solid tomato;
 }
