@@ -45,6 +45,8 @@
 }
 .profile-profile .bio{
     width: 200px;
+    text-align: start;
+    padding: 0;
     height: 100px;
     border: 1px solid;
 }
