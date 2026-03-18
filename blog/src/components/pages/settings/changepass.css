@@ -11,11 +11,18 @@
     justify-content: center;
     gap: 10px;
     margin: 10px;
+    width: 80%;
 }
-.change-pass input,h2,button{
-    width: 20%;
+.change-pass input,button{
+    width: 30%;
     padding: 10px;
 }
 .change-pass button{
     font-weight: bold;
+    cursor: pointer;
+}
+.change-pass button:hover{
+    background-color: tomato;
+    border: 1px solid tomato;
+    border-radius: 5px;
 }

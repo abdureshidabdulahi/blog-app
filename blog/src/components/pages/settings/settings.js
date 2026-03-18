@@ -1,16 +1,26 @@
 
 import { NavLink, useNavigate } from 'react-router-dom'
 import './settings.css'
-const SettingsPage = ()=>{
-    const navigate = useNavigate()
-    return(
+import ChangePass from './changePass'
+import { useState } from 'react'
+const SettingsPage = ()=>{ 
+    const [value,setValue] =useState(true)
+    const handlePassword = ()=>{
+        setValue(false)
+    }
+    const handleEdit = ()=>{
+        setValue(true)
+    }
+        return(
         <div className="settings-container">
             <div className="sidebar">
             <h2>Dashbord</h2>
-            <p>Edit Profile</p>
-            <p onClick={()=>navigate('/changepassword')}>Change password</p>
+            <p onClick={handleEdit}>Edit Profile</p>
+            <p onClick={ handlePassword}>Change password</p>
             </div>
-            <div className="main"> 
+           {
+            value?
+             <div className="main"> 
                <div className='main-profile'>
                  <h2>Edit Profile</h2>
                  <img src='/assets/d12dfdbd6b7501faf694ac42775f19451aee8805-324x328.webp' alt="editphoto" width={150} height={150}/>
@@ -32,7 +42,8 @@ const SettingsPage = ()=>{
                     <input type="text" placeholder="https://"/>
                 </div>
                </div>
-            </div>
+            </div>:<ChangePass/>
+           }
         </div>
     )
 }

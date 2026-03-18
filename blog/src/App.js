@@ -37,7 +37,6 @@ function App() {
        <Route path='about' element={<About/>}/>
        <Route path='profile'  element={<ProfilePage/>} />
        <Route path='settings' element={<SettingsPage/>} />
-       <Route path='changepassword' element={<ChangePass/>}/>
         
      
        </Routes>
