@@ -5,7 +5,7 @@ import Header from './components/header/header.js';
 import Home from './components/home/home.jsx';
 import AllBlogs from './components/blogsAll.js';
 import Footer from './components/footer';
-import About from './components/about';
+import About from './components/about/about.js';
 import ProfilePage from './components/pages/profile/profilePage.js';
 import LoginPage from './components/pages/login/loginPage.js'; 
 import SettingsPage from './components/pages/settings/settings.js';

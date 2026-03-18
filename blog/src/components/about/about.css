@@ -1,0 +1,36 @@
+ .about-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .about-container h1{ 
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .about-container h1 span{
+    color: red;
+    
+    
+  }
+  .about-container p{
+    width: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px 0;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 20px;
+  }
+.home-container p span{
+  color: red;
+}
+.about-container img{
+  width: 70%;
+  height: 400px;
+  margin: 5px auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+ 
+  
+}

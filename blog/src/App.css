@@ -3,15 +3,56 @@
   padding: 0;
   box-sizing: border-box;
  }
+ .footer{
+  display: flex; 
+  justify-content: space-between;
+  gap: 15px; 
+ }
+ .footer-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(2, 92, 165);
+  padding: 30px;
+ }
  
+  .list-one,
+  .list-two,
+  .list-three,
+  .list-four{
+    width: 300px;
+    height: fit-content; 
+    padding: 15px;
+  }
+   .list-one h3,
+  .list-two h3,
+  .list-three h3,
+  .list-four h3{
+    color: white;
+    font-weight: 600;
+    padding: 10px 0;
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-
-
- 
-
- 
- 
- 
- 
- 
- 
+ .list-one ul li,
+  .list-two ul li,
+  .list-three ul li,
+  .list-four ul li{
+    list-style: none;
+    padding: 5px;
+    color: white;
+    font-weight:  500;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .rights{
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .rights span{
+    color: white;
+    font-weight: bold;
+  }
+  

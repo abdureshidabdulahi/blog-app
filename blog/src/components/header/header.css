@@ -25,12 +25,14 @@
   color: rgb(70, 69, 69);
   cursor: pointer;
  }
- .active{
-    color: tomato; 
-}
  .home,.about,.blogs{
     text-decoration: none;
     color: black;
+ }
+ .home.active,
+ .about.active,
+ .blogs.active {
+    color: tomato;
  }
   .signin{
   width: fit-content;
