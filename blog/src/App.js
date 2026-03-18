@@ -8,6 +8,8 @@ import Footer from './components/footer';
 import About from './components/about';
 import ProfilePage from './components/pages/profile/profilePage.js';
 import LoginPage from './components/pages/login/loginPage.js'; 
+import SettingsPage from './components/pages/settings/settings.js';
+import ChangePass from './components/pages/settings/changePass.js';
 import { useContext } from 'react';
 import {storeContext} from './components/context/storeContext.js'
  
@@ -33,7 +35,9 @@ function App() {
        }
        />
        <Route path='about' element={<About/>}/>
-       <Route path='profile'  element={<ProfilePage/>}/>
+       <Route path='profile'  element={<ProfilePage/>} />
+       <Route path='settings' element={<SettingsPage/>} />
+       <Route path='changepassword' element={<ChangePass/>}/>
         
      
        </Routes>

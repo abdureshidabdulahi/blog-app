@@ -7,8 +7,12 @@ import CreateIcon from '@mui/icons-material/Create';
 import {storeContext} from './../context/storeContext' 
 import './header.css'
 export default function Header(){
-    const {setshowlogin,token} = useContext(storeContext)
+    const {setshowlogin,token,setToken} = useContext(storeContext)
     const navigate = useNavigate()
+    const handleClick = ()=>{
+        setToken(localStorage.removeItem('token'))
+        window.location.reload()
+    }
     return(
         <div className="header-container">
             <div><img src= "/assets/34884.jpg"  height={70} alt='header-log' onClick={()=>navigate('/')}/></div>
@@ -33,8 +37,8 @@ export default function Header(){
                            <div className='uls'>
                              <ul>
                                 <li onClick={()=>navigate('/profile')}>Profile</li> 
-                                <li>Settings</li>
-                                <li>Sign Out</li> 
+                                <li onClick={()=>navigate('/settings')}>Settings</li>
+                                <li onClick={handleClick}>Sign Out</li> 
                             </ul>
                            </div>
                             </div>
