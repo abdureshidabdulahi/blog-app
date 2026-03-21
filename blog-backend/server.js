@@ -1,7 +1,7 @@
 import express from 'express'
 import connection from './connectDB.js'
 import cors from 'cors'
-import 'dotenv/config'
+import 'dotenv/config' 
 import userRoute from './components/routes/userRoute.js'
 
 const app = express()

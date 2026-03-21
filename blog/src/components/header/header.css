@@ -52,19 +52,22 @@
     gap: 10px;
 }
 .create-content{
-    border: 2px solid black;  
+    border: 2px solid rgba(0, 0, 0, 0.484);  
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.422);
+    color: white;
     
 }
 .create-content:hover{
-    background-color: rgba(255, 0, 0, 0.532);
+    background-color: rgba(255, 0, 0, 0.208);
     border: 2px solid tomato; 
+    color: black;
 }
 .profile{
     font-size: 50px !important;
