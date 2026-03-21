@@ -65,8 +65,8 @@
     
 }
 .create-content:hover{
-    background-color: rgba(255, 0, 0, 0.208);
-    border: 2px solid tomato; 
+    background-color: rgba(255, 0, 0, 0.126);
+    /* border: 2px solid tomato;  */
     color: black;
 }
 .profile{

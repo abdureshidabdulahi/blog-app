@@ -4,19 +4,39 @@
     align-items: center;
     margin: 10px;
     gap: 10px;
+    box-shadow: 5px 5px 10px black;
+    padding: 10px;
 }
 h2 input{
     padding: 10px;
-    width: 400px;
+    width: 500px;
     margin: 10px 0;
     font-size: 18px;
+    border: 2px solid  rgba(6, 97, 158, 0.719);
+    border-radius: 5px;
+    outline: none;
 }
+ 
 textarea{
     padding: 10px;
+    border: 2px solid  rgba(6, 97, 158, 0.719);
+    outline: none;
+    border-radius: 10px;
 }
 button{
     cursor: pointer;
+    border-radius: 5px;
+    background-color:  rgba(6, 97, 158, 0.772);
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+}
+.image img{
+    border-radius: 10px;
 }
 .image{
     cursor: pointer;
+    border: 2px solid rgba(6, 97, 158, 0.719);
+    border-radius: 10px;
+    
 }

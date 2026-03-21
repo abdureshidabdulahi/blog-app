@@ -1,5 +1,4 @@
-
-import { NavLink, useNavigate } from 'react-router-dom'
+ 
 import './settings.css'
 import ChangePass from './changePass'
 import { useState } from 'react'
@@ -30,10 +29,12 @@ const SettingsPage = ()=>{
                 <div className="header-input">
                     <input type="text" placeholder='Enter Name'/>
                     <input type="text" placeholder='Enter Gmail'/>
+                    
                 </div>
                 <input type="text" placeholder='Enter Username'/>
                 <p>Username will be used to search the user and will be visible to all users.</p>
                 <textarea placeholder="Bio" rows={5} cols={10}/>
+                
                 <h2>Add Your Social Media Account</h2>
                 <div className='social-media'>
                     <input type="text" placeholder="https://"/>

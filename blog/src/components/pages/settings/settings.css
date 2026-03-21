@@ -9,11 +9,20 @@
 }
 .header-input{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+}
+.header-input input{
+    border: 2px solid rgba(0, 110, 179, 0.546);
+    border-radius:10px;
+    outline: none;
 }
 .social-media{
     display: flex;
     flex-direction: column;
+}
+.social-media input{
+    border: 2px solid rgb(0, 110, 179, 0.546);
+    outline: none;
 }
 .sidebar{
     display: flex;
