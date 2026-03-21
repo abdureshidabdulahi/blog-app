@@ -4,9 +4,10 @@ import './content.css'
 
 const Content = ()=>{
     const [previewImage,setPreviewImage] =useState(null)
-    
+
     const handleImage = (event)=>{
         const file = event.target.files[0] 
+        if(!file) return
            const previewurl = URL.createObjectURL(file)
          
         setPreviewImage(previewurl)

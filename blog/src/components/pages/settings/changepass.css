@@ -13,16 +13,17 @@
     margin: 10px;
     width: 80%;
 }
+.change-pass input{
+    border: 2px solid rgb(0, 110, 179, 0.546);
+    outline: none;
+    border-radius: 10px;
+}
 .change-pass input,button{
     width: 30%;
     padding: 10px;
 }
-.change-pass button{
-    font-weight: bold;
+.change-pass button{  
+    font-size: 1.5rem;
     cursor: pointer;
 }
-.change-pass button:hover{
-    background-color: tomato;
-    border: 1px solid tomato;
-    border-radius: 5px;
-}
+ 

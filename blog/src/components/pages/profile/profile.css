@@ -24,7 +24,7 @@
     content: '';
     height: 2px;
     width: 100px;
-    background-color: tomato;   
+    background-color:  rgba(0, 110, 179, 0.607);   
     place-self: center;
 }
 .profile-profile{
@@ -39,6 +39,8 @@
 }
 .profile-profile img{ 
     border-radius: 50%;
+    box-shadow: 3px 3px 5px;
+    border: 2px solid rgba(0, 110, 179, 0.564);
 }
 .profile-profile p{
     padding: 5px;
@@ -49,6 +51,10 @@
     padding: 0;
     height: 100px;
     border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 2px 3px 7px;
+    padding: 10px;
+    border: 2px solid rgba(0, 110, 179, 0.555);
 }
 .profile-profile button{
     padding: 5px 10px;
@@ -58,7 +64,4 @@
     cursor: pointer;
 
 }
-.profile-profile button:hover{
-background-color: rgba(255, 99, 71, 0.644);
-border: 1px solid tomato;
-}
+ 

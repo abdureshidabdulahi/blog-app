@@ -60,13 +60,12 @@
     padding: 5px;
     border-radius: 20px;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.422);
-    color: white;
+    background-color:rgba(0, 110, 179, 0.219);
+    color: black;
     
 }
 .create-content:hover{
-    background-color: rgba(255, 0, 0, 0.126);
-    /* border: 2px solid tomato;  */
+    background-color:rgba(0, 110, 179, 0.571) ; 
     color: black;
 }
 .profile{
@@ -83,7 +82,8 @@
     border-radius: 5px;
     top: 30px; 
     right: 30px;
-    background-color: white;
+    background-color: rgba(4, 88, 141, 0.845);
+    color: white;
      
 
 }

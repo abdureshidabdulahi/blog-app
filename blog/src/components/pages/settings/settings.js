@@ -31,7 +31,7 @@ const SettingsPage = ()=>{
                     <input type="text" placeholder='Enter Gmail'/>
                     
                 </div>
-                <input type="text" placeholder='Enter Username'/>
+                <input type="text" placeholder='Enter Username' className='input'/>
                 <p>Username will be used to search the user and will be visible to all users.</p>
                 <textarea placeholder="Bio" rows={5} cols={10}/>
                 
