@@ -25,6 +25,8 @@ const Content = ()=>{
             <input type='file' onChange={handleImage} style={{display:'none'}} id='file-input'/>
              </div>
             <h2><input type='text' placeholder='write title here!'/></h2>
+            <h2><input type='text' placeholder='write the author here' /></h2>
+            <h2><input type='text' placeholder='write the category here!'/> </h2>
             <textarea placeholder="write description and conclution" cols='70' rows={30}/>
             <button>publish</button>
             
