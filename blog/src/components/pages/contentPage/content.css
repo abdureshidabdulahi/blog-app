@@ -1,4 +1,4 @@
-.content-container{
+ form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,6 +6,8 @@
     gap: 10px;
     box-shadow: 5px 5px 10px black;
     padding: 10px;
+    width: fit-content;
+    place-self: center;
 }
 h2 input{
     padding: 10px;
@@ -31,12 +33,15 @@ button{
     font-size: 1.5rem;
     border: none;
 }
-.image img{
+ form .image img{
     border-radius: 10px;
+    width: 500px;
+    height: 300px;
 }
 .image{
     cursor: pointer;
     border: 2px solid rgba(6, 97, 158, 0.719);
     border-radius: 10px;
+    width: fit-content;
     
 }

@@ -10,6 +10,7 @@ const Content = ()=>{
         title:'',
         description:'',
         author:'', 
+        category:''
 
 
     })
@@ -34,12 +35,15 @@ const Content = ()=>{
     formData.append('title',data.title)
     formData.append('description',data.description)
     formData.append('author',data.author)
+    formData.append('category',data.category)
     formData.append('image',file)
     const handleSubmit = ()=>{
 
     }
     useEffect(()=>{
         console.log(formData)
+        console.log([...formData.entries()])
+        
     })
 
     return(
@@ -47,14 +51,14 @@ const Content = ()=>{
            <form onSubmit={handleSubmit}>
              <div className="image">
             {
-                previewImage?<img src={previewImage} alt='image2' width={500} height={300} onClick={trigerFileInput}/>:
-                <img src="/assets/upload_area.png" alt="upload-photo" width={500} height={300} onClick={trigerFileInput}/>
+                previewImage?<img src={previewImage} alt='image2'   onClick={trigerFileInput}/>:
+                <img src="/assets/upload_area.png" alt="upload-photo"   onClick={trigerFileInput}/>
             }
             <input type='file' onChange={handleImage} style={{display:'none'}} id='file-input'/>
              </div>
             <h2><input type='text' name='title' value={data.title} placeholder='write title here!' onChange={handleChange} required/></h2>
-            <h2><input type='text' placeholder='write the author here' name='author' value={data.author} required/></h2>
-            <h2><input type='text' placeholder='write the category here!' name='category' value={data.category} required/></h2>
+            <h2><input type='text' placeholder='write the author here' onChange={handleChange} name='author' value={data.author} required/></h2>
+            <h2><input type='text' placeholder='write the category here!' onChange={handleChange} name='category' value={data.category} required/></h2>
             <textarea placeholder="write description and conclution" cols='70' rows={30} required/>
             <button type='submit'>publish</button>
            </form>
