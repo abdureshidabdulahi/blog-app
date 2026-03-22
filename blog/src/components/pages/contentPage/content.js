@@ -1,6 +1,7 @@
  import { useState } from 'react'
 import './content.css'
 import { useEffect } from 'react'
+import axios from 'axios'
 
 
 const Content = ()=>{
@@ -37,12 +38,13 @@ const Content = ()=>{
     formData.append('author',data.author)
     formData.append('category',data.category)
     formData.append('image',file)
-    const handleSubmit = ()=>{
-
+    const handleSubmit =async (event)=>{
+        event.preventDefault()
+        await axios.post('http://localhost:5137/api/user/savecontent',formData)
     }
     useEffect(()=>{
-        console.log(formData)
-        console.log([...formData.entries()])
+        // console.log(formData)
+        // console.log([...formData.entries()])
         
     })
 
@@ -59,7 +61,7 @@ const Content = ()=>{
             <h2><input type='text' name='title' value={data.title} placeholder='write title here!' onChange={handleChange} required/></h2>
             <h2><input type='text' placeholder='write the author here' onChange={handleChange} name='author' value={data.author} required/></h2>
             <h2><input type='text' placeholder='write the category here!' onChange={handleChange} name='category' value={data.category} required/></h2>
-            <textarea placeholder="write description and conclution" cols='70' rows={30} required/>
+            <textarea placeholder="write description and conclution" cols='70' rows={30} name='description' value={data.description} onChange={handleChange} required/>
             <button type='submit'>publish</button>
            </form>
             
