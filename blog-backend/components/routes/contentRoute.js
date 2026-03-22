@@ -9,11 +9,13 @@ const storage = multer.diskStorage({
         calback(null,'images')
     },
     filename:(req,file,calback)=>{
-        
+        calback(null,`${Date.now()}${file.originalname}`)
     }
 })
 
-contentRouter.post('/savecontent',contentFunction)
+const images = multer({storage:storage})
+
+contentRouter.post('/savecontent',images.single('image'),contentFunction)
 
 
 export default contentRouter
