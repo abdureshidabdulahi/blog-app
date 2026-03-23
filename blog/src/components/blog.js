@@ -4,7 +4,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
 
-const BlogForm = () => {
+const Blog = () => {
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
 
@@ -46,4 +46,4 @@ const BlogForm = () => {
   );
 };
 
-export default BlogForm;
+export default Blog;

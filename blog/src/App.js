@@ -2,15 +2,13 @@
 import './App.css';
 import { Route,Routes } from 'react-router-dom';
 import Header from './components/header/header.js';
-import Home from './components/home/home.jsx';
-import AllBlogs from './components/blogsAll.js'; 
-import BlogForm from './components/blog.js';
+import Home from './components/home/home.jsx';   
 import Footer from './components/footer';
+import BlogForm from './components/pages/contentPage/content.js';
 import About from './components/about/about.js';
 import ProfilePage from './components/pages/profile/profilePage.js';
 import LoginPage from './components/pages/login/loginPage.js'; 
-import SettingsPage from './components/pages/settings/settings.js'; 
-import Content from './components/pages/contentPage/content.js';
+import SettingsPage from './components/pages/settings/settings.js';   
 import { useContext } from 'react';
 import {storeContext} from './components/context/storeContext.js'
  
@@ -24,13 +22,11 @@ function App() {
        <Routes>
         <Route path='/' element={
           <> 
-          <Home/> 
-          <BlogForm/>
+          <Home/>  
           </> 
           }/>
        <Route path='blogs' element={ 
-        <> 
-         {/* <AllBlogs heading={'All Blogs'}/> */}
+        <>  
           
         </> 
        }
@@ -38,9 +34,7 @@ function App() {
        <Route path='about' element={<About/>}/>
        <Route path='profile'  element={<ProfilePage/>} />
        <Route path='settings' element={<SettingsPage/>} />
-       <Route path='/createcontent' element={<Content/>}/>
-        
-     
+       <Route path='/createcontent' element={< BlogForm/>}/> 
        </Routes>
         <Footer/> 
        

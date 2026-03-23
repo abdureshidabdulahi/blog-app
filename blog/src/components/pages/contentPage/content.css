@@ -1,1 +1,38 @@
- 
+ .content{
+    width: 100%;
+ }
+ .content form{
+    width: 50%;
+    place-self: center;
+ }
+ form .ql-toolbar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+ }
+ form .quill{
+    width: 100%;
+    min-height: 300px;
+ }
+ .ql-editor{ 
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: pre-wrap;
+    width: 100%;
+    min-height: 300px; 
+ }
+ form .ql-container{
+    width: 100%; 
+    overflow-x: hidden;
+    min-height: 300px;
+ } 
+ .container{
+    width: 100%;
+ }
+ .headers{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+ }
+
