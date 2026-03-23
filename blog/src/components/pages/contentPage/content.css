@@ -25,14 +25,7 @@ textarea{
     outline: none;
     border-radius: 10px;
 }
-button{
-    cursor: pointer;
-    border-radius: 5px;
-    background-color:  rgba(6, 97, 158, 0.772);
-    color: white;
-    font-size: 1.5rem;
-    border: none;
-}
+ 
  form .image img{
     border-radius: 10px;
     width: 500px;
@@ -44,4 +37,7 @@ button{
     border-radius: 10px;
     width: fit-content;
     
+}
+form button{
+    background-color: rgba(7, 77, 151, 0.765);
 }

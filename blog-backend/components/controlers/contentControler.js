@@ -11,6 +11,15 @@ const contentFunction =async (req,res)=>{
             image:req.file.filename
         })
         await newContent.save()
-}  
+} 
+const contentLists = async (req,res)=>{
+    try{
+       const listOfContents =  await contentModel.find({})
+        res.json({success:true,listOfContents})
+    }catch(error){
+            console.log(error)
+    }
 
-export {contentFunction}
+}
+
+export {contentFunction,contentLists}
