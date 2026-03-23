@@ -10,24 +10,29 @@ const Contexts = (props)=>{
     const [content,setContent] = useState([])
     const [showlogin,setshowlogin] = useState(false)
 
-    const context={
-                showlogin,
-                setshowlogin,
-                token,
-                setToken,
-    }
+  
     // fetchContent from the backend
 
     const fetchContent =async ()=>{
    const result = await axios.get('http://localhost:5137/api/user/getcontent')
-   if(result.success === true){
-    console.log('this is the content',result.data)
+   setContent(result.data.listOfContents)
+  
+   if(result.data.success === true){
+    console.log('this is the content',result)
    }
    
     }
 useEffect(()=>{
     fetchContent()
 })
+
+const context={
+    showlogin,
+    setshowlogin,
+    token,
+    setToken,
+    content
+}
     return(
         <storeContext.Provider value={context}>
             {props.children}
