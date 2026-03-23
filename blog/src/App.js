@@ -24,12 +24,12 @@ function App() {
         <Route path='/' element={
           <> 
           <Home/>
-          <AllBlogs heading={'Latest Blogs'}/> 
+          {/* <AllBlogs heading={'Latest Blogs'}/>  */}
           </> 
           }/>
        <Route path='blogs' element={ 
         <> 
-         <AllBlogs heading={'All Blogs'}/>
+         {/* <AllBlogs heading={'All Blogs'}/> */}
           
         </> 
        }

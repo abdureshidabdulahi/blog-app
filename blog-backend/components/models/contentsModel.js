@@ -6,7 +6,7 @@ const contentSchema = new mongoose.Schema({
     category:{type:String,enum:["Technology","Programming","Career/Learning","Cyber Security","Networking"]},
     author:{type:String},
     image:{type:String},
-    createdAt:{type:Date,default:Date.now()},
+    createdAt:{type:Date,default:Date.now()}, 
     comments:{type:Object},
     likes:{type:Object}, 
 })
