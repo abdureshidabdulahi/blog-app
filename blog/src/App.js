@@ -3,8 +3,8 @@ import './App.css';
 import { Route,Routes } from 'react-router-dom';
 import Header from './components/header/header.js';
 import Home from './components/home/home.jsx';
-import AllBlogs from './components/blogsAll.js';
-import Blogs from './components/blog.js';
+import AllBlogs from './components/blogsAll.js'; 
+import BlogForm from './components/blog.js';
 import Footer from './components/footer';
 import About from './components/about/about.js';
 import ProfilePage from './components/pages/profile/profilePage.js';
@@ -25,7 +25,7 @@ function App() {
         <Route path='/' element={
           <> 
           <Home/> 
-          <Blogs/>
+          <BlogForm/>
           </> 
           }/>
        <Route path='blogs' element={ 
