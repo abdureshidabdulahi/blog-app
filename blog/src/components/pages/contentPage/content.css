@@ -21,6 +21,7 @@
     white-space: pre-wrap;
     width: 100%;
     min-height: 300px; 
+    font-size: 18px;
  }
  form .ql-container{
     width: 100%; 
@@ -34,5 +35,28 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
+ }
+ .headers h2,input{
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid rgba(9, 68, 151, 0.74);
+    border-radius: 10px;
+    outline: none;
+ }
+ .headers img{
+    width: 50%;
+    height: 300px;
+    cursor: pointer;
+ }
+ .headers #input-file{
+    display: none;
+ }
+ .container h2{
+    width: 50%;
+    place-self: center;
+    margin-top: 10px;
  }
 
