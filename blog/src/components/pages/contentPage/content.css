@@ -5,6 +5,9 @@
     width: 50%;
     place-self: center;
  }
+ form button{
+   background-color: rgba(8, 70, 140, 0.861);
+ }
  form .ql-toolbar{
     display: flex;
     flex-direction: row;
@@ -38,13 +41,17 @@
     align-items: center;
     gap: 10px;
  }
- .headers h2,input{
+ .headers input{
     width: 50%;
     padding: 10px;
     font-size: 20px;
     border: 2px solid rgba(9, 68, 151, 0.74);
     border-radius: 10px;
     outline: none;
+ }
+ .headers h3{
+   color: rgba(0, 0, 0, 0.518);
+
  }
  .headers img{
     width: 50%;

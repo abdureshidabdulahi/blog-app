@@ -18,13 +18,13 @@ const Contexts = (props)=>{
    setContent(result.data.listOfContents)
   
    if(result.data.success === true){
-    console.log('this is the content',result)
+    // console.log('this is the content',result)
    }
    
     }
 useEffect(()=>{
     fetchContent()
-})
+},[])
 
 const context={
     showlogin,

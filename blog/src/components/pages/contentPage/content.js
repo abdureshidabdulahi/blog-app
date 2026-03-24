@@ -36,10 +36,26 @@ import { useEffect, useState } from "react"
             contents:value
         })
     }
+    const handleSubmit =async (event)=>{
+        event.preventDefault()
+        const formData = new FormData()
+        formData.append('title',content.title)
+        formData.append('author',content.author)
+        formData.append('category',content.category)
+        formData.append('contents',content.contents)
+        formData.append('image',image)
+        await axios.post('http://localhost:5137/api/user/savecontent',formData)
+        setContent({
+            title:'',
+            author:'',
+            category:'',
+            contents:''
+        })
 
+    }
     useEffect(()=>{
         console.log(content)
-    },[])
+    },[content])
     return(
         <div className="container">
            <div className="headers">
@@ -48,14 +64,18 @@ import { useEffect, useState } from "react"
             image?<img src={previewUrl} alt="previewphoto" onClick={trigerFileInput}/>:<img src="/assets/upload_area.png" alt="upload" onClick={trigerFileInput}/>
            }
            <input type="file"  id="input-file" onChange={handlechange}/>
+           <h3>Enter Your title Below</h3>
             <input type="text" placeholder="please enter title" value={content.title} name="title" onChange={handleInput}/>
+            <h3>Enter The Author Below</h3>
             <input type="text" placeholder="please enter author" value={content.author} name="author" onChange={handleInput}/>
+            <h3>Enter The Category Below</h3>
             <input type="text" placeholder="please enter category" value={content.category} name="category" onChange={handleInput}/>
            </div>
            <h2>Enter Your Description Below</h2>
            <div className="content" >
-             <form>
+             <form onSubmit={handleSubmit}>
                 <ReactQuill placeholder="please write your descriptions here" value={content.contents}  onChange={handleQuill}/>
+                <button type="submit">Submit</button>
              </form>
            </div>
 

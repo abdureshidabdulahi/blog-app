@@ -4,10 +4,12 @@ import contentModel from "../models/contentsModel.js"
 
 
 const contentFunction =async (req,res)=>{ 
+    console.log(req.body)
         const newContent = new contentModel({
             title:req.body.title,
             category:req.body.category,
-            description:req.body.description,
+            author:req.body.author,
+            description:req.body.contents,
             image:req.file.filename
         })
         await newContent.save()
