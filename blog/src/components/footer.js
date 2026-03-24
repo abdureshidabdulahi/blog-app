@@ -47,7 +47,7 @@ export default function Footer(){
                 </ul>
              </div>
              </div>
-             <p className='rights'>&copy; 2025 <span>SELF-THAUGHT-DEV</span>.All rights reserved</p>
+             <p className='rights'>&copy; 2025 <span>SELF-TAUGHT-DEV</span>.All rights reserved</p>
         </div>
     )
 }
