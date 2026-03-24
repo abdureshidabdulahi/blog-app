@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    border: 2px solid black; 
+}
+.each-content-container{
+    width: fit-content;
+    border: 2px solid green;
+}
+.each-content-container img{
+    width: 300px;
+    height: 150px;
+}

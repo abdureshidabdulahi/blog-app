@@ -7,6 +7,7 @@ import contentRouter from './components/routes/contentRoute.js'
 
 const app = express()
 connection()
+app.use('/images',express.static('images'))
 app.use(cors())
 app.use(express.json())
 app.use('/api/users',userRoute)

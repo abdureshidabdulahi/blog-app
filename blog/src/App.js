@@ -3,7 +3,7 @@ import './App.css';
 import { Route,Routes } from 'react-router-dom';
 import Header from './components/header/header.js';
 import Home from './components/home/home.jsx';   
-import Blog from './components/blog.js';
+import Blog from './components/pages/userBlog/blog.js';
 import Footer from './components/footer';
 import BlogForm from './components/pages/contentPage/content.js';
 import About from './components/about/about.js';
