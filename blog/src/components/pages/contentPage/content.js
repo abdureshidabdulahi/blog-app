@@ -15,6 +15,21 @@ import { storeContext } from "../../context/storeContext"
         category:'',
         contents:''
     })
+    const modules = {
+        toolbar:[
+            [{'header':[3,4,5]}],
+            ['bold','italic','underline'],
+            [{list:'ordered'},{list:'bullet'}],
+            ['link'],
+            ['clean']
+        ]
+    }
+    const formats =[
+        'header',
+        'bold','italic','underline',
+        'list','bullet',
+        'link'
+    ]
 
     const trigerFileInput = ()=>{
         document.getElementById('input-file').click()
@@ -76,7 +91,7 @@ import { storeContext } from "../../context/storeContext"
            <h2>Enter Your Description Below</h2>
            <div className="content" >
              <form onSubmit={handleSubmit}>
-                <ReactQuill placeholder="please write your descriptions here" value={content.contents}  onChange={handleQuill}/>
+                <ReactQuill formats={formats} modules={modules} placeholder="please write your descriptions here" value={content.contents}  onChange={handleQuill}/>
                 <button type="submit">Submit</button>
              </form>
            </div>
