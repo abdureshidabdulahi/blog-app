@@ -7,23 +7,29 @@ export const storeContext = createContext(null)
 
 const Contexts = (props)=>{
     const [token,setToken] =useState(localStorage.getItem('token'))
-    const [content,setContent] = useState([])
+    const [allContents,setAllContent] = useState([])
+    const [myBlogs,setMyBlogs] = useState([])
     const [showlogin,setshowlogin] = useState(false)
 
   
     // fetchContent from the backend
 
-    const fetchContent =async ()=>{
+    const fetchAllContent =async ()=>{
    const result = await axios.get('http://localhost:5137/api/user/getcontent')
-   setContent(result.data.listOfContents)
+   setAllContent(result.data.listOfContents)
   
    if(result.data.success === true){
     // console.log('this is the content',result)
    }
    
     }
+    const fetchUserBlog =async ()=>{
+        const result = await axios.post('http://localhost:5137/api/user/myblogs',{},{headers:{token}})
+            setMyBlogs(result.data.myBlogs)
+    }
 useEffect(()=>{
-    fetchContent()
+    fetchAllContent()
+    fetchUserBlog()
 },[])
 
 const context={
@@ -31,7 +37,8 @@ const context={
     setshowlogin,
     token,
     setToken,
-    content
+    allContents,
+    myBlogs
 }
     return(
         <storeContext.Provider value={context}>

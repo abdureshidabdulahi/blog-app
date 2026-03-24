@@ -2,9 +2,11 @@
  import './content.css'
  import 'react-quill/dist/quill.snow.css'
  import axios from 'axios' 
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { storeContext } from "../../context/storeContext"
 
  const BlogForm = ()=>{
+    const {token} =useContext(storeContext)
     const [image,setImage] =useState(null)
     const [previewUrl,setPreviewUrl] = useState(null)
     const [content,setContent] = useState({
@@ -44,7 +46,7 @@ import { useEffect, useState } from "react"
         formData.append('category',content.category)
         formData.append('contents',content.contents)
         formData.append('image',image)
-        await axios.post('http://localhost:5137/api/user/savecontent',formData)
+        await axios.post('http://localhost:5137/api/user/savecontent',formData,{headers:{token}})
         setContent({
             title:'',
             author:'',

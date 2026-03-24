@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 
 const contentSchema = new mongoose.Schema({
+    userId:{type:String,required:true},
     title:{type:String},
     description:{type:String},
     category:{type:String,enum:["Technology","Programming","Career/Learning","Cyber Security","Networking"]}, 

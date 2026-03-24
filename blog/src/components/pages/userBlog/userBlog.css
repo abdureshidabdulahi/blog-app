@@ -9,9 +9,28 @@
 }
 .each-content-container{
     width: fit-content;
-    border: 2px solid green;
+    /* border: 2px solid green; */
+    margin: 10px; 
+    box-shadow: -1px 1px 3px black ;
+    border-radius: 10px;
+}
+.each-content-container h1,.quill{
+    width: 100%;
+    text-align: center;
+   
+}
+.each-content-container .quill{
+    color: rgba(0, 0, 0, 0.311);
+    margin: 10px 0px;
 }
 .each-content-container img{
     width: 300px;
     height: 150px;
+    border-radius:  10px 10px 0px 0px;
+}
+.each-content-container hr{
+    width: 80%; 
+    place-self: center;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.358);
 }

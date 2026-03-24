@@ -1,6 +1,7 @@
 import express from 'express' 
-import { contentFunction, contentLists } from '../controlers/contentControler.js'
+import { contentFunction, all_contentLists, userBlog } from '../controlers/contentControler.js'
 import multer from 'multer'
+import { authentication } from '../middleware/auth.js'
 
 const contentRouter = express.Router()
 
@@ -15,8 +16,9 @@ const storage = multer.diskStorage({
 
 const images = multer({storage:storage})
 
-contentRouter.post('/savecontent',images.single('image'),contentFunction)
-contentRouter.get('/getcontent',contentLists)
+contentRouter.post('/savecontent',images.single('image'),authentication,contentFunction)
+contentRouter.post('/myblogs',authentication,userBlog)
+contentRouter.get('/getcontent',all_contentLists)
 
 
 export default contentRouter

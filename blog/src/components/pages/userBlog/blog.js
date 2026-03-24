@@ -5,14 +5,16 @@ import dompurify from 'dompurify'
 
  
 const Blog = () => {
-  const {content} = useContext(storeContext)
+  const {myBlogs} = useContext(storeContext)
    return(
     <div className="container">
     {
-      content.map((item)=>(
+      myBlogs.map((item)=>(
         <div className="each-content-container">
           {<img src={ `http://localhost:5137/images/${item.image}`} alt="header" />}
-         <div dangerouslySetInnerHTML={{__html:dompurify.sanitize(item.description)}} />
+          <h1>{item.title}</h1>
+         <div dangerouslySetInnerHTML={{__html:dompurify.sanitize(item.description)}} className="quill"/>
+         <hr />
         </div>
       ))
     }

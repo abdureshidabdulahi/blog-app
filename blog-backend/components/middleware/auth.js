@@ -1,16 +1,18 @@
 import jwt from 'jsonwebtoken'
-import userModel from '../models/userModel'
+import userModel from '../models/userModel.js'
 
-const authentication = async(req,res)=>{
+const authentication = async(req,res,next)=>{
 try {
-    const user = await userModel.find({email:req.body.email})
-if(user){
-    console.log('this email exists please choose another email')
-}
+  const {token} = req.headers
+const jwt_decoded = jwt.decode(token,process.env.SECRET_KEY) 
+req.userId = jwt_decoded.id
 
-
+next()
 } catch (error) {
-    
+    console.log(error)
+    next()
 }
 
 }
+
+export {authentication}
