@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { storeContext } from "../../context/storeContext";
 import "./userBlog.css";
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import DOMPurify from "dompurify";
 
 const Blog = () => {
@@ -17,6 +18,15 @@ const Blog = () => {
       ? text.substring(0, limit) + "..."
       : text;
   };
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+  
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
 
   return (
     <div className="container">
@@ -32,9 +42,14 @@ const Blog = () => {
           {/*Show shortened text instead of full HTML */}
           <p className="quill">
             {getShortText(item.description, 120)}
-          </p>
+          </p> 
+          <div className="blog-profile">
+           {<AccountBoxIcon className="profile-AccountBoxIcon"/>} 
+           <p>{formatDate(item.createdAt)} .<span>by @{item.userName}</span></p>
 
+          </div>
           <hr /> 
+
         </div>
       ))}
     </div>

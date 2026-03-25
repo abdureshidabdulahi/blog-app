@@ -34,3 +34,18 @@
     height: 2px;
     background-color: rgba(0, 0, 0, 0.358);
 }
+.blog-profile {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 5px 10px;
+}
+.blog-profile p{
+    display: flex;
+    flex-direction: column;
+    color: rgba(0, 0, 0, 0.473);
+}
+.blog-profile .profile-AccountBoxIcon{
+    font-size: 35px;
+    color: rgba(0, 0, 0, 0.651);
+}

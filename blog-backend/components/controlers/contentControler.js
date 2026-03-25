@@ -7,6 +7,7 @@ const contentFunction =async (req,res)=>{
     console.log(req.body)
         const newContent = new contentModel({
             userId:req.userId,
+            userName:req.username,
             title:req.body.title,
             category:req.body.category,
             author:req.body.author,
