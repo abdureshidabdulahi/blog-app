@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { storeContext } from "../../context/storeContext";
 import "./userBlog.css";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
@@ -26,21 +27,25 @@ const Blog = () => {
         myBlogs.map((item, index) => (
           <div className="each-content-container" key={index}>
             <div className="content-image">
-              <img
-                src={`http://localhost:5137/images/${item.image}`}
-                alt={item.title || "Blog image"}
-              />
-              <p>{item.category || "General"}</p>
+              <Link to={`/post/${item._id}`} className="clickable-link">
+                <img
+                  src={`http://localhost:5137/images/${item.image}`}
+                  alt={item.title || "Blog image"}
+                />
+                <p>{item.category || "General"}</p>
+              </Link>
             </div>
 
             <h1>{item.title}</h1>
 
-            <div
-              className="quill preview"
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(item.description),
-              }}
-            />
+            <Link to={`/post/${item._id}`} className="clickable-link">
+              <div
+                className="quill preview"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(item.description),
+                }}
+              />
+            </Link>
 
             <div className="blog-profile">
               <AccountBoxIcon className="profile-AccountBoxIcon" />

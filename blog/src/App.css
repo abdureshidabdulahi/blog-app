@@ -3,6 +3,15 @@
   padding: 0;
   box-sizing: border-box;
  }
+ :root {
+  --primary-light-brown: #af4425;
+  --primary-dark-brown: #662e1c;
+  --secondary-light-yellow: #c9a66b;
+  --light-white-yellow: #ebdcb2;
+}
+.body{
+  background-color: var(--primary-dark-brown);
+}
  .footer{
   display: flex; 
   justify-content: space-between;
@@ -13,7 +22,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(2, 92, 165);
+  background-color: var(--primary-dark-brown);
   padding: 30px;
  }
  
@@ -29,7 +38,7 @@
   .list-two h3,
   .list-three h3,
   .list-four h3{
-    color: white;
+    color: var(--light-white-yellow);
     font-weight: 600;
     padding: 10px 0;
     text-align: start;
@@ -42,17 +51,17 @@
   .list-four ul li{
     list-style: none;
     padding: 5px;
-    color: white;
+    color: var(--light-white-yellow);
     font-weight:  500;
     font-family: Arial, Helvetica, sans-serif;
   }
   .rights{
-    color: rgba(255, 255, 255, 0.74);
+    color: var(--light-white-yellow);
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
   }
   .rights span{
-    color: white;
+    color: var(--light-white-yellow);
     font-weight: bold;
   }
   

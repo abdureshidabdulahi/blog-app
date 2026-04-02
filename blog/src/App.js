@@ -4,6 +4,7 @@ import { Route,Routes } from 'react-router-dom';
 import Header from './components/header/header.js';
 import Home from './components/home/home.jsx';   
 import Blog from './components/pages/userBlog/blog.js';
+import ContentDetail from './components/pages/userBlog/contentDetail.js';
 import Footer from './components/footer';
 import BlogForm from './components/pages/contentPage/content.js';
 import About from './components/about/about.js';
@@ -31,8 +32,7 @@ function App() {
        <Route path='about' element={<About/>}/>
        <Route path='profile'  element={<ProfilePage/>} />
        <Route path='settings' element={<SettingsPage/>} />
-       <Route path='/createcontent' element={< BlogForm/>}/> 
-       </Routes>
+       <Route path='/createcontent' element={< BlogForm/>}/>        <Route path='/post/:id' element={<ContentDetail/>} />       </Routes>
         <Footer/> 
        
     </div>

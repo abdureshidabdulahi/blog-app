@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.body{
+    background-color: var(--primary-dark-brown);
+}
 
 .container {
   width: min(1200px, 96%);
@@ -122,6 +125,22 @@
 
 .love-comment p:hover {
   color: #1d4ed8;
+}
+
+.clickable-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.clickable-link:hover .quill,
+.clickable-link:hover .content-image img {
+  filter: brightness(0.96);
+}
+
+.back-button {
+  font-size: 0.95rem;
 }
 
 .empty-state {
