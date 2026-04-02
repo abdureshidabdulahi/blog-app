@@ -16,7 +16,7 @@
   font-family:  Outfit, sans-serif;
 
  }
- .home-container p span{
+ .home-container p .span{
   font-family: sans-serif;
   font-weight: bold;
   color: var(--secondary-light-yellow);

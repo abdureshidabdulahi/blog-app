@@ -7,10 +7,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  background: var(--primary-dark-bown);
+  background-color: var(--primary-dark-brown); /* fixed variable name */
   border-bottom: 2px solid var(--light-white-yellow);
 
  }
@@ -28,7 +30,7 @@
  }
  .home,.about,.blogs{
     text-decoration: none;
-    color: black;
+    color: var(--light-white-yellow);
  }
  .home.active,
  .about.active,

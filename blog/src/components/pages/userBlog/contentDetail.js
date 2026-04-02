@@ -40,7 +40,7 @@ const ContentDetail = () => {
         ← Back
       </button>
       <div className="each-content-container" style={{backgroundColor:"var(--primary-dark-brown)", color:"var(light-white-yellow)"}}>
-        <div className="content-image" style={{ minHeight: "300px"}}>
+        <div className="content-image" style={{ height: "300px"}}>
           <img src={`http://localhost:5137/images/${item.image}`} alt={item.title} />
           <p>{item.category || "General"}</p>
         </div>

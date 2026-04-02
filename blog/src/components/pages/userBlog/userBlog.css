@@ -18,8 +18,9 @@
 
 .each-content-container {
   display: flex;
-  flex-direction: column;
-  background: #ffffff;
+  flex-direction: column; 
+  background-color: var(--light-dark-brown);
+  color: var(--light-white-yellow);
   border: 1px solid #e1e4e8;
   border-radius: 14px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);

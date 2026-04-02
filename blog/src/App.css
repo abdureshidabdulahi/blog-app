@@ -5,9 +5,14 @@
  }
  :root {
   --primary-light-brown: #af4425;
-  --primary-dark-brown: #662e1c;
-  --secondary-light-yellow: #c9a66b;
+  --primary-dark-brown: #0D98BA;
+  --secondary-light-yellow: #00B7EB;
   --light-white-yellow: #ebdcb2;
+}
+.App {
+  padding-top: 80px; /* ensure the fixed header does not cover page content */
+  min-height: 100vh;
+  background-color: var(--primary-dark-brown);
 }
 .body{
   background-color: var(--primary-dark-brown);

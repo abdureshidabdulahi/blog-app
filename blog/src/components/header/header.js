@@ -28,10 +28,7 @@ export default function Header(){
                 token?<div className='profile-container'>
                 <div className='content-div'>
                     <p className='create-content' onClick={()=>navigate('/createcontent')}>
-                        <CreateIcon/>Create Content</p>
-                        
-                        
-                       
+                        <CreateIcon/>Create Content</p> 
                         <div className='profile-lists'>
                             <AccountCircleIcon className='profile'/>
                            <div className='uls'>
