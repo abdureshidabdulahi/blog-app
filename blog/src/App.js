@@ -27,12 +27,7 @@ function App() {
           <Blog/>
           </> 
           }/>
-       <Route path='blogs' element={ 
-        <>  
-          
-        </> 
-       }
-       />
+       
        <Route path='about' element={<About/>}/>
        <Route path='profile'  element={<ProfilePage/>} />
        <Route path='settings' element={<SettingsPage/>} />

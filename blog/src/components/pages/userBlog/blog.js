@@ -22,49 +22,48 @@ const Blog = () => {
 
   return (
     <div className="container">
-      {myBlogs.map((item, index) => (
-        <div className="each-content-container" key={index}>
-          
-         <div className="content-image">
-         <img
-            src={`http://localhost:5137/images/${item.image}`}
-            alt="header"
-          />
-          <p>{item.category}</p>
-         </div>
+      {Array.isArray(myBlogs) && myBlogs.length > 0 ? (
+        myBlogs.map((item, index) => (
+          <div className="each-content-container" key={index}>
+            <div className="content-image">
+              <img
+                src={`http://localhost:5137/images/${item.image}`}
+                alt={item.title || "Blog image"}
+              />
+              <p>{item.category || "General"}</p>
+            </div>
 
-          <h1>{item.title}</h1>
+            <h1>{item.title}</h1>
 
-          {/* ✅ Render Quill HTML with preview truncation */}
-          <div
-            className="quill preview"
-            dangerouslySetInnerHTML={{
-              __html: DOMPurify.sanitize(item.description),
-            }}
-          />
+            <div
+              className="quill preview"
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(item.description),
+              }}
+            />
 
-          {/* Profile + Date */}
-          <div className="blog-profile">
-            <AccountBoxIcon className="profile-AccountBoxIcon" />
-            <p>
-              {formatDate(item.createdAt)} .{" "}
-              <span>by {item.userName}</span>
-            </p>
+            <div className="blog-profile">
+              <AccountBoxIcon className="profile-AccountBoxIcon" />
+              <p>
+                {item.createdAt ? formatDate(item.createdAt) : "Unknown date"}
+                {" • "}
+                <span>by {item.userName || "Unknown author"}</span>
+              </p>
+            </div>
+
+            <div className="love-comment">
+              <p>
+                <FavoriteBorderIcon />
+              </p>
+              <p>
+                <ChatBubbleOutlineIcon />
+              </p>
+            </div>
           </div>
-
-          <hr />
-
-          {/* Like & Comment Icons */}
-          <div className="love-comment">
-            <p>
-              <FavoriteBorderIcon />
-            </p>
-            <p>
-              <ChatBubbleOutlineIcon />
-            </p>
-          </div>
-        </div>
-      ))}
+        ))
+      ) : (
+        <div className="empty-state">No blogs found yet. Start writing your first article!</div>
+      )}
     </div>
   );
 };
