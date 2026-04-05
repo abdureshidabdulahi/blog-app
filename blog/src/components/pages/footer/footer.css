@@ -39,7 +39,7 @@
 }
 
 .footer ul li links {
-  color: var(--light-white-yellow);;
+  color: var(--light-white-yellow);
   text-decoration: none;
   transition: color 0.2s ease;
   cursor: pointer;

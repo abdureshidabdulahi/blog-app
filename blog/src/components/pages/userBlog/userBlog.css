@@ -156,3 +156,34 @@
   font-size: 1rem;
   background: #f8fafc;
 }  
+
+/* style={{ maxWidth: "900px",margin:"20px auto",position:"relative"}} */
+
+
+/* style={{ margin: "20px 0", padding: "10px 16px",
+             borderRadius: "8px", border: "1px solid #d1d5db", background: "var(--primary-light-brown)",
+              cursor: "pointer",position:"absolute",zIndex:"200",right:"0" }} */
+
+              /* style={{backgroundColor:"var(--primary-dark-brown)", color:"var(light-white-yellow)"}} */
+
+
+              /* style={{ margin: "16px 18px 20px 18px", maxHeight: "none", overflow: "auto" }} */
+
+ 
+
+.each-content-container-detail{ 
+  width: 60%;
+  margin: 10px auto;
+  border: 1px solid black;
+  position: relative;
+}
+.back-button{
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  z-index: 1000;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  border: none;
+} 

@@ -29,17 +29,15 @@ const ContentDetail = () => {
   };
 
   return (
-    <div className="container" style={{ maxWidth: "900px",margin:"20px auto",position:"relative"}}>
-      <button
+    <div className="content-detail">
+     
+      <div className="each-content-container-detail" >
+         <button
         className="back-button"
-        onClick={() => navigate(-1)}
-        style={{ margin: "20px 0", padding: "10px 16px",
-             borderRadius: "8px", border: "1px solid #d1d5db", background: "var(--primary-light-brown)",
-              cursor: "pointer",position:"absolute",zIndex:"200",right:"0" }}
+        onClick={() => navigate(-1)} 
       >
         ← Back
       </button>
-      <div className="each-content-container" style={{backgroundColor:"var(--primary-dark-brown)", color:"var(light-white-yellow)"}}>
         <div className="content-image" style={{ height: "300px"}}>
           <img src={`http://localhost:5137/images/${item.image}`} alt={item.title} />
           <p>{item.category || "General"}</p>
@@ -49,8 +47,8 @@ const ContentDetail = () => {
 
         <div className="blog-profile" style={{ padding: "10px 18px" }}>
           <div>
-            <p style={{ color: "#111827", fontWeight: 700, marginBottom: "6px" }}>{item.userName || "Unknown author"}</p>
-            <p style={{ color: "#6b7280", fontSize: "0.9rem" }}>
+            <p >{item.userName || "Unknown author"}</p>
+            <p  >
               {item.createdAt ? formatDate(item.createdAt) : "Unknown date"}
             </p>
           </div>
@@ -58,7 +56,7 @@ const ContentDetail = () => {
 
         <div
           className="quill"
-          style={{ margin: "16px 18px 20px 18px", maxHeight: "none", overflow: "auto" }}
+          
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.description) }}
         />
       </div>
