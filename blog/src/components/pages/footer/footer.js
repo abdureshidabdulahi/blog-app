@@ -1,10 +1,9 @@
+import './footer.css';
 
- 
 export default function Footer(){
     return(
         <div className="footer-container">
-            <div className="footer">
-
+            <div className="footer"> 
             <div className="list-one">
                 <h3>About</h3>
                 <ul>

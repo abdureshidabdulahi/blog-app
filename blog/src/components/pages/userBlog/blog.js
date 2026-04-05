@@ -36,9 +36,10 @@ const Blog = () => {
               </Link>
             </div>
 
-            <h1>{item.title}</h1>
+            
 
             <Link to={`/post/${item._id}`} className="clickable-link">
+            <h1>{item.title}</h1>
               <div
                 className="quill preview"
                 dangerouslySetInnerHTML={{
