@@ -19,9 +19,11 @@
 .each-content-container {
   display: flex;
   flex-direction: column; 
+  width: 300px;
+  height: fit-content;
   background-color: var(--light-dark-brown);
   color: var(--light-white-yellow);
-  border: 1px solid #e1e4e8;
+  /* border: 1px solid #e1e4e8; */
   border-radius: 14px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   overflow: hidden;
@@ -153,4 +155,4 @@
   color: #374151;
   font-size: 1rem;
   background: #f8fafc;
-}
+}  
