@@ -86,7 +86,7 @@ import { storeContext } from "../../context/storeContext"
             <h3>Enter The Author Below</h3>
             <input type="text" placeholder="please enter author" value={content.author} name="author" onChange={handleInput}/>
             <h3>Enter The Category Below</h3>
-            <input type="text" placeholder="please enter category" value={content.category} name="category" onChange={handleInput}/>
+            <input type="text" className="category" placeholder="please enter category" value={content.category} name="category" onChange={handleInput}/>
            </div>
            <h2>Enter Your Description Below</h2>
            <div className="content" >

@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { storeContext } from "../../context/storeContext";
 import DOMPurify from "dompurify";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import "./userBlog.css";
 
 const ContentDetail = () => {
@@ -51,7 +53,7 @@ const ContentDetail = () => {
             <p  >
               {item.createdAt ? formatDate(item.createdAt) : "Unknown date"}
             </p>
-          </div>
+          </div> 
         </div>
 
         <div
@@ -59,6 +61,15 @@ const ContentDetail = () => {
           
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.description) }}
         />
+        <hr/>
+          <div className="love-comment">
+              <p>
+                <FavoriteBorderIcon />
+              </p>
+              <p>
+                <ChatBubbleOutlineIcon />
+              </p>
+            </div>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@
   right: 0;
   z-index: 1000;
   background-color: var(--primary-dark-brown); /* fixed variable name */
-  border-bottom: 2px solid var(--light-white-yellow);
+  /* border-bottom: 2px solid var(--light-white-yellow); */
 
  }
   .info{

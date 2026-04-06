@@ -3,6 +3,8 @@
   color: var(--light-white-yellow);
   padding: 3rem 1.5rem 2rem;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  border-top: 2px solid var(--light-white-yellow);
+  margin-top: 20px;
 }
 
 .footer {
