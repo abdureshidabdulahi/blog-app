@@ -66,8 +66,9 @@
     display: none;
  }
  .container h2{
-    width: 50%;
-    place-self: center;
+    width: 100%;
+    /* place-self: center; */
+    text-align: center;
     margin-top: 10px;
  }
 .category{

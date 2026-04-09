@@ -13,6 +13,8 @@
   padding-top: 80px; /* ensure the fixed header does not cover page content */
   min-height: 100vh;
   background-color: var(--primary-dark-brown);
+  display: flex;
+  flex-direction: column;
 }
 .body{
   background-color: var(--primary-dark-brown);

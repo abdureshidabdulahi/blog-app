@@ -5,7 +5,7 @@ const contentSchema = new mongoose.Schema({
     userName:{type:String},
     title:{type:String},
     description:{type:String},
-    category:{type:String,enum:["Technology","Programming","Career/Learning","Cyber Security","Networking"]}, 
+    category:{type:String,required:true}, 
     image:{type:String},
     createdAt:{type:Date,default:Date.now()}, 
     comments:{type:Object},

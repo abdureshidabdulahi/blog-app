@@ -9,7 +9,7 @@ const contentFunction =async (req,res)=>{
             userId:req.userId,
             userName:req.username,
             title:req.body.title,
-            category:req.body.category,
+            category:req.body.category.toUpperCase(),
             author:req.body.author,
             description:req.body.contents,
             image:req.file.filename

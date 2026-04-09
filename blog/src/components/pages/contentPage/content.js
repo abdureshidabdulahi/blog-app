@@ -68,7 +68,8 @@ import { storeContext } from "../../context/storeContext"
             category:'',
             contents:''
         })
-
+        setImage(null)
+        setPreviewUrl(null)
     }
     useEffect(()=>{
         console.log(content)
