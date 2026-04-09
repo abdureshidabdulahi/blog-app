@@ -22,7 +22,7 @@ const Blog = () => {
   };
 
   return ( 
-    <div className="container"> 
+    <div className="container-blogs"> 
       {Array.isArray(myBlogs) && myBlogs.length > 0 ? (
         myBlogs.map((item, index) => (
           <div className="each-content-container" key={index}>

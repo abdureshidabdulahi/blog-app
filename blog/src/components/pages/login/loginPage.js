@@ -1,7 +1,6 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import './login.css'
 import axios from 'axios'
-import { useEffect } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
 import { storeContext } from '../../context/storeContext';
 
@@ -16,6 +15,13 @@ const LoginPage = ()=>{
         password:'',
         confirmPassword:''
     })
+
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
 
     const onchangeHandler = (event)=>{
         const value = event.target.value
@@ -57,7 +63,7 @@ const LoginPage = ()=>{
            
             
                   
-                 <form onSubmit={handleClick}>
+                 <form onSubmit={handleClick} className='login-form'>
                    <div className='login-header'> 
                     <h1 className='login-title'>{signin}</h1>
                     <p onClick={()=>setshowlogin(false)} className='login-title'>{<CloseIcon/>}</p>

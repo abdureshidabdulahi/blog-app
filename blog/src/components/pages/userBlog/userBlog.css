@@ -10,8 +10,8 @@
   width: 100%;
   height: fit-content;
 }
-.container {
-  width: 100%; 
+.container-blogs {
+  width: 100% !important; 
   margin: 20px  opx; 
   display: flex;
   flex-direction: row !important;

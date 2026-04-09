@@ -1,10 +1,9 @@
- .content{
-   width: 100%;
- }
- .content form{
-    width: 50%;
-    place-self: center;
-    padding: 10px;
+ 
+  form{
+width: 40% !important;
+place-self: center;
+padding: 10px;
+color: black;
  }
  form button{
    background-color: rgba(8, 70, 140, 0.861);
@@ -27,50 +26,34 @@
     width: 100%;
     min-height: 300px; 
     font-size: 18px;
+    color: black;
  }
  form .ql-container{
     width: 100%; 
     overflow-x: hidden;
     min-height: 300px;
  } 
+ form #input-file{
+   display: none;
+ }
+ form input{
+   padding: 10px;
+   outline: none;
+   border-radius: 5px;
+   border: 2px solid black;
+   font-size: 16px;
+ }
  .container{
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
  }
- .headers{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+ .container img{
+   width: 40%;
+   height: 300px;
+   place-self: center;
  }
- .headers input{
-    width: 50%;
-    padding: 10px;
-    font-size: 20px;
-    border: 2px solid rgba(9, 68, 151, 0.74);
-    border-radius: 10px;
-    outline: none;
+ .container h1{
+   text-align: center;
  }
- .headers h3{
-   color: rgba(0, 0, 0, 0.518);
-
- }
- .headers img{
-    width: 50%;
-    height: 300px;
-    cursor: pointer;
- }
- .headers #input-file{
-    display: none;
- }
- .container h2{
-    width: 100%;
-    /* place-self: center; */
-    text-align: center;
-    margin-top: 10px;
- }
-.category{
-   text-transform: uppercase;
-}
+ 

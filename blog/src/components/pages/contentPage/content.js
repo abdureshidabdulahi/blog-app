@@ -75,12 +75,12 @@ import { storeContext } from "../../context/storeContext"
         console.log(content)
     },[content])
     return(
-        <div className="container">
-           <div className="headers">
+        <div className="container"> 
            <h1>Create Content</h1>
            {
             image?<img src={previewUrl} alt="previewphoto" onClick={trigerFileInput}/>:<img src="/assets/upload_area.png" alt="upload" onClick={trigerFileInput}/>
            }
+           <form onSubmit={handleSubmit}>
            <input type="file"  id="input-file" onChange={handlechange}/>
            <h3>Enter Your title Below</h3>
             <input type="text" placeholder="please enter title" value={content.title} name="title" onChange={handleInput}/>
@@ -88,14 +88,14 @@ import { storeContext } from "../../context/storeContext"
             <input type="text" placeholder="please enter author" value={content.author} name="author" onChange={handleInput}/>
             <h3>Enter The Category Below</h3>
             <input type="text" className="category" placeholder="please enter category" value={content.category} name="category" onChange={handleInput}/>
-           </div>
+          
            <h2>Enter Your Description Below</h2>
-           <div className="content" >
-             <form onSubmit={handleSubmit}>
+            
+             
                 <ReactQuill formats={formats} modules={modules} placeholder="please write your descriptions here" value={content.contents}  onChange={handleQuill}/>
                 <button type="submit">Submit</button>
              </form>
-           </div>
+            
 
         </div>
     )
