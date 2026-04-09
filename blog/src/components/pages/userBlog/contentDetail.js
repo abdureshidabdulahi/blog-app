@@ -15,7 +15,7 @@ const ContentDetail = () => {
 
   if (!item) {
     return (
-      <div className="container" style={{ padding: "2rem" }}>
+      <div >
         <div className="empty-state">Loading content... or content not found.</div>
       </div>
     );
