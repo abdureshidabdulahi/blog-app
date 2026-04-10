@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { storeContext } from "../../context/storeContext";
 import "./userBlog.css";
+import axios from "axios";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
@@ -20,6 +21,11 @@ const Blog = () => {
       day: "numeric",
     });
   };
+  const onClickHandle =async (postId)=>{
+    console.log('i am being clicked',postId)
+    
+    
+  }
  useEffect(()=>{
   console.log('this is the blogs',myBlogs)
  },[])
@@ -61,7 +67,7 @@ const Blog = () => {
 
             <div className="love-comment">
               <p>
-                <FavoriteBorderIcon />
+                <FavoriteBorderIcon onClick={()=>onClickHandle(item._id)}/>
               </p>
               <p>
                 <ChatBubbleOutlineIcon />
