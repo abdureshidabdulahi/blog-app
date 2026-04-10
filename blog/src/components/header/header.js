@@ -11,6 +11,7 @@ export default function Header(){
     const navigate = useNavigate()
     const handleClick = ()=>{
         setToken(localStorage.removeItem('token'))
+        navigate('/')
         window.location.reload()
     }
     return(

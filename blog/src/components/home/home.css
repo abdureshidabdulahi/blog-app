@@ -1,7 +1,7 @@
 .home-container{
   display: flex;
   flex-direction: column;
-  padding: 50px 0 0;
+  padding: 100px 0 0;
 
  }
  body{
@@ -29,41 +29,7 @@
   padding: 20px 0;
   font-family: sans-serif;
   color: var(--light-white-yellow);
- }
- .twinButtons{
-  width: 100%;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-
- }
- .twinButtons button{
-  border: none;
-  padding: 20px 40px;
-  font-size: 16px;
-  font-weight:  bold;
- }
- .twinButtons .one{
-  color: white;
-  background-color:  rgba(255, 68, 0, 0.84);
-  border-radius: 30px;
- }
- .twinButtons .two{
-  color:  rgba(255, 68, 0, 0.84);
-  border-radius: 30px;
-   border: 2px solid  rgba(255, 68, 0, 0.84);
- }
- .twinButtons .two:hover{
-  background-color:  rgba(255, 68, 0, 0.094);
-  cursor: pointer;
- }
- .twinButtons .one:hover{
-  background-color:  rgb(255, 68, 0);
-  cursor: pointer;
- }
-
-
+ }  
  .search{
   width: 50%;
   margin:20px auto; 

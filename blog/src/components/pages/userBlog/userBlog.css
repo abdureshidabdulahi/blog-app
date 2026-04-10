@@ -9,10 +9,12 @@
 .content-detail{
   width: 100%;
   height: fit-content;
+  padding: 100px 0 0;
 }
 .container-blogs {
   width: 100% !important; 
-  margin: 20px  opx; 
+  margin: 20px  0px; 
+  padding: 100px 0 0;
   display: flex;
   flex-direction: row !important;
   flex-wrap: wrap;

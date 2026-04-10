@@ -8,9 +8,7 @@ const jwt_decoded = jwt.decode(token,process.env.SECRET_KEY)
 req.userId = jwt_decoded.id
 const user = await userModel.findById(jwt_decoded.id)
 
-req.username = user.fullName
-
-
+req.username = user.fullName 
 next()
 } catch (error) {
     console.log(error)

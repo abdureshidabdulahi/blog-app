@@ -22,10 +22,8 @@ function App() {
        <Header/>
         {showlogin?<LoginPage/>:<></>}
        <Routes>
-        <Route path='/' element={
-          <> 
-          <Home/>   
-          </> 
+        <Route path='/' element={ 
+          <Home/>    
           }/>
           <Route path='blogs' element={<Blog/>} />
        

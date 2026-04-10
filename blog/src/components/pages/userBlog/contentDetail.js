@@ -33,7 +33,7 @@ const ContentDetail = () => {
   return (
     <div className="content-detail">
      
-      <div className="each-content-container-detail" >
+      <div className="each-content-container-detail">
          <button
         className="back-button"
         onClick={() => navigate(-1)} 

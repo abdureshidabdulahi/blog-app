@@ -8,9 +8,23 @@ const contentSchema = new mongoose.Schema({
     category:{type:String,required:true}, 
     image:{type:String},
     createdAt:{type:Date,default:Date.now()}, 
-    comments:{type:Object},
-    likes:{type:Object}, 
-})
+     comments: [
+  {
+    userId: String,
+    userName: String,
+    text: String,
+    createdAt: {
+      type: Date,
+      default: Date.now
+    }
+  }
+],
+    likes: [
+  {
+    userId: String
+  }
+], 
+},{minimize:false})
 
 const contentModel = mongoose.model('content',contentSchema)
 
