@@ -23,7 +23,7 @@ const Blog = () => {
   };
   const onClickHandle =async (postId)=>{
     console.log('i am being clicked',postId)
-    
+    await axios.post('http://localhost:5137/api/user/like',{_id:postId})
     
   }
  useEffect(()=>{
