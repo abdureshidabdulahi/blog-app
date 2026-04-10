@@ -36,8 +36,7 @@ const context={
     showlogin,
     setshowlogin,
     token,
-    setToken,
-    allContents,
+    setToken, 
     myBlogs
 }
     return(

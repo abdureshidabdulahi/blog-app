@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken'
 import userModel from '../models/userModel.js'
+import contentModel from '../models/contentsModel.js'
 
 const authentication = async(req,res,next)=>{
 try {
@@ -7,6 +8,9 @@ try {
 const jwt_decoded = jwt.decode(token,process.env.SECRET_KEY) 
 req.userId = jwt_decoded.id
 const user = await userModel.findById(jwt_decoded.id)
+// const likedPost = await contentModel.find({})
+
+
 
 req.username = user.fullName 
 next()

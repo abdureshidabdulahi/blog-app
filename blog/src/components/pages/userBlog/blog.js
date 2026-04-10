@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { storeContext } from "../../context/storeContext";
 import "./userBlog.css";
@@ -20,7 +20,9 @@ const Blog = () => {
       day: "numeric",
     });
   };
-
+ useEffect(()=>{
+  console.log('this is the blogs',myBlogs)
+ },[])
   return ( 
     <div className="container-blogs"> 
       {Array.isArray(myBlogs) && myBlogs.length > 0 ? (
