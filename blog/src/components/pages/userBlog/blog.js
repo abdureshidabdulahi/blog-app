@@ -23,8 +23,7 @@ const Blog = () => {
   };
   const onClickHandle =async (postId)=>{
     console.log('i am being clicked',postId)
-    await axios.post('http://localhost:5137/api/user/like',{_id:postId},{headers:{token}})
-    // await axios.post('http://localhost:5137/api/user/all_likes',{_id:postId},{headers:{token}})
+    await axios.post('http://localhost:5137/api/user/like',{_id:postId},{headers:{token}}) 
     console.log(token)
     
   }
@@ -32,7 +31,7 @@ const Blog = () => {
   console.log('this is the blogs',myBlogs)
  },[])
   return ( 
-    <div className="container-blogs"> 
+    <div className="container-blogs">  
       {Array.isArray(myBlogs) && myBlogs.length > 0 ? (
         myBlogs.map((item, index) => (
           <div className="each-content-container" key={index}>

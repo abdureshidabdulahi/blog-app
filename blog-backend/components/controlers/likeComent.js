@@ -26,7 +26,7 @@ export const handleLikes = async (req, res) => {
         
 
        
-        console.log(post.likes.length)
+        // console.log(post.likes.length)
         // Respond with success and optionally the updated likes
         res.status(200).json({ 
             message: "Like added successfully", 

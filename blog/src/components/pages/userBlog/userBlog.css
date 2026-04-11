@@ -14,9 +14,10 @@
 .container-blogs {
   width: 100% !important; 
   margin: 20px  0px; 
-  padding: 100px 0 0;
+  /* padding: 100px 0 0; */
   display: flex;
   flex-direction: row !important;
+  
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px; 
@@ -174,7 +175,7 @@
   /* border: 1px solid black; */
   position: relative;
   border-radius: 10px;
-  box-shadow: 1px 1px 15px var(--light-white-yellow);
+  box-shadow: 1px 1px 15px var(--secondary-light-yellow);
   overflow: hidden;
 }
 .back-button{

@@ -44,7 +44,19 @@
   
  }
  .search input:focus{
-  outline:  2px solid rgba(255, 68, 0, 0.84);
+  outline:  2px solid var(--secondary-light-yellow);
   border: none;
   border-radius: 5px;
+ }
+ .home-container h2{
+  color: var(--light-white-yellow);
+  text-align: center;
+ }
+ .home-container h2::after{
+  display: block; 
+  margin: 0px auto;
+  content: '';
+  width: 100px;
+  height: 2px;
+  background-color: var(--secondary-light-yellow);
  }

@@ -10,7 +10,7 @@ import About from './components/about/about.js';
 import ProfilePage from './components/pages/profile/profilePage.js';
 import LoginPage from './components/pages/login/loginPage.js'; 
 import SettingsPage from './components/pages/settings/settings.js';   
-import Footer from './components/pages/footer/footer';
+import Footer from './components/footer/footer';
 import { useContext } from 'react';
 import {storeContext} from './components/context/storeContext.js'
  
@@ -23,9 +23,11 @@ function App() {
         {showlogin?<LoginPage/>:<></>}
        <Routes>
         <Route path='/' element={ 
+         <>
           <Home/>    
+          <Blog/></>
           }/>
-          <Route path='blogs' element={<Blog/>} />
+          {/* <Route path='blogs' element={} /> */}
        
        <Route path='about' element={<About/>}/>
        <Route path='profile'  element={<ProfilePage/>} />
