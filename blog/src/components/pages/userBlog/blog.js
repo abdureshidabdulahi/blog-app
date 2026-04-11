@@ -9,7 +9,7 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import DOMPurify from "dompurify";
 
 const Blog = () => {
-  const { myBlogs } = useContext(storeContext);
+  const { myBlogs,token } = useContext(storeContext);
 
   // Format date
   const formatDate = (dateString) => {
@@ -23,7 +23,8 @@ const Blog = () => {
   };
   const onClickHandle =async (postId)=>{
     console.log('i am being clicked',postId)
-    await axios.post('http://localhost:5137/api/user/like',{_id:postId})
+    await axios.post('http://localhost:5137/api/user/like',{_id:postId},{headers:{token}})
+    console.log(token)
     
   }
  useEffect(()=>{

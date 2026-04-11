@@ -7,8 +7,7 @@ try {
   const {token} = req.headers
 const jwt_decoded = jwt.decode(token,process.env.SECRET_KEY) 
 req.userId = jwt_decoded.id
-const user = await userModel.findById(jwt_decoded.id)
-// const likedPost = await contentModel.find({})
+const user = await userModel.findById(jwt_decoded.id) 
 
 
 
