@@ -30,7 +30,7 @@ export const handleLikes = async (req, res) => {
         // Respond with success and optionally the updated likes
         res.status(200).json({ 
             message: "Like added successfully", 
-            likes: post.likes  // This is the actual array now
+            likes: post.likes.length  // This is the actual array now
         });
     } catch (error) {
         console.error(error);

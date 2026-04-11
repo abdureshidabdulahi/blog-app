@@ -7,9 +7,11 @@ import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import DOMPurify from "dompurify";
+import { useState } from "react";
 
 const Blog = () => {
   const { myBlogs,token } = useContext(storeContext);
+  const [likes,setLikes] = useState({})
 
   // Format date
   const formatDate = (dateString) => {
@@ -23,13 +25,24 @@ const Blog = () => {
   };
   const onClickHandle =async (postId)=>{
     console.log('i am being clicked',postId)
-    await axios.post('http://localhost:5137/api/user/like',{_id:postId},{headers:{token}}) 
+    const result = await axios.post('http://localhost:5137/api/user/like',{_id:postId},{headers:{token}}) 
     console.log(token)
+    setLikes(prevLikes => ({
+      ...prevLikes, 
+    }));
+    console.log('this is my likes',result.data.likes)
     
   }
  useEffect(()=>{
   console.log('this is the blogs',myBlogs)
- },[])
+  if (myBlogs && Array.isArray(myBlogs)) {
+    const initialLikes = {};
+    myBlogs.forEach(blog => {
+      initialLikes[blog._id] = blog.likes ? blog.likes.length : 0;
+    });
+    setLikes(initialLikes);
+  }
+ },[myBlogs])
   return ( 
     <div className="container-blogs">  
       {Array.isArray(myBlogs) && myBlogs.length > 0 ? (
@@ -69,7 +82,7 @@ const Blog = () => {
             <div className="love-comment">
               <p>
                 <FavoriteBorderIcon onClick={()=>onClickHandle(item._id)}/>
-                  <span>455</span>
+                  <span>{likes[item._id]}</span>
               </p>
               <p>
                 <ChatBubbleOutlineIcon />
