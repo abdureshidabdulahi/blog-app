@@ -10,8 +10,7 @@ import DOMPurify from "dompurify";
 import { useState } from "react";
 
 const Blog = () => {
-  const { myBlogs,token } = useContext(storeContext);
-  const [likes,setLikes] = useState({})
+  const { myBlogs,token } = useContext(storeContext); 
 
   // Format date
   const formatDate = (dateString) => {
@@ -27,21 +26,18 @@ const Blog = () => {
     console.log('i am being clicked',postId)
     const result = await axios.post('http://localhost:5137/api/user/like',{_id:postId},{headers:{token}}) 
     console.log(token)
-    setLikes(prevLikes => ({
-      ...prevLikes, 
-    }));
+    
     console.log('this is my likes',result.data.likes)
     
   }
+const likes = async(id)=>{
+  const result = await axios.post('http://localhost:5137/api/user/all_likes',{_id:id},{headers:{token}})
+  return result.data.laiks
+
+}
  useEffect(()=>{
   console.log('this is the blogs',myBlogs)
-  if (myBlogs && Array.isArray(myBlogs)) {
-    const initialLikes = {};
-    myBlogs.forEach(blog => {
-      initialLikes[blog._id] = blog.likes ? blog.likes.length : 0;
-    });
-    setLikes(initialLikes);
-  }
+  
  },[myBlogs])
   return ( 
     <div className="container-blogs">  
@@ -82,7 +78,7 @@ const Blog = () => {
             <div className="love-comment">
               <p>
                 <FavoriteBorderIcon onClick={()=>onClickHandle(item._id)}/>
-                  <span>{likes[item._id]}</span>
+                  <span>{likes(item._id)}</span>
               </p>
               <p>
                 <ChatBubbleOutlineIcon />

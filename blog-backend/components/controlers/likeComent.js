@@ -41,7 +41,17 @@ export const handleLikes = async (req, res) => {
 
 
 export const allLikes = async(req,res)=>{
-    const post = await contentModel.findById(req.body._id)
-  const likes = post.likes.length
-  console.log(likes)
+   try {
+     const post = await contentModel.findById(req.body._id)
+     res.status(200).json({
+        message:'total likes',
+        liks:post
+     })
+   } catch (error) {
+    console.log(error)
+    res.json({
+        message:'sorry there is error in fetching all likes'
+    })
+   }
+    
 }
