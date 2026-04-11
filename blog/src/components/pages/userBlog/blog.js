@@ -24,6 +24,7 @@ const Blog = () => {
   const onClickHandle =async (postId)=>{
     console.log('i am being clicked',postId)
     await axios.post('http://localhost:5137/api/user/like',{_id:postId},{headers:{token}})
+    // await axios.post('http://localhost:5137/api/user/all_likes',{_id:postId},{headers:{token}})
     console.log(token)
     
   }
@@ -69,6 +70,7 @@ const Blog = () => {
             <div className="love-comment">
               <p>
                 <FavoriteBorderIcon onClick={()=>onClickHandle(item._id)}/>
+                  <span>455</span>
               </p>
               <p>
                 <ChatBubbleOutlineIcon />

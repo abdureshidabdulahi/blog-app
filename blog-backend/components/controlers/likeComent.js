@@ -26,10 +26,10 @@ export const handleLikes = async (req, res) => {
         
 
        
-        // console.log(post)
+        console.log(post.likes.length)
         // Respond with success and optionally the updated likes
-        res.status(200).json({
-            message: "Like added successfully",
+        res.status(200).json({ 
+            message: "Like added successfully", 
             likes: post.likes  // This is the actual array now
         });
     } catch (error) {
@@ -40,3 +40,8 @@ export const handleLikes = async (req, res) => {
  
 
 
+export const allLikes = async(req,res)=>{
+    const post = await contentModel.findById(req.body._id)
+  const likes = post.likes.length
+  console.log(likes)
+}
