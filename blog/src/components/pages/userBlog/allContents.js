@@ -5,13 +5,15 @@ import "./userBlog.css";
 import axios from "axios";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import DOMPurify from "dompurify";
 import { useState } from "react";
 
 export default function  AllContent(){ 
-      const {allContents,token } = useContext(storeContext); 
+      const {allContents, token, userId } = useContext(storeContext); 
   const [likesMap,setLikesMap] = useState({})
+  const [likedMap,setLikedMap] = useState({})
 
   // Format date
   const formatDate = (dateString) => {
@@ -23,7 +25,7 @@ export default function  AllContent(){
       day: "numeric",
     });
   }; 
-  const onClickHandle = async (postId) => {
+  const onClickHandle = async (postId, isOwn) => {
   try {
     const result = await axios.post(
       "http://localhost:5137/api/user/like",
@@ -31,11 +33,24 @@ export default function  AllContent(){
       { headers: { token } }
     );
 
-    setLikesMap((prev) => ({
+    const newLiked = !likedMap[postId];
+    setLikedMap((prev) => ({
       ...prev,
-      [postId]: result.data.likes.length,
+      [postId]: newLiked,
     }));
-    console.log('this is the likes',likesMap)
+
+    if (newLiked || isOwn) {
+      setLikesMap((prev) => ({
+        ...prev,
+        [postId]: result.data.likes.length,
+      }));
+    } else {
+      setLikesMap((prev) => {
+        const newMap = { ...prev };
+        delete newMap[postId];
+        return newMap;
+      });
+    }
   } catch (err) {
     console.log(err);
   }
@@ -48,6 +63,7 @@ useEffect(() => {
     if (!Array.isArray(allContents)) return;
 
     const newLikes = {};
+    const newLiked = {};
 
     for (let content of allContents) {
       try {
@@ -57,18 +73,25 @@ useEffect(() => {
           { headers: { token } }
         );
 
-        newLikes[content._id] = res.data.likes.likes.length;
+        const likesArray = res.data.likes.likes;
+        const hasLiked = likesArray.some(like => like.userId === userId);
+        const isOwnPost = content.userId === userId;
+        newLiked[content._id] = hasLiked;
+        if (hasLiked || isOwnPost) {
+          newLikes[content._id] = likesArray.length;
+        }
       } catch (err) {
         console.log(err);
-        newLikes[content._id] = 0;
+        newLiked[content._id] = false;
       }
     }
 
     setLikesMap(newLikes);
+    setLikedMap(newLiked);
   };
 
   fetchLikes();
-}, [allContents]);
+}, [allContents, token, userId]);
     return(
         <div className="allcontent-container">   
       {Array.isArray(allContents) && allContents.length > 0 ? (
@@ -103,8 +126,18 @@ useEffect(() => {
 
             <div className="love-comment">
               <p>
-                <FavoriteBorderIcon onClick={()=>onClickHandle(item._id)}/>
-                  <span><span>{likesMap[item._id] || 0}</span></span>
+                {likedMap[item._id] ? (
+                  <FavoriteIcon
+                    onClick={() => onClickHandle(item._id, item.userId === userId)}
+                    style={{ color: "red", cursor: "pointer" }}
+                  />
+                ) : (
+                  <FavoriteBorderIcon
+                    onClick={() => onClickHandle(item._id, item.userId === userId)}
+                    style={{ cursor: "pointer" }}
+                  />
+                )}
+                {likesMap[item._id] !== undefined && <span>{likesMap[item._id]}</span>}
               </p>
               <p>
                 <ChatBubbleOutlineIcon />

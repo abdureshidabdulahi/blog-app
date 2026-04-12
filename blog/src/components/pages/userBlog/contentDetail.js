@@ -1,19 +1,73 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { storeContext } from "../../context/storeContext";
 import DOMPurify from "dompurify";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import axios from "axios";
 import "./userBlog.css";
 
 const ContentDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { myBlogs, allContents } = useContext(storeContext);
+  const { myBlogs, allContents, token, userId } = useContext(storeContext);
+  const [likesMap, setLikesMap] = useState({});
+  const [likedMap, setLikedMap] = useState({});
 
   const item =
     myBlogs.find((content) => content._id === id) ||
     allContents.find((content) => content._id === id);
+
+  useEffect(() => {
+    if (!item) return;
+
+    const fetchLikes = async () => {
+      try {
+        const res = await axios.post(
+          "http://localhost:5137/api/user/all_likes",
+          { _id: item._id },
+          { headers: { token } }
+        );
+
+        const likesArray = res.data.likes.likes;
+        const hasLiked = likesArray.some(like => like.userId === userId);
+        const isOwnPost = item.userId === userId;
+        setLikedMap({ [item._id]: hasLiked });
+        if (hasLiked || isOwnPost) {
+          setLikesMap({ [item._id]: likesArray.length });
+        }
+      } catch (err) {
+        console.log(err);
+        setLikedMap({ [item._id]: false });
+      }
+    };
+
+    fetchLikes();
+  }, [item, token, userId]);
+
+  const onClickHandle = async () => {
+    if (!item) return;
+    try {
+      const result = await axios.post(
+        "http://localhost:5137/api/user/like",
+        { _id: item._id },
+        { headers: { token } }
+      );
+
+      const newLiked = !likedMap[item._id];
+      setLikedMap({ [item._id]: newLiked });
+
+      const isOwn = item.userId === userId;
+      if (newLiked || isOwn) {
+        setLikesMap({ [item._id]: result.data.likes.length });
+      } else {
+        setLikesMap({});
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   if (!item) {
     return (
@@ -66,7 +120,18 @@ const ContentDetail = () => {
         <hr/>
           <div className="love-comment">
               <p>
-                <FavoriteBorderIcon />
+                {likedMap[item._id] ? (
+                  <FavoriteIcon
+                    onClick={onClickHandle}
+                    style={{ color: "red", cursor: "pointer" }}
+                  />
+                ) : (
+                  <FavoriteBorderIcon
+                    onClick={onClickHandle}
+                    style={{ cursor: "pointer" }}
+                  />
+                )}
+                {likesMap[item._id] !== undefined && <span>{likesMap[item._id]}</span>}
               </p>
               <p>
                 <ChatBubbleOutlineIcon />

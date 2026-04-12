@@ -10,6 +10,28 @@ const Contexts = (props)=>{
     const [allContents,setAllContent] = useState([])
     const [myBlogs,setMyBlogs] = useState([])
     const [showlogin,setshowlogin] = useState(false)
+    const [userId,setUserId] = useState(null)
+
+    // Decode token to get userId
+    const decodeToken = (token) => {
+        if (!token) return null;
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            return payload.id;
+        } catch (error) {
+            console.error('Error decoding token:', error);
+            return null;
+        }
+    };
+
+    useEffect(() => {
+        if (token) {
+            const id = decodeToken(token);
+            setUserId(id);
+        } else {
+            setUserId(null);
+        }
+    }, [token]);
 
   
     // fetchContent from the backend
@@ -38,7 +60,8 @@ const context={
     token,
     setToken, 
     myBlogs,
-    allContents
+    allContents,
+    userId
 }
     return(
         <storeContext.Provider value={context}>
