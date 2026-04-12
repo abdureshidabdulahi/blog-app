@@ -111,6 +111,28 @@ const ContentDetail = () => {
     });
   };
 
+// in the comment it show how many seconds hour months years ago was writen the comment
+
+  const timeAgo = (dateString) => {
+  const now = new Date();
+  const past = new Date(dateString);
+
+  const diff = Math.floor((now - past) / 1000); // seconds
+
+  if (diff < 60) return "Just now";
+
+  const minutes = Math.floor(diff / 60);
+  if (minutes < 60) return `${minutes} min ago`;
+
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours} hr ago`;
+
+  const days = Math.floor(hours / 24);
+  if (days < 7) return `${days} day ago`;
+
+  return past.toLocaleDateString();
+};
+
   return (
     <div className="content-detail">
      
@@ -129,12 +151,14 @@ const ContentDetail = () => {
         <h1>{item.title}</h1>
 
         <div className="blog-profile" style={{ padding: "10px 18px" }}>
-          <div>
+          <div className='blog-profile-1'>
+            <img src='/assets/photo_2025-02-08_17-34-55.jpg' alt='profile-imag' width={50} height={50} />
             <p >{item.userName || "Unknown author"}</p>
-            <p  >
+           
+          </div> 
+           <p>
               {item.createdAt ? formatDate(item.createdAt) : "Unknown date"}
             </p>
-          </div> 
         </div>
 
         <div
@@ -183,8 +207,8 @@ const ContentDetail = () => {
             <div className="comments-section">
               {comments.map((comment, index) => (
                 <div key={index} className="comment">
-                  <strong>{comment.userName}:</strong> {comment.text}
-                  <small> {new Date(comment.createdAt).toLocaleString()}</small>
+                <img src='/assets/photo_2025-02-08_17-34-55.jpg' alt='me' width={40} height={40}/>
+                <p className='comments-info'><span className='username'>{comment.userName}</span><span>{comment.text}</span><span>{timeAgo(comment.createdAt)}</span> </p>
                 </div>
               ))}
             </div>
