@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Route,Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/header/header.js';
 import Home from './components/home/home.jsx';   
 import Blog from './components/pages/userBlog/blog.js';
@@ -10,15 +10,26 @@ import About from './components/about/about.js';
 import ProfilePage from './components/pages/profile/profilePage.js';
 import LoginPage from './components/pages/login/loginPage.js'; 
 import SettingsPage from './components/pages/settings/settings.js';   
+import AllContent from './components/pages/userBlog/allContents.js';
 import Footer from './components/footer/footer';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import {storeContext} from './components/context/storeContext.js'
  
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   const {showlogin} =useContext(storeContext)
   return (
     <div className='App'>
-     
+       <ScrollToTop />
        <Header/>
         {showlogin?<LoginPage/>:<></>}
        <Routes>
@@ -27,7 +38,7 @@ function App() {
           <Home/>    
           <Blog/></>
           }/>
-          {/* <Route path='blogs' element={} /> */}
+          <Route path='blogs' element={<AllContent/>} />
        
        <Route path='about' element={<About/>}/>
        <Route path='profile'  element={<ProfilePage/>} />

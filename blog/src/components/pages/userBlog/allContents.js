@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+   import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { storeContext } from "../../context/storeContext";
 import "./userBlog.css";
@@ -9,8 +9,8 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import DOMPurify from "dompurify";
 import { useState } from "react";
 
-const Blog = () => {
-  const { myBlogs,token } = useContext(storeContext); 
+export default function  AllContent(){ 
+      const {allContents,token } = useContext(storeContext); 
   const [likesMap,setLikesMap] = useState({})
 
   // Format date
@@ -22,15 +22,7 @@ const Blog = () => {
       month: "long",
       day: "numeric",
     });
-  };
-  // const onClickHandle =async (postId)=>{
-  //   console.log('i am being clicked',postId)
-  //   const result = await axios.post('http://localhost:5137/api/user/like',{_id:postId},{headers:{token}}) 
-  //   console.log(token)
-    
-  //   console.log('this is my likes',result.data.likes)
-    
-  // }
+  }; 
   const onClickHandle = async (postId) => {
   try {
     const result = await axios.post(
@@ -53,22 +45,22 @@ const Blog = () => {
 
 useEffect(() => {
   const fetchLikes = async () => {
-    if (!Array.isArray(myBlogs)) return;
+    if (!Array.isArray(allContents)) return;
 
     const newLikes = {};
 
-    for (let blog of myBlogs) {
+    for (let content of allContents) {
       try {
         const res = await axios.post(
           "http://localhost:5137/api/user/all_likes",
-          { _id: blog._id },
+          { _id: content._id },
           { headers: { token } }
         );
 
-        newLikes[blog._id] = res.data.likes.likes.length;
+        newLikes[content._id] = res.data.likes.likes.length;
       } catch (err) {
         console.log(err);
-        newLikes[blog._id] = 0;
+        newLikes[content._id] = 0;
       }
     }
 
@@ -76,42 +68,38 @@ useEffect(() => {
   };
 
   fetchLikes();
-}, [myBlogs, token]);
-  return ( 
-    <div className="container-blogs">  
-      {Array.isArray(myBlogs) && myBlogs.length > 0 ? (
-        myBlogs.map((item, index) => (
+}, [allContents]);
+    return(
+        <div className="allcontent-container">   
+      {Array.isArray(allContents) && allContents.length > 0 ? (
+        allContents.map((item, index) => (
           <div className="each-content-container" key={index}>
-            <div className="content-image">
-              <Link to={`/post/${item._id}`} className="clickable-link">
+            <Link to={`/post/${item._id}`} className="clickable-link">
+              <div className="content-image">
                 <img
                   src={`http://localhost:5137/images/${item.image}`}
                   alt={item.title || "Blog image"} height={300}
                 />
                 <p>{item.category || "General"}</p>
-              </Link>
-            </div>
+              </div>
 
-            
-
-            <Link to={`/post/${item._id}`} className="clickable-link">
-            <h1>{item.title}</h1>
+              <h1>{item.title}</h1>
               <div
                 className="quill preview"
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(item.description),
                 }}
               />
-            </Link>
 
-            <div className="blog-profile">
-              <AccountBoxIcon className="profile-AccountBoxIcon" />
-              <p>
-                {item.createdAt ? formatDate(item.createdAt) : "Unknown date"}
-                {" • "}
-                <span>by {item.userName || "Unknown author"}</span>
-              </p>
-            </div>
+              <div className="blog-profile">
+                <AccountBoxIcon className="profile-AccountBoxIcon" />
+                <p>
+                  {item.createdAt ? formatDate(item.createdAt) : "Unknown date"}
+                  {" • "}
+                  <span>by {item.userName || "Unknown author"}</span>
+                </p>
+              </div>
+            </Link>
 
             <div className="love-comment">
               <p>
@@ -130,5 +118,3 @@ useEffect(() => {
     </div>
   );
 };
-
-export default Blog;

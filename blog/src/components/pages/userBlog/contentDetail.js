@@ -9,9 +9,11 @@ import "./userBlog.css";
 const ContentDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { myBlogs } = useContext(storeContext);
+  const { myBlogs, allContents } = useContext(storeContext);
 
-  const item = myBlogs.find((content) => content._id === id);
+  const item =
+    myBlogs.find((content) => content._id === id) ||
+    allContents.find((content) => content._id === id);
 
   if (!item) {
     return (

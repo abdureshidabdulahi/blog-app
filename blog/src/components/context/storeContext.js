@@ -15,7 +15,7 @@ const Contexts = (props)=>{
     // fetchContent from the backend
 
     const fetchAllContent =async ()=>{
-   const result = await axios.get('http://localhost:5137/api/user/getcontent')
+   const result = await axios.get('http://localhost:5137/api/user/getcontent',{},{headers:{token}})
    setAllContent(result.data.listOfContents)
   
    if(result.data.success === true){
@@ -37,7 +37,8 @@ const context={
     setshowlogin,
     token,
     setToken, 
-    myBlogs
+    myBlogs,
+    allContents
 }
     return(
         <storeContext.Provider value={context}>

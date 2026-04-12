@@ -22,6 +22,17 @@
   justify-content: center;
   gap: 10px; 
 }
+.allcontent-container{
+    width: 100% !important; 
+  margin: 20px  0px; 
+  padding: 100px 0 0;
+  display: flex;
+  flex-direction: row !important;
+  
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; 
+}
 
 .each-content-container { 
   position: relative;
