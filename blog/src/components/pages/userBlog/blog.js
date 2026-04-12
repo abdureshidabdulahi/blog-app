@@ -41,7 +41,7 @@ const Blog = () => {
 
     setLikesMap((prev) => ({
       ...prev,
-      [postId]: prev + result.data.likes.length,
+      [postId]: result.data.likes.length,
     }));
     console.log('this is the likes',likesMap)
   } catch (err) {
@@ -69,7 +69,7 @@ useEffect(() => {
           { headers: { token } }
         );
 
-        newLikes[blog._id] = res.data.laiks.likes.length;
+        newLikes[blog._id] = res.data.likes.likes.length;
       } catch (err) {
         console.log(err);
         newLikes[blog._id] = 0;

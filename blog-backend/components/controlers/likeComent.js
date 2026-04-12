@@ -30,7 +30,7 @@ export const handleLikes = async (req, res) => {
         // Respond with success and optionally the updated likes
         res.status(200).json({ 
             message: "Like added successfully", 
-            likes: post.likes.length  // This is the actual array now
+            likes: post.likes  // This is the actual array now
         });
     } catch (error) {
         console.error(error);
@@ -45,7 +45,7 @@ export const allLikes = async(req,res)=>{
      const post = await contentModel.findById(req.body._id)
      res.status(200).json({
         message:'total likes',
-        laiks:post
+        likes:post
      })
    } catch (error) {
     console.log(error)
