@@ -1,5 +1,5 @@
 import express from 'express' 
-import { contentFunction, all_contentLists, userBlog } from '../controlers/contentControler.js'
+import { contentFunction, all_contentLists, userBlog, addComment } from '../controlers/contentControler.js'
 import multer from 'multer'
 import { authentication } from '../middleware/auth.js'
 
@@ -19,6 +19,8 @@ const images = multer({storage:storage})
 contentRouter.post('/savecontent',images.single('image'),authentication,contentFunction)
 contentRouter.post('/myblogs',authentication,userBlog)
 contentRouter.get('/getcontent',all_contentLists)
+// Route for adding comments to a post
+contentRouter.post('/addcomment',authentication,addComment)
 
 
 export default contentRouter

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { storeContext } from "../../context/storeContext";
 import "./userBlog.css";
 import axios from "axios";
@@ -12,6 +12,7 @@ import { useState } from "react";
 
 const Blog = () => {
   const { myBlogs, token, userId } = useContext(storeContext); 
+  const navigate = useNavigate();
   const [likesMap, setLikesMap] = useState({})
   const [likedMap, setLikedMap] = useState({})
 
@@ -152,7 +153,13 @@ useEffect(() => {
                 {likesMap[item._id] !== undefined && <span>{likesMap[item._id]}</span>}
               </p>
               <p>
-                <ChatBubbleOutlineIcon />
+                {/* Comment icon that navigates to detail page for full commenting */}
+                <ChatBubbleOutlineIcon
+                  onClick={() => navigate(`/post/${item._id}`)}
+                  style={{ cursor: "pointer" }}
+                />
+                {/* Display comment count */}
+                <span>{item.comments ? item.comments.length : 0}</span>
               </p>
             </div>
           </div>

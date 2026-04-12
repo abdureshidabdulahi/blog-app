@@ -14,6 +14,9 @@ const ContentDetail = () => {
   const { myBlogs, allContents, token, userId } = useContext(storeContext);
   const [likesMap, setLikesMap] = useState({});
   const [likedMap, setLikedMap] = useState({});
+  const [showCommentInput, setShowCommentInput] = useState(false); // State to toggle comment input visibility
+  const [commentText, setCommentText] = useState(""); // State for the comment text input
+  const [comments, setComments] = useState([]); // State to store the list of comments
 
   const item =
     myBlogs.find((content) => content._id === id) ||
@@ -22,6 +25,10 @@ const ContentDetail = () => {
   useEffect(() => {
     if (!item) return;
 
+    // Set comments from the post data
+    setComments(item.comments || []);
+
+    // Fetch likes data for the post
     const fetchLikes = async () => {
       try {
         const res = await axios.post(
@@ -64,6 +71,24 @@ const ContentDetail = () => {
       } else {
         setLikesMap({});
       }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleCommentSubmit = async () => {
+    if (!commentText.trim()) return; // Don't submit empty comments
+    try {
+      // Send comment to backend
+      const result = await axios.post(
+        "http://localhost:5137/api/user/addcomment",
+        { _id: item._id, text: commentText },
+        { headers: { token } }
+      );
+      // Update comments list and reset input
+      setComments(result.data.comments);
+      setCommentText("");
+      setShowCommentInput(false);
     } catch (err) {
       console.log(err);
     }
@@ -134,8 +159,34 @@ const ContentDetail = () => {
                 {likesMap[item._id] !== undefined && <span>{likesMap[item._id]}</span>}
               </p>
               <p>
-                <ChatBubbleOutlineIcon />
+                <ChatBubbleOutlineIcon
+                  onClick={() => setShowCommentInput(!showCommentInput)}
+                  style={{ cursor: "pointer" }}
+                />
               </p>
+            </div>
+            {showCommentInput && (
+              <div className="comment-input">
+                {/* Input field for writing comments */}
+                <input
+                  type="text"
+                  value={commentText}
+                  onChange={(e) => setCommentText(e.target.value)}
+                  placeholder="Write a comment..."
+                  onKeyPress={(e) => e.key === 'Enter' && handleCommentSubmit()}
+                />
+                {/* Button to submit the comment */}
+                <button onClick={handleCommentSubmit}>Post</button>
+              </div>
+            )}
+            {/* Section to display all comments */}
+            <div className="comments-section">
+              {comments.map((comment, index) => (
+                <div key={index} className="comment">
+                  <strong>{comment.userName}:</strong> {comment.text}
+                  <small> {new Date(comment.createdAt).toLocaleString()}</small>
+                </div>
+              ))}
             </div>
       </div>
     </div>
