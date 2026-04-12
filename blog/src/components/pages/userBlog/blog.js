@@ -11,6 +11,7 @@ import { useState } from "react";
 
 const Blog = () => {
   const { myBlogs,token } = useContext(storeContext); 
+  const [likesMap,setLikesMap] = useState({})
 
   // Format date
   const formatDate = (dateString) => {
@@ -22,23 +23,64 @@ const Blog = () => {
       day: "numeric",
     });
   };
-  const onClickHandle =async (postId)=>{
-    console.log('i am being clicked',postId)
-    const result = await axios.post('http://localhost:5137/api/user/like',{_id:postId},{headers:{token}}) 
-    console.log(token)
+  // const onClickHandle =async (postId)=>{
+  //   console.log('i am being clicked',postId)
+  //   const result = await axios.post('http://localhost:5137/api/user/like',{_id:postId},{headers:{token}}) 
+  //   console.log(token)
     
-    console.log('this is my likes',result.data.likes)
+  //   console.log('this is my likes',result.data.likes)
     
-  }
-const likes = async(id)=>{
-  const result = await axios.post('http://localhost:5137/api/user/all_likes',{_id:id},{headers:{token}})
-  return result.data.laiks
+  // }
+  const onClickHandle = async (postId) => {
+  try {
+    const result = await axios.post(
+      "http://localhost:5137/api/user/like",
+      { _id: postId },
+      { headers: { token } }
+    );
 
-}
- useEffect(()=>{
-  console.log('this is the blogs',myBlogs)
+    setLikesMap((prev) => ({
+      ...prev,
+      [postId]: prev + result.data.likes.length,
+    }));
+    console.log('this is the likes',likesMap)
+  } catch (err) {
+    console.log(err);
+  }
+};
+ 
+//  useEffect(()=>{
+//   console.log('this is the blogs',myBlogs)
+
   
- },[myBlogs])
+//  },[myBlogs])
+
+useEffect(() => {
+  const fetchLikes = async () => {
+    if (!Array.isArray(myBlogs)) return;
+
+    const newLikes = {};
+
+    for (let blog of myBlogs) {
+      try {
+        const res = await axios.post(
+          "http://localhost:5137/api/user/all_likes",
+          { _id: blog._id },
+          { headers: { token } }
+        );
+
+        newLikes[blog._id] = res.data.laiks.likes.length;
+      } catch (err) {
+        console.log(err);
+        newLikes[blog._id] = 0;
+      }
+    }
+
+    setLikesMap(newLikes);
+  };
+
+  fetchLikes();
+}, [myBlogs, token]);
   return ( 
     <div className="container-blogs">  
       {Array.isArray(myBlogs) && myBlogs.length > 0 ? (
@@ -78,7 +120,7 @@ const likes = async(id)=>{
             <div className="love-comment">
               <p>
                 <FavoriteBorderIcon onClick={()=>onClickHandle(item._id)}/>
-                  <span>{likes(item._id)}</span>
+                  <span><span>{likesMap[item._id] || 0}</span></span>
               </p>
               <p>
                 <ChatBubbleOutlineIcon />

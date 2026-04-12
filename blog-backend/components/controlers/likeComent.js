@@ -45,7 +45,7 @@ export const allLikes = async(req,res)=>{
      const post = await contentModel.findById(req.body._id)
      res.status(200).json({
         message:'total likes',
-        liks:post
+        laiks:post
      })
    } catch (error) {
     console.log(error)
