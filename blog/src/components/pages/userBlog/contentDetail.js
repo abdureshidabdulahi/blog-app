@@ -183,26 +183,26 @@ const ContentDetail = () => {
                 {likesMap[item._id] !== undefined && <span>{likesMap[item._id]}</span>}
               </p>
               <p>
-                <ChatBubbleOutlineIcon
-                  onClick={() => setShowCommentInput(!showCommentInput)}
+                <ChatBubbleOutlineIcon 
                   style={{ cursor: "pointer" }}
                 />
               </p>
             </div>
-            {showCommentInput && (
+            {
               <div className="comment-input">
                 {/* Input field for writing comments */}
                 <input
                   type="text"
+                  className="write-comment"
                   value={commentText}
                   onChange={(e) => setCommentText(e.target.value)}
                   placeholder="Write a comment..."
                   onKeyPress={(e) => e.key === 'Enter' && handleCommentSubmit()}
                 />
                 {/* Button to submit the comment */}
-                <button onClick={handleCommentSubmit}>Post</button>
+                <button className="post-button" onClick={handleCommentSubmit}>Post</button>
               </div>
-            )}
+            }
             {/* Section to display all comments */}
             <div className="comments-section">
               {comments.map((comment, index) => (

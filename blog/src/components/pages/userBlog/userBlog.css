@@ -216,11 +216,12 @@
   border: none;
 } 
 .comments-section{
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .comment{
   display: flex; 
   padding: 10px;
+  width: 80%;
   gap: 10px;
   background-color: white;
 }
@@ -238,5 +239,17 @@
 .comments-info .username{
   font-weight: bold;
   font-family: 'Inner',sans-serif;
+}
+.comment-input{
+  position: relative;
+}
+.write-comment{
+  width: 80%;
+  padding: 10px;
+  outline: 2px solid var(--secondary-light-yellow);
+}
+.post-button{
+  position: absolute;
+  right: 10px;
 }
 
