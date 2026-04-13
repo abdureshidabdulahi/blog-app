@@ -11,7 +11,7 @@ import DOMPurify from "dompurify";
 import { useState } from "react";
 
 const Blog = () => {
-  const { myBlogs, token, userId } = useContext(storeContext); 
+  const { myBlogs, token, userId,setShowCommentInput } = useContext(storeContext); 
   const navigate = useNavigate();
   const [likesMap, setLikesMap] = useState({})
   const [likedMap, setLikedMap] = useState({})
@@ -155,7 +155,10 @@ useEffect(() => {
               <p>
                 {/* Comment icon that navigates to detail page for full commenting */}
                 <ChatBubbleOutlineIcon
-                  onClick={() => navigate(`/post/${item._id}`)}
+                  onClick={() =>{
+                     navigate(`/post/${item._id}`)
+                     setShowCommentInput(true)
+                  }}
                   style={{ cursor: "pointer" }}
                 />
                 {/* Display comment count */}

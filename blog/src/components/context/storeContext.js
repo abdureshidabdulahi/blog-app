@@ -11,6 +11,7 @@ const Contexts = (props)=>{
     const [myBlogs,setMyBlogs] = useState([])
     const [showlogin,setshowlogin] = useState(false)
     const [userId,setUserId] = useState(null)
+    const [showCommentInput, setShowCommentInput] = useState(false);
 
     // Decode token to get userId
     const decodeToken = (token) => {
@@ -61,7 +62,9 @@ const context={
     setToken, 
     myBlogs,
     allContents,
-    userId
+    userId,
+    showCommentInput,
+    setShowCommentInput
 }
     return(
         <storeContext.Provider value={context}>
