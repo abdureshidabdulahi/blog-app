@@ -5,6 +5,7 @@ import DOMPurify from "dompurify";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
 import "./userBlog.css";
 
@@ -94,6 +95,7 @@ const ContentDetail = () => {
 
       setComments(result.data.comments);
       setCommentText("");
+
     } catch (err) {
       console.log(err);
     }
@@ -167,7 +169,10 @@ const ContentDetail = () => {
 
             <p>{formatDate(item.createdAt)}</p>
           </div>
-
+          <div style={{width:'80%',display:'flex',alignItems:'center',justifyContent:'space-between',margin:'0 auto'}}>
+            <h1>Comments</h1>
+            <CloseIcon onClick={(()=>setShowCommentInput(false)) } style={{cursor:'pointer'}}/>
+          </div>
            <div className="comment-input">
             <input
               type="text"
