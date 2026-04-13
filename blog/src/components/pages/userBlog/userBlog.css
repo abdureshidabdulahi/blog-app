@@ -204,6 +204,11 @@
   box-shadow: 1px 1px 25px var(--secondary-light-yellow);
   overflow: hidden;
 }
+
+hr { 
+  height: 2px; 
+  background-color: black;
+}
 .back-button{
   width: 100px;
   position: absolute;
@@ -215,19 +220,23 @@
   color: black;
   border: none;
 } 
-.comments-section{
-  /* border: 2px solid red; */
+.comments-section{ 
    border: 2px solid var(--secondary-light-yellow);
   border-radius: 10px;
-  width: 80%;
-  margin: 0 auto;
+  overflow: hidden;
+  width: 80%; 
+  margin: 10px auto; 
+
+}
+.comments-section hr{
+  width: 100%;
 }
 .comment{
   display: flex; 
   padding: 10px;
-  width: 80%;
+  width: 100%;
   gap: 10px;
-  background-color: white;
+  background-color: white; 
 }
 .comment img{
   border-radius: 50%;
@@ -246,23 +255,33 @@
 }
 .comment-input{
   position: relative;
-  width: 80%;
+  width: 80%;  
   margin: 0 auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
  
 }
 .write-comment{
   width: 100%;
   padding: 10px;
   outline: 2px solid var(--secondary-light-yellow);
+  border: none;
+  border-radius: 10px;
+  height: 100%;
+  font-size: 16px;
 }
 .post-button{
-  position: absolute;
-  right: 5px;
-  top: 5px;
+  position: absolute;  
+  right: auto;
+  top: auto;
   background-color: var(--secondary-light-yellow);
   border: none;
   width: 80px;
   height: 30px;
-  cursor: pointer;
+  cursor: pointer; 
+  border-radius: 5px;
+  margin-right: 5px;
 }
 

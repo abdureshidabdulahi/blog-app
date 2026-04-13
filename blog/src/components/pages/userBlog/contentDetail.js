@@ -189,8 +189,11 @@ const ContentDetail = () => {
               </p>
             </div>
             {
+              <>
+              <h1>Comments</h1>
               <div className="comment-input">
                 {/* Input field for writing comments */}
+                
                 <input
                   type="text"
                   className="write-comment"
@@ -201,16 +204,20 @@ const ContentDetail = () => {
                 />
                 {/* Button to submit the comment */}
                 <button className="post-button" onClick={handleCommentSubmit}>Post</button>
-              </div>
+              </div></>
             }
             {/* Section to display all comments */}
             <div className="comments-section">
               {comments.map((comment, index) => (
+              <>
                 <div key={index} className="comment">
                 <img src='/assets/photo_2025-02-08_17-34-55.jpg' alt='me' width={40} height={40}/>
                 <p className='comments-info'><span className='username'>{comment.userName}</span><span>{comment.text}</span><span>{timeAgo(comment.createdAt)}</span> </p>
                 </div>
+                <hr />
+                </>
               ))}
+              
             </div>
       </div>
     </div>
