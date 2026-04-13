@@ -194,27 +194,28 @@ const ContentDetail = () => {
           </div>
 
           <div className="comments-section">
-            {comments.map((comment, index) => (
-              <div key={index}>
-                <div className="comment">
-                  <img
-                    src="/assets/photo_2025-02-08_17-34-55.jpg"
-                    alt="me"
-                    width={40}
-                    height={40}
-                  />
+            {comments && comments.length > 0 ? (
+  comments.map((comment, index) => (
+    <div key={index} className="comment">
+      <img
+        src="/assets/photo_2025-02-08_17-34-55.jpg"
+        alt="me"
+        width={40}
+        height={40}
+      />
 
-                  <p className="comments-info">
-                    <span className="username">
-                      {comment.userName}
-                    </span>{" "}
-                    <span>{comment.text}</span>{" "}
-                    <span>{timeAgo(comment.createdAt)}</span>
-                  </p>
-                </div>
-                <hr />
-              </div>
-            ))}
+      <p className="comments-info">
+        <span className="username">
+          {comment.userName}
+        </span>{" "}
+        <span>{comment.text}</span>{" "}
+        <span>{timeAgo(comment.createdAt)}</span>
+      </p>
+    </div>
+  ))
+) : (
+  <p className="no-comments">No comments yet</p>
+)}
           </div>
 
 
