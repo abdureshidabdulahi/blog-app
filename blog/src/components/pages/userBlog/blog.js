@@ -110,7 +110,7 @@ useEffect(() => {
               <Link to={`/post/${item._id}`} className="clickable-link">
                 <img
                   src={`http://localhost:5137/images/${item.image}`}
-                  alt={item.title || "Blog image"} height={300}
+                  alt={item.title || "Blog image"} height={300} width={320}
                 />
                 <p>{item.category || "General"}</p>
               </Link>
