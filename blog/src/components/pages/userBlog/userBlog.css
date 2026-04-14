@@ -50,11 +50,23 @@
   margin: 10px; 
   background-color: var(--light-dark-brown);
   color: var(--light-white-yellow); 
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.each-content-container-myblog { 
+  position: relative;
+  width: 320px; 
+  margin: 10px; 
+  background-color: var(--light-dark-brown);
+  color: var(--light-white-yellow); 
   border-radius: 14px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 
 .each-content-container:hover {
   transform: translateY(-5px);
@@ -68,15 +80,29 @@
   overflow: hidden;
   border-radius: 16px;
 }
+.content-image-myblog {
+  position: relative;
+  width: 100%; 
+  height: 300px;
+  overflow: hidden;
+  border-radius: 16px;
+}
 .content-image-allcontent {
   position: relative;
   width: 100%;
   max-width: 100%;
   height: 300px;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0 ;
 }
  .content-image-allcontent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+ .content-image-myblog img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -104,6 +130,33 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+.content-image-myblog p {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: black;
+  background-color:var(--secondary-light-yellow);
+  padding: 5px 12px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.content-image-allcontent p {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: black;
+  background-color:var(--secondary-light-yellow);
+  padding: 5px 12px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 
 .each-content-container-detail h1 {
   margin: 16px 18px 8px 18px; 
@@ -127,6 +180,17 @@
   width: 100%;
 }
 .quill-allcontent{
+   margin: 0 18px 14px 18px;
+  color: var(--light-white-yellow);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  min-height: 100px;
+  max-height: fit-content;
+  width: 320px;
+  overflow: hidden;
+  color: white; 
+}
+.quill-myblog{
    margin: 0 18px 14px 18px;
   color: var(--light-white-yellow);
   font-size: 0.95rem;
@@ -212,6 +276,13 @@
   width: 320px;
 }
 .clickable-link-allcontent {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+  width: 320px;
+}
+.clickable-link-myblog {
   text-decoration: none;
   color: inherit;
   display: block;

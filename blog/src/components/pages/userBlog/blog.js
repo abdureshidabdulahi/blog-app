@@ -105,9 +105,9 @@ useEffect(() => {
     <div className="container-blogs">  
       {Array.isArray(myBlogs) && myBlogs.length > 0 ? (
         myBlogs.map((item, index) => (
-          <div className="each-content-container" key={index}>
-            <div className="content-image">
-              <Link to={`/post/${item._id}`} className="clickable-link">
+          <div className="each-content-container-myblog" key={index}>
+            <div className="content-image-myblog">
+              <Link to={`/post/${item._id}`} className="clickable-link-myblog">
                 <img
                   src={`http://localhost:5137/images/${item.image}`}
                   alt={item.title || "Blog image"} height={300} width={320}
@@ -118,10 +118,10 @@ useEffect(() => {
 
             
 
-            <Link to={`/post/${item._id}`} className="clickable-link">
+            <Link to={`/post/${item._id}`} className="clickable-link-myblog">
             <h1>{item.title}</h1>
               <div
-                className="quill preview"
+                className="quill-myblog preview"
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(item.description),
                 }}
