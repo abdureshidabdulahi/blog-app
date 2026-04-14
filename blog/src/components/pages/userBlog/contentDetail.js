@@ -146,8 +146,9 @@ const ContentDetail = () => {
             ← Back
           </button>
 
-          <div className="content-image" style={{ height: "300px" }}>
-            <img
+          <div className="content-image" style={{ height: "300px",width:'100%'}}>
+            <img 
+            style={{width:'100%',height:'300px'}}
               src={`http://localhost:5137/images/${item.image}`}
               alt={item.title}
             />
