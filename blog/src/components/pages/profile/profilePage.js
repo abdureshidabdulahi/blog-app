@@ -108,19 +108,15 @@ useEffect(() => {
             <div className="content-profile-image">
               <Link to={`/post/${item._id}`} className="clickable-link">
                 <img
-                style={{width:'150px',height:'fitContent',borderRadius:'5px 0 0 5px'}}
+                  className="blog-card-image"
                   src={`http://localhost:5137/images/${item.image}`}
-                  alt={item.title || "Blog image"} height={300}
+                  alt={item.title || "Blog image"}
                 />
-                
               </Link>
             </div>
 
-            
-
             <Link to={`/post/${item._id}`} className="clickable-link">
-            <h1 className="profile-blog-title">{item.title}</h1>
-              
+              <h1 className="profile-blog-title">{item.title}</h1>
             </Link>
 
             <div className="blog-profile">
@@ -132,13 +128,8 @@ useEffect(() => {
               </p>
             </div>
 
-            <div className="love-comment-profile" style={{borderTop:'none',display:'flex',gap:'5px',
-                border:'1px solid black',
-                height:'30px',padding:'5px',borderRadius:'5px',cursor:'pointer',marginRight:'5px'
-                }}>
-              <p style={{
-                display:'flex',alignItems:'center',gap:'5px'
-              }}>
+            <div className="love-comment-profile">
+              <p>
                 {likedMap[item._id] ? (
                   <FavoriteIcon
                     onClick={() => onClickHandle(item._id, item.userId === userId)}
@@ -152,9 +143,7 @@ useEffect(() => {
                 )}
                 {likesMap[item._id] !== undefined && <span>{likesMap[item._id]}</span>}
               </p>
-              <p style={{
-                display:'flex',alignItems:'center',gap:'5px'
-              }}>
+              <p>
                 {/* Comment icon that navigates to detail page for full commenting */}
                 <ChatBubbleOutlineIcon
                   onClick={() =>{
