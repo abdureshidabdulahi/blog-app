@@ -99,22 +99,16 @@ useEffect(() => {
     return(
         <div className="profile-page">
             <div className="profile-blogs">
-                <h2>My Blogs</h2>
-                <div style={{
-                    display:'flex',
-                    flexWrap:'wrap',
-                    width:'100%',alignItems:'center',justifyContent:'spaceBetween',margin:'15px',
-                    gap:'10px'
-                }}>
+                
+                <div className="profile-blogs-list">
+                    <h2>My Blogs</h2>
                    {Array.isArray(myBlogs) && myBlogs.length > 0 ? (
         myBlogs.map((item, index) => (
-          <div className="each-content-profile-container" key={index} style={{display:'flex',width:'100%',alignItems:'center',
-          justifyContent:'space-between',border:'2px solid var(--secondary-light-yellow-2)',borderRadius:'10px',padding:'5px'
-          }}>
+          <div className="each-content-profile-container" key={index}>
             <div className="content-profile-image">
               <Link to={`/post/${item._id}`} className="clickable-link">
                 <img
-                style={{width:'150px',height:'100px',borderRadius:'5px 0 0 5px'}}
+                style={{width:'150px',height:'fitContent',borderRadius:'5px 0 0 5px'}}
                   src={`http://localhost:5137/images/${item.image}`}
                   alt={item.title || "Blog image"} height={300}
                 />
@@ -125,7 +119,7 @@ useEffect(() => {
             
 
             <Link to={`/post/${item._id}`} className="clickable-link">
-            <h1 style={{fontSize:'20px'}}>{item.title}</h1>
+            <h1 className="profile-blog-title">{item.title}</h1>
               
             </Link>
 
@@ -138,9 +132,9 @@ useEffect(() => {
               </p>
             </div>
 
-            <div className="love-comment-profile" style={{borderTop:'none',display:'flex',
-                border:'2px solid var(--secondary-light-yellow)',
-                height:'30px',padding:'5px',borderRadius:'5px'
+            <div className="love-comment-profile" style={{borderTop:'none',display:'flex',gap:'5px',
+                border:'1px solid black',
+                height:'30px',padding:'5px',borderRadius:'5px',cursor:'pointer',marginRight:'5px'
                 }}>
               <p style={{
                 display:'flex',alignItems:'center',gap:'5px'
@@ -181,7 +175,8 @@ useEffect(() => {
         </div>
             
             </div>
-            <div className="profile-profile" style={{position:'static',top:'100px'}}> 
+            <div className="profile-profile"> 
+                <h2>My Profile</h2>
                 <img src='/assets/erick-chevez-WSD3UnbB6ZI-unsplash.jpg' alt="profile-phot" width={150} height={150}/>
                 <p>@user</p>
                 <p>0 blogs - 0 reads</p>

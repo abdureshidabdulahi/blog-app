@@ -6,29 +6,97 @@
 
 .profile-page{
     display: flex;
-    margin: 100px 0 0 ;
+    margin: 100px 0 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
 }
-.profile-blogs{    
+.profile-blogs{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 .profile-blogs h2{
     text-align: center;
-    width: 100px;
-    place-self: center;
+    width: 100%;
+    margin-bottom: 10px;
 }
 .profile-blogs h2::after{
-    display: flex;
+    display: block;
     content: '';
     height: 2px;
-    width: 100px;
-    background-color:  rgba(0, 110, 179, 0.607);   
-    place-self: center;
+    width: 80px;
+    margin: 8px auto 0;
+    background-color: rgba(0, 110, 179, 0.607);
+}
+.profile-blogs-list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    align-items: stretch;
+    margin: 15px 0;
+}
+.each-content-profile-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap;
+    border: 2px solid var(--secondary-light-yellow-2);
+    border-radius: 10px; 
+    box-sizing: border-box;
+    background-color: white;
+    color: black;
+}
+.each-content-profile-container > * {
+    min-width: 0;
+}
+.content-profile-image{
+    flex: 0 0 auto;
+}
+.content-profile-image img{
+    width: 150px;
+    height: 100px;
+    border-radius: 5px 0 0 5px;
+    object-fit: cover;
+}
+.profile-blog-title{
+    margin: 0;
+    font-size: clamp(16px, 1.2vw, 18px);
+    flex: 1 1 1;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+.blog-profile{
+    flex: 0 0 220px;
+    min-width: 0;
+}
+.love-comment-profile{
+    flex: 0 0 auto;
+    min-width: 0;
 }
 .profile-profile{
     display: flex;
     flex-direction: column; 
     justify-content: center;
     align-items: center; 
+    width: 40%;
     gap: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px var(--secondary-light-yellow-2);
+    background: #fff;
+}
+.profile-profile h2{
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.4rem;
 }
 .profile-profile img{ 
     border-radius: 50%;
@@ -41,7 +109,6 @@
 .profile-profile .bio{
     width: 200px;
     text-align: start;
-    padding: 0;
     height: 100px;
     border: 1px solid;
     border-radius: 10px;
