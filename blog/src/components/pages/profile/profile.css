@@ -6,12 +6,11 @@
 
 .profile-page{
     display: flex;
+    margin: 100px 0 0 ;
 }
-.profile-blogs{
-    display: flex;
-    border-right: 2px solid;
-    flex-direction: column;
-    flex-grow: 1;
+.profile-blogs{ 
+    width: 60%;
+    border-right: 2px solid;  
     margin: 10px;
 }
 .profile-blogs h2{
@@ -29,12 +28,10 @@
 }
 .profile-profile{
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    margin: 10px;
+    padding: 10px; 
     gap: 10px;
 }
 .profile-profile img{ 
