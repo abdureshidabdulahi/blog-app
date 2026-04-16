@@ -37,6 +37,7 @@ import { storeContext } from "../../context/storeContext"
 
     const handlechange =(event)=>{
     const file = event.target.files[0]
+    // console.log(file)
         if(!file) return
         const previewImage = URL.createObjectURL(file)
         setImage(file)
@@ -61,6 +62,7 @@ import { storeContext } from "../../context/storeContext"
         formData.append('category',content.category)
         formData.append('contents',content.contents)
         formData.append('image',image)
+        console.log('this is the form',formData)
         await axios.post('http://localhost:5137/api/user/savecontent',formData,{headers:{token}})
         setContent({
             title:'',
