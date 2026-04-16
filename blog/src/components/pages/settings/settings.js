@@ -1,11 +1,19 @@
  
 import './settings.css'
 import ChangePass from './changePass'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 const SettingsPage = ()=>{ 
     const [value,setValue] =useState(true)
-    const [data,setData] = useState({})
-    const handleChange = ()=>{
+    const [data,setData] = useState({
+        username:'',
+        gmail:''
+
+    })
+    const handleChange = (event)=>{
+        const value = event.target.value
+        const name = event.target.name
+        setData((pre)=>({...pre,[name]:value}))
+        
 
     }
     const handlePassword = ()=>{
@@ -14,6 +22,11 @@ const SettingsPage = ()=>{
     const handleEdit = ()=>{
         setValue(true)
     }
+    useEffect(()=>{
+        console.log(data)
+
+    },[data]
+)
         return(
         <div className="settings-container">
             <div className="sidebar">
@@ -23,7 +36,8 @@ const SettingsPage = ()=>{
             </div>
            {
             value?
-             <div className="main"> 
+           <form>
+              <div className="main"> 
                <div className='main-profile'>
                  <h2>Edit Profile</h2>
                  <img src='/assets/d12dfdbd6b7501faf694ac42775f19451aee8805-324x328.webp' alt="editphoto" width={150} height={150}/>
@@ -31,10 +45,10 @@ const SettingsPage = ()=>{
                </div>
                <div className='main-profile2'> 
                 <div className="header-input"> 
-                    <input type="text" placeholder='Enter Gmail'/>
+                    <input onChange={handleChange}  name='gmail'  type="text" placeholder='Enter Gmail'/>
                     
                 </div>
-                <input onChange={handleChange} type="text" placeholder='Enter Username' className='input'/>
+                <input onChange={handleChange} name='username' type="text" placeholder='Enter Username' className='input'/>
                 <p>Username will be used to search the user and will be visible to all users.</p>
                 <textarea onChange={handleChange} placeholder="Bio" rows={5} cols={10}/>
                 
@@ -46,7 +60,8 @@ const SettingsPage = ()=>{
                     <input type="text" placeholder="https://whatsApp"/>
                 </div>
                </div>
-            </div>:<ChangePass/>
+            </div>
+           </form>:<ChangePass/>
            }
         </div>
     )
