@@ -104,9 +104,9 @@ useEffect(() => {
                     <h2>My Blogs</h2>
                    {Array.isArray(myBlogs) && myBlogs.length > 0 ? (
         myBlogs.map((item, index) => (
-          <div className="each-content-profile-container" key={index}>
+          <div className="each-content-profile-container-profile" key={index}>
             <div className="content-profile-image">
-              <Link to={`/post/${item._id}`} className="clickable-link">
+              <Link to={`/post/${item._id}`} className="clickable-link-profile">
                 <img
                   className="blog-card-image"
                   src={`http://localhost:5137/images/${item.image}`}
@@ -115,12 +115,12 @@ useEffect(() => {
               </Link>
             </div>
 
-            <Link to={`/post/${item._id}`} className="clickable-link">
+            <Link to={`/post/${item._id}`} className="clickable-link-profile">
               <h1 className="profile-blog-title">{item.title}</h1>
             </Link>
 
-            <div className="blog-profile">
-              <AccountBoxIcon className="profile-AccountBoxIcon" />
+            <div className="blog-profile-profile">
+              
               <p>
                 {item.createdAt ? formatDate(item.createdAt) : "Unknown date"}
                 {" • "}

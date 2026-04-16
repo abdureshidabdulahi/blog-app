@@ -8,7 +8,7 @@
   --primary-dark-brown: #0D98BA;
   --secondary-light-yellow: #00B7EB;
   --secondary-light-yellow-2: #00CAFF;
-  --light-white-yellow: #ebdcb2;
+  --light-white-yellow: white;
 }
 .App {
   /* padding-top: 80px; ensure the fixed header does not cover page content */

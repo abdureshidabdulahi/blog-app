@@ -48,11 +48,11 @@ body, html {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 2px;
 }
-.each-content-profile-container{
+.each-content-profile-container-profile{
     width: 100%;
     display: flex; 
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 18px;
     flex-wrap: nowrap;
     border: 1px solid rgba(255, 255, 255, 0.35);
@@ -61,11 +61,13 @@ body, html {
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
 }
-.each-content-profile-container > * {
+.each-content-profile-container-profile > * {
     min-width: 0;
 }
-.clickable-link{
+ 
+.clickable-link-profile{
     width: 150px;
+    text-decoration: none;
 }
 .content-profile-image{
     flex: 0 0 auto;

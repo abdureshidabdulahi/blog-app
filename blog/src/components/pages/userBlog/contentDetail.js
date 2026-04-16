@@ -260,7 +260,7 @@ const ContentDetail = () => {
           </div>
 
           <div
-            className="quill"
+            className="quill-contentdetail"
             dangerouslySetInnerHTML={{
               __html: DOMPurify.sanitize(item.description),
             }}
