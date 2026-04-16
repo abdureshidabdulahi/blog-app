@@ -2,6 +2,7 @@ import userModel from "../models/userModel.js"
 import jwt from 'jsonwebtoken'
 import validator from 'validator'
 import bcrypt from 'bcrypt'
+import multer from 'multer'
 
 const createToken = (id)=>{
     return jwt.sign({id},process.env.SECRET_KEY)
@@ -61,4 +62,7 @@ const loginUser = async(req,res)=>{
         res.json({success:false,message:'there is aproblem with the login'})
     }
 }
+
+ 
+
 export {registerUser,loginUser}

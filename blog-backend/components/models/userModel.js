@@ -5,12 +5,11 @@ const userSchema =new mongoose.Schema({
     email:{type:String,required:true},
     password:{type:String,required:true},
     role:{type:String,required:true,default:'user'},
-    profileImage:{type:String},
+    profileImage:{type:String,default:''},
     createdAt:{type:Date,default:Date.now()},
-    userName:{type:String},
-    myContents:{type:Object}
+    userName:{type:String}, 
 
-})
+},{minimize:false})
 
 const userModel = mongoose.model('user',userSchema)
 
