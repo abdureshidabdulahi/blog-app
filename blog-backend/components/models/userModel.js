@@ -7,7 +7,8 @@ const userSchema =new mongoose.Schema({
     role:{type:String,required:true,default:'user'},
     profileImage:{type:String,default:''},
     createdAt:{type:Date,default:Date.now()},
-    userName:{type:String}, 
+    userName:{type:String,default:''}, 
+    gmail:{type:String,default:''}
 
 },{minimize:false})
 

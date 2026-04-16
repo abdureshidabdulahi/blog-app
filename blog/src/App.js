@@ -36,14 +36,17 @@ function App() {
         <Route path='/' element={ 
          <>
           <Home/>    
-          <Blog/></>
+          <Blog/>
+          </>
           }/>
           <Route path='blogs' element={<AllContent/>} />
        
        <Route path='about' element={<About/>}/>
-       <Route path='profile'  element={<ProfilePage/>} />
-       <Route path='settings' element={<SettingsPage/>} />
-       <Route path='/createcontent' element={< BlogForm/>}/>        <Route path='/post/:id' element={<ContentDetail/>} />       </Routes>
+       <Route path='/profile'  element={<ProfilePage/>} />
+       <Route path='/profile/settings' element={<SettingsPage/>}/> 
+       <Route path='/settings' element={<SettingsPage/>} />
+       <Route path='/createcontent' element={< BlogForm/>}/>
+               <Route path='/post/:id' element={<ContentDetail/>} />       </Routes>
         <Footer/> 
        
     </div>

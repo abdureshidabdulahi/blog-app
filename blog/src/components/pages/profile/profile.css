@@ -167,17 +167,19 @@ body, html {
     font-weight: 700;
     color: #2c3c5c;
 }
-.profile-profile button{
+.profile-profile a{
     width: 100%;
     max-width: 220px;
     padding: 12px 0;
-    font-weight: 600;
+    font-weight: 500;
     border-radius: 12px;
     border: 1px solid rgba(33, 49, 77, 0.18);
     background: #fff;
     color: #21314d;
     cursor: pointer;
     box-shadow: 0 8px 20px rgba(129, 149, 184, 0.15);
+    text-decoration: none;
+    text-align: center;
 }
 .profile-profile .bio{
     width: 100%;

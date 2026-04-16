@@ -5,7 +5,7 @@
 }
 .settings-container{
     display: flex;
-    margin: 10px;
+    margin: 100px 0 0;
 }
 .header-input{
     display: flex;

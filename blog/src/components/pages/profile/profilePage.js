@@ -1,4 +1,4 @@
- import { data } from 'react-router-dom'
+ import { data, Outlet } from 'react-router-dom'
 import './profile.css'
 import { useContext,useEffect,useState } from 'react'
 import { storeContext } from '../../context/storeContext'
@@ -169,7 +169,8 @@ useEffect(() => {
                 <img src='/assets/erick-chevez-WSD3UnbB6ZI-unsplash.jpg' alt="profile-phot" width={150} height={150}/>
                 <p>@user</p>
                 <p>0 blogs - 0 reads</p>
-                <button>Edit Profile</button>
+                <Link to={'/profile/settings'}>edit profile</Link> 
+                <Outlet/>
                 <p className='bio'>no bio here</p>
                 <p>joined at december 9</p>
 
