@@ -14,7 +14,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const ProfilePage =()=>{
     
-      const { myBlogs, token, userId,setShowCommentInput,users } = useContext(storeContext); 
+      const { myBlogs, token, userId,setShowCommentInput,users, } = useContext(storeContext); 
       const navigate = useNavigate();
       const [likesMap, setLikesMap] = useState({})
       const [likedMap, setLikedMap] = useState({})
@@ -95,7 +95,9 @@ useEffect(() => {
 
   fetchLikes();
 }, [myBlogs, token, userId]);
-
+useEffect(()=>{
+  console.log('this si my blogs',myBlogs.length)
+})
     return(
         <div className="profile-page">
             <div className="profile-blogs">
@@ -165,14 +167,13 @@ useEffect(() => {
             
             </div>
             <div className="profile-profile"> 
-                <h2>My Profile</h2>
+                <h2 style={{color:'black'}}>My Profile</h2>
                 <img src={`http://localhost:5137/userImage/${users.profileImage}`} alt="profile-phot" width={150} height={150}/>
-                <p>@user</p>
-                <p>0 blogs - 0 reads</p>
-                <Link to={'/profile/settings'}>edit profile</Link> 
-                <Outlet/>
-                <p className='bio'>no bio here</p>
-                <p>joined at december 9</p>
+                <p>@{users.userName || 'Add UserName'}</p>
+                <p>{myBlogs.length} blogs - 0 reads</p>
+                <Link to={'/profile/settings'}>edit profile</Link>  
+                <p className='bio'>{users.bio || 'no bio'}</p>
+                <p><span style={{fontWeight:'bold'}}>Joined At:</span> {(new Date(users.createdAt).toDateString())}</p>
 
 
             </div>

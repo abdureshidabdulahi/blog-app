@@ -54,17 +54,19 @@ const Contexts = (props)=>{
     //fetch users from backend
     const user = async()=>{
         const result = await axios.get('http://localhost:5137/api/users/users_list')
-       const logedinUser =  result.data.users.map((item)=>{
-            if(item._id === userId){
+        const id = decodeToken(token)
+       const logedinUser =  result.data.users.find((item)=>{
+            if(item._id === id){
                 return item
             }
     }) 
-    console.log(logedinUser) 
+    setUsers(logedinUser) 
+    console.log(logedinUser)
     }
 useEffect(()=>{
     fetchAllContent()
     fetchUserBlog()
-    user()
+    user() 
 },[])
 
 const context={
