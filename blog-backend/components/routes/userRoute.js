@@ -25,7 +25,7 @@ const upload = multer({storage})
 userRoute.put('/add_profile_image',authentication,upload.single('profileImage'),async(req,res)=>{
     try {
         if(!req.file){
-            return res.json({messagge:'filel is not found'})
+            return res.json({messagge:'file is not found'})
         }
     const updatedUser = await userModel.findByIdAndUpdate(req.userId,{profileImage:req.file.filename})
         res.json({message:'image is saved corectly'})

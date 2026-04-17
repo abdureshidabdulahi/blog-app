@@ -8,7 +8,8 @@ const userSchema =new mongoose.Schema({
     profileImage:{type:String,default:''},
     createdAt:{type:Date,default:Date.now()},
     userName:{type:String,default:''}, 
-    gmail:{type:String,default:''}
+    gmail:{type:String,default:''},
+    social_media:{type:Object,default:{}}
 
 },{minimize:false})
 
