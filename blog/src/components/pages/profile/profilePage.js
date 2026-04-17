@@ -14,7 +14,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const ProfilePage =()=>{
     
-      const { myBlogs, token, userId,setShowCommentInput } = useContext(storeContext); 
+      const { myBlogs, token, userId,setShowCommentInput,users } = useContext(storeContext); 
       const navigate = useNavigate();
       const [likesMap, setLikesMap] = useState({})
       const [likedMap, setLikedMap] = useState({})
@@ -166,7 +166,7 @@ useEffect(() => {
             </div>
             <div className="profile-profile"> 
                 <h2>My Profile</h2>
-                <img src='/assets/erick-chevez-WSD3UnbB6ZI-unsplash.jpg' alt="profile-phot" width={150} height={150}/>
+                <img src={`http://localhost:5137/userImage/${users.profileImage}`} alt="profile-phot" width={150} height={150}/>
                 <p>@user</p>
                 <p>0 blogs - 0 reads</p>
                 <Link to={'/profile/settings'}>edit profile</Link> 

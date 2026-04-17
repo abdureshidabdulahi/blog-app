@@ -1,5 +1,5 @@
 import express from 'express'
-import { registerUser,loginUser } from '../controlers/userControler.js'
+import { registerUser,loginUser, listOfUsers } from '../controlers/userControler.js'
 import { authentication } from '../middleware/auth.js' 
 import userModel from '../models/userModel.js'
 import multer from 'multer'
@@ -9,6 +9,7 @@ const userRoute = express.Router()
 
 userRoute.post('/register',registerUser)
 userRoute.post('/login',loginUser)
+userRoute.get('/users_list',listOfUsers)
 
 const storage = multer.diskStorage({
     destination:(req,file,cb)=>{

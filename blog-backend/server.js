@@ -9,6 +9,7 @@ import likeRouter from './components/routes/likesRoute.js'
 const app = express()
 connection()
 app.use('/images',express.static('images'))
+app.use('/userImage',express.static('userImages'))
 app.use(cors())
 app.use(express.json())
 app.use('/api/users',userRoute)

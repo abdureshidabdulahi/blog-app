@@ -11,6 +11,7 @@ const Contexts = (props)=>{
     const [myBlogs,setMyBlogs] = useState([])
     const [showlogin,setshowlogin] = useState(false)
     const [userId,setUserId] = useState(null)
+    const [users,setUsers] = useState([])
     const [showCommentInput, setShowCommentInput] = useState(false);
 
     // Decode token to get userId
@@ -50,9 +51,20 @@ const Contexts = (props)=>{
         const result = await axios.post('http://localhost:5137/api/user/myblogs',{},{headers:{token}})
             setMyBlogs(result.data.myBlogs)
     }
+    //fetch users from backend
+    const user = async()=>{
+        const result = await axios.get('http://localhost:5137/api/users/users_list')
+       const logedinUser =  result.data.users.map((item)=>{
+            if(item._id === userId){
+                return item
+            }
+    }) 
+    console.log(logedinUser) 
+    }
 useEffect(()=>{
     fetchAllContent()
     fetchUserBlog()
+    user()
 },[])
 
 const context={
@@ -64,7 +76,8 @@ const context={
     allContents,
     userId,
     showCommentInput,
-    setShowCommentInput
+    setShowCommentInput,
+    users
 }
     return(
         <storeContext.Provider value={context}>

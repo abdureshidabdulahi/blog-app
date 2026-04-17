@@ -63,6 +63,15 @@ const loginUser = async(req,res)=>{
     }
 }
 
+const listOfUsers = async(req,res)=>{
+    try {
+    const users = await userModel.find({})
+    res.json({message:'here are list of users',users})
+    } catch (error) {
+        console.log('users can not found')
+    }
+}
+
  
 
-export {registerUser,loginUser}
+export {registerUser,loginUser,listOfUsers}

@@ -6,7 +6,7 @@ import ChangePass from './changePass'
 import { useEffect, useState } from 'react'
 import { storeContext } from '../../context/storeContext'
 const SettingsPage = ()=>{ 
-    const {token} = useContext(storeContext)
+    const {token,users} = useContext(storeContext)
     const fileRef = useRef()
     const [value,setValue] =useState(true)
     const [profile,setProfile] = useState(null)
