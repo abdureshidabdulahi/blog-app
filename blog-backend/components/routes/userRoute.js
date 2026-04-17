@@ -27,7 +27,18 @@ userRoute.put('/add_profile_image',authentication,upload.single('profileImage'),
         if(!req.file){
             return res.json({messagge:'file is not found'})
         }
-    const updatedUser = await userModel.findByIdAndUpdate(req.userId,{profileImage:req.file.filename})
+    const updatedUser = await userModel.findByIdAndUpdate(req.userId,
+        {profileImage:req.file.filename,
+        social_media:{
+            youtube:req.body.youtube,
+            facebook:req.body.facebook,
+            telegram:req.body.telegram,
+            bio:req.body.bio,
+            whatsApp:req.body.whatsApp, 
+    },
+    gmail:req.body.gmail,
+    userName:req.body.username
+},{new:true})
         res.json({message:'image is saved corectly'})
     } catch (error) {
         console.log('error at the save userImage',error)
