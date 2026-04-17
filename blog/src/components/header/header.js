@@ -7,7 +7,7 @@ import CreateIcon from '@mui/icons-material/Create';
 import {storeContext} from './../context/storeContext' 
 import './header.css'
 export default function Header(){
-    const {setshowlogin,token,setToken} = useContext(storeContext)
+    const {setshowlogin,token,setToken,users} = useContext(storeContext)
     const navigate = useNavigate()
     const handleClick = ()=>{
         setToken(localStorage.removeItem('token'))
@@ -31,7 +31,8 @@ export default function Header(){
                     <p className='create-content' onClick={()=>navigate('/createcontent')}>
                         <CreateIcon/>Create Content</p> 
                         <div className='profile-lists'>
-                            <AccountCircleIcon className='profile'/>
+                            {<img src={`http://localhost:5137/userImage/${users.profileImage}` } width={50} height={50} alt='dkjfd' 
+                            style={{borderRadius:'50%', border:'1.5px solid black'}}/> || <AccountCircleIcon className='profile'/>}
                            <div className='uls'>
                              <ul>
                                 <li onClick={()=>navigate('/profile')}>Profile</li> 

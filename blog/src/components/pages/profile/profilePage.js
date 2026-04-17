@@ -95,9 +95,7 @@ useEffect(() => {
 
   fetchLikes();
 }, [myBlogs, token, userId]);
-useEffect(()=>{
-  console.log('this si my blogs',myBlogs.length)
-})
+ 
     return(
         <div className="profile-page">
             <div className="profile-blogs">
@@ -172,7 +170,7 @@ useEffect(()=>{
                 <p>@{users.userName || 'Add UserName'}</p>
                 <p>{myBlogs.length} blogs - 0 reads</p>
                 <Link to={'/profile/settings'}>edit profile</Link>  
-                <p className='bio'>{users.bio || 'no bio'}</p>
+                <p className='bio'>{users?.social_media?.bio || 'no bio'}</p>
                 <p><span style={{fontWeight:'bold'}}>Joined At:</span> {(new Date(users.createdAt).toDateString())}</p>
 
 

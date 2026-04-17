@@ -55,9 +55,7 @@ const LoginPage = ()=>{
         console.log(token) 
         localStorage.setItem('token',token)
     }
-     useEffect(()=>{
-        console.log(data) 
-     })
+     
     return(
          <div className="login-page">
            
