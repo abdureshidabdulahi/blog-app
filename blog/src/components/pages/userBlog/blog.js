@@ -107,10 +107,10 @@ useEffect(() => {
         myBlogs.map((item, index) => (
           <div className="each-content-container-myblog" key={index}>
             <div className="content-image-myblog">
-              <Link to={`/post/${item._id}`} className="clickable-link-myblog">
+              <Link to={`/post/${item._id}`} className="clickable-link-myblog-1">
                 <img
                   src={`http://localhost:5137/images/${item.image}`}
-                  alt={item.title || "Blog image"} height={300} width={320}
+                  alt={item.title || "Blog image"}
                 />
                 <p>{item.category || "General"}</p>
               </Link>
@@ -118,7 +118,7 @@ useEffect(() => {
 
             
 
-            <Link to={`/post/${item._id}`} className="clickable-link-myblog">
+            <Link to={`/post/${item._id}`} className="clickable-link-myblog-2">
             <h1>{item.title}</h1>
               <div
                 className="quill-myblog preview"

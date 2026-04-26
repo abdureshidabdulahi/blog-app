@@ -48,7 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
  .border-wrapper {
   display: inline-block;
@@ -79,6 +79,13 @@
 }
 .profile-lists{
     position: relative; 
+    border: none;
+}
+.profile-lists img{
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px #f48d0c;
+    border:1px solid #fab025;
+
 }
 .uls{ 
     display: none;

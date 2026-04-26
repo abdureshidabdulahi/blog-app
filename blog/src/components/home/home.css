@@ -42,12 +42,13 @@
   height: 40px;
   font-size: 20px;
   padding: 5px 10px;
-   border: 1px solid black;
+  border: 2px solid #f48d0c;
    border-radius: 5px;
   
  }
  .search input:focus{
-  outline:  2px solid var(--secondary-light-yellow);
+  
+  outline: 2px solid #f48d0c; 
   border: none;
   border-radius: 5px;
  }
