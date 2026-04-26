@@ -19,11 +19,11 @@ export default function Header(){
             <div><img src= "/assets/Gemini_Generated_Image_qvfoctqvfoctqvfo.png"  height={70} alt='header-log' onClick={()=>navigate('/')}/></div>
            
          <div className='info'>
-         <NavLink to='/' className='home'>Home</NavLink>
+         <NavLink to='/' className='home'> Home </NavLink>
            {
-            token? <NavLink to={'blogs'} className='blogs'>Blogs</NavLink>:''
+            token? <NavLink to={'blogs'} className='blogs'> Blogs </NavLink>:''
            }
-           <NavLink to='about' className='about'>About</NavLink>
+           <NavLink to='about' className='about'> About </NavLink>
          </div>
             <div>{
                 token?<div className='profile-container'>

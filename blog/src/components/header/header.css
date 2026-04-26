@@ -2,7 +2,7 @@
  .header-container{
   width:100%;
   height: 70px;
-  box-shadow: 0px 0px 5px #fab025;
+  box-shadow: 0px 0px 5px #451503;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,13 +21,7 @@
   align-items: center;
   gap: 15px;
 
- }
-  .info span{
-  font-size: 20px;
-  font-family:sans-serif;
-  color: rgb(70, 69, 69);
-  cursor: pointer;
- }
+ } 
  .home,.about,.blogs{
     text-decoration: none;
     color: white;
@@ -36,7 +30,8 @@
  .about.active,
  .blogs.active {
     color: #f48d0c;
-    box-shadow: 0px 0px 5px #f48d0c;
+    text-shadow: 0px 0px 5px #f48d0c;
+    /* box-shadow: 0px 0px 5px #f48d0c; */
  }
   .signin{
   width: fit-content;
@@ -88,12 +83,13 @@
 .uls{ 
     display: none;
     position: absolute; 
-    border: 1px solid;
+    /* border: 1px solid; */
     border-radius: 5px;
-    top: 30px; 
-    right: 30px;
-    background-color: rgba(4, 88, 141, 0.845);
-    color: white;
+    top: 0px; 
+    right: 50px;
+    background:linear-gradient(to bottom,#b3470a,#cf6407);
+    color: white; 
+    backdrop-filter: blur(10px);
      
 
 }
@@ -114,7 +110,8 @@
       cursor: pointer;
 }
 .uls ul li:hover{  
-    background-color: rgba(0, 0, 0, 0.212);
+    background:linear-gradient(to right,#fcdd8b,#feefc7);
+    color: #451503;
     border-radius: 5px;
    
 
