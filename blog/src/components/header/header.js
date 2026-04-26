@@ -28,8 +28,11 @@ export default function Header(){
             <div>{
                 token?<div className='profile-container'>
                 <div className='content-div'>
-                    <p className='create-content' onClick={()=>navigate('/createcontent')}>
-                        <CreateIcon/>Create Content</p> 
+                   <div className="border-wrapper">
+                    <p className="create-content" onClick={() => navigate('/createcontent')}>
+                        <CreateIcon /> Create Content
+                    </p>
+                    </div>
                         <div className='profile-lists'>
                             {<img src={`http://localhost:5137/userImage/${users.profileImage}` } width={50} height={50} alt='dkjfd' 
                             style={{borderRadius:'50%', border:'1.5px solid black'}}/> || <AccountCircleIcon className='profile'/>}
