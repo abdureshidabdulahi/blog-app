@@ -9,6 +9,17 @@
   --secondary-light-yellow: #00B7EB;
   --secondary-light-yellow-2: #00CAFF;
   --light-white-yellow: white;
+  --color-1:#451503;
+  --color-2:#772e10;
+  --color-3:#91370f;
+  --color-4:#b3470a;
+  --color-5:#cf6407;
+  --color-6:#f48d0c;
+  --color-7:#fab025;
+  --color:8:#fbc64e;
+  --color-9:#fcdd8b;
+  --color-10:#feefc7;
+  --color-11:#fffaeb
 }
 .App {
   /* padding-top: 80px; ensure the fixed header does not cover page content */
