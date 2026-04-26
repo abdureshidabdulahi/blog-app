@@ -97,8 +97,12 @@
   border-radius: 16px 16px 0 0 ;
 }
 .content-image-myblog{ 
+  display: flex;
   width: 100%;
   height: fit-content;
+  /* align-items: center; */
+  margin: 10px 0;
+  justify-content: center;
   overflow: hidden;
   border-radius: 16px 16px 0 0 ;
 }
@@ -141,10 +145,6 @@
   text-align: center;
   color: white;
 }
-.clickable-link-myblog-2 h1{
-  text-align: center;
-  color: white;
-}
  
 .quill-allcontent{
    margin: 0 18px 14px 18px;
@@ -158,13 +158,14 @@
   color: white; 
 }
 .quill-myblog{
-   margin: 0 18px 14px 18px;
+   /* margin: 0 18px 14px 18px; */
+   padding: 0 10px;
   color: var(--light-white-yellow);
   font-size: 0.95rem;
-  line-height: 1.65;
+  line-height: 1.5;
   min-height: 100px;
   max-height: fit-content;
-  width: 320px;
+  width: 100%;
   overflow: hidden;
   color: white; 
 }
@@ -279,18 +280,26 @@
   position: absolute;
   top: 10px;
   left: 15px;
+  border: 2px solid #cf6407;
+  box-shadow: 0px 0px 5px #b3470a;
+  background: linear-gradient(to right,#b3470a,#cf6407);
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: #451503;
 }
- 
+ .clickable-link-myblog-2{
+  text-decoration: none;
+  width: 100%;
+ }
 
-.clickable-link:hover .quill,
-.clickable-link:hover .content-image img {
-  filter: brightness(0.96);
+.clickable-link-myblog-2k:hover .quill-myblog{
+  filter: brightness(0.96); 
 }
-.clickable-link h1{ 
+.clickable-link-myblog-2 h2{ 
   text-align: center;
   margin-bottom: 15px;
   width: 320px;
-  color: white;
+  color: white; 
 }
 .back-button {
   font-size: 0.95rem;

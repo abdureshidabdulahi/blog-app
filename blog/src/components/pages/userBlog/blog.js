@@ -119,7 +119,7 @@ useEffect(() => {
             
 
             <Link to={`/post/${item._id}`} className="clickable-link-myblog-2">
-            <h1>{item.title}</h1>
+            <h2>{item.title}</h2>
               <div
                 className="quill-myblog preview"
                 dangerouslySetInnerHTML={{
