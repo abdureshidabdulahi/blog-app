@@ -102,7 +102,7 @@ useEffect(() => {
               <div className="content-image-allcontent">
                 <img
                   src={`http://localhost:5137/images/${item.image}`}
-                  alt={item.title || "Blog image"} height={300}
+                  alt={item.title || "Blog image"}
                 />
                 <p>{item.category || "General"}</p>
               </div>
@@ -115,7 +115,9 @@ useEffect(() => {
                 }}
               />
 
-              <div className="blog-profile">
+             
+            </Link>
+             <div className="blog-profile">
                 <AccountBoxIcon className="profile-AccountBoxIcon" />
                 <p>
                   {item.createdAt ? formatDate(item.createdAt) : "Unknown date"}
@@ -123,7 +125,6 @@ useEffect(() => {
                   <span>by {item.userName || "Unknown author"}</span>
                 </p>
               </div>
-            </Link>
 
             <div className="love-comment">
               <p>

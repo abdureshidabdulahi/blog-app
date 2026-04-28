@@ -146,9 +146,9 @@ const ContentDetail = () => {
             ← Back
           </button>
 
-          <div className="content-image" style={{ height: "300px",width:'100%'}}>
+          <div className="content-image-detail" >
             <img 
-            style={{width:'100%',height:'300px'}}
+            
               src={`http://localhost:5137/images/${item.image}`}
               alt={item.title}
             />
@@ -157,7 +157,7 @@ const ContentDetail = () => {
 
           <h1>{item.title}</h1>
 
-          <div className="blog-profile">
+          <div className="blog-profile-detail">
             <div className="blog-profile-1">
               <img
                 src="/assets/photo_2025-02-08_17-34-55.jpg"
@@ -208,9 +208,12 @@ const ContentDetail = () => {
       <p className="comments-info">
         <span className="username">
           {comment.userName}
-        </span>{" "}
-        <span>{comment.text}</span>{" "}
-        <span>{timeAgo(comment.createdAt)}</span>
+        </span>
+        {comments.length < comments.length-1 && (
+        
+          <span>{comment.text}</span>
+        )}
+        <span className="createdtime">{timeAgo(comment.createdAt)}</span>
       </p>
     </div>
   ))
@@ -235,7 +238,7 @@ const ContentDetail = () => {
             ← Back
           </button>
 
-          <div className="content-image" style={{ height: "300px" }}>
+          <div className="content-image-detail">
             <img
               src={`http://localhost:5137/images/${item.image}`}
               alt={item.title}
@@ -245,7 +248,7 @@ const ContentDetail = () => {
 
           <h1>{item.title}</h1>
 
-          <div className="blog-profile">
+          <div className="blog-profile-detail">
             <div className="blog-profile-1">
               <img
                 src="/assets/photo_2025-02-08_17-34-55.jpg"
@@ -265,8 +268,6 @@ const ContentDetail = () => {
               __html: DOMPurify.sanitize(item.description),
             }}
           />
-
-          <hr />
 
           <div className="love-comment">
             <p>
