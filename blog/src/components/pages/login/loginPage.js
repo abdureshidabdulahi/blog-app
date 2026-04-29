@@ -70,7 +70,8 @@ const LoginPage = ()=>{
                        {
                     signin === 'Signin' ?
                     <>
-                    <div>
+                   <div className='FnameLname'>
+                     <div>
                     <p>Enter fristName</p>
                     <input type='text' placeholder='Enter fristName' name='fristName' value={data.fristName} onChange={onchangeHandler} required/>
                 </div>
@@ -78,6 +79,7 @@ const LoginPage = ()=>{
                     <p>Enter lastName</p>
                     <input type='text' placeholder='Enter lastName' name='lastName' value={data.lastName} onChange={onchangeHandler} required/>
                 </div>
+                   </div>
                     </>:<></>
                 }
 
