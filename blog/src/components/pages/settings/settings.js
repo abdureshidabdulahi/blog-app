@@ -102,7 +102,7 @@ const handleprofileClick =()=>{
                     
                 </div>
                 <input className='header-input' onChange={handleChange} value={data.username} name='username' type="text" placeholder='Enter Username' className='input'/>
-                <p>Username will be used to search the user and will be visible to all users.</p>
+                <p>. Username will be used to search the user and will be visible to all users.</p>
                 <textarea name='bio' onChange={handleChange} value={data.bio} placeholder="Write your Bio" rows={5} cols={10}/>
                 
                 <h2>Add Your Social Media Account</h2>

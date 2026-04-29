@@ -17,16 +17,21 @@
     border-right: 2px solid;
     padding: 10px;
 }
+.sidebar h2{
+    color: var(--color-10);
+    text-align: center;
+}
 
 .sidebar p {
     margin-top: 10px;
     padding: 5px;
-    border: 1px solid;
+    border: 1px solid var(--color-3);
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
-    background-color: rgba(0, 110, 179, 0.546);
-    box-shadow: 0px 3px 5px black;
+    background: linear-gradient(to right,var(--color-5),var(--color-6));
+    box-shadow: 0px 0px 5px var(--color-3);
+    color: var(--color-1);
 }
 
 /* FORM */
@@ -69,18 +74,19 @@ form .main {
     gap: 10px;
 }
 
-/* .main-profile2 .header-input {
+.main-profile2 .header-input {
     display: flex;
     width: 100%;
     gap: 10px;
 
-} */
+}
 
 .main-profile2 input {
     padding: 10px;
     border-radius: 5px;
     width: 100%;
     border: 2px solid var(--color-10);
+    background-color: white;
     outline: none;
 }
 
@@ -91,7 +97,10 @@ form .main {
 
 .main-profile2 p {
     text-align: start;
-    color: rgba(0, 0, 0, 0.482);
+    color: var(--color-10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* INPUT GENERAL */
@@ -108,6 +117,7 @@ form input {
     outline: none;
     width: 100%;
     background-color: white;
+    width: 100%;
 }
 
 .social-media {
@@ -116,7 +126,6 @@ form input {
 }
 
 .social-media input {
-    border: 2px solid rgba(0, 110, 179, 0.546);
     outline: none;
     width: 100%;
 }
