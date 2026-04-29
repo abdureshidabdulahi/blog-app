@@ -85,11 +85,11 @@ import { storeContext } from "../../context/storeContext"
            <form onSubmit={handleSubmit}>
            <input type="file"  id="input-file" onChange={handlechange}/>
            <h3>Enter Your title Below</h3>
-            <input type="text" placeholder="please enter title" value={content.title} name="title" onChange={handleInput}/>
+            <input className="inputs" type="text" placeholder="please enter title" value={content.title} name="title" onChange={handleInput}/>
             <h3>Enter The Author Below</h3>
-            <input type="text" placeholder="please enter author" value={content.author} name="author" onChange={handleInput}/>
+            <input className="inputs" type="text" placeholder="please enter author" value={content.author} name="author" onChange={handleInput}/>
             <h3>Enter The Category Below</h3>
-            <input type="text" className="category" placeholder="please enter category" value={content.category} name="category" onChange={handleInput}/>
+            <input className="inputs" type="text" className="category" placeholder="please enter category" value={content.category} name="category" onChange={handleInput}/>
           
            <h2>Enter Your Description Below</h2>
             

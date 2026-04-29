@@ -1,17 +1,18 @@
 
-  form{
+form{
     display: flex;
     flex-direction: column;
-width: 40% !important;
-place-self: center;
-padding: 10px;
-color: var(--color-10);
+    width: 40% !important;
+    place-self: center;
+    padding: 10px;
+    color: var(--color-10);
  }
  form h2,h3{
   margin: 10px;
  }
  form button{
-   background-color: rgba(8, 70, 140, 0.861);
+  background: linear-gradient(to right,var(--color-5),var(--color-6));
+  box-shadow: 0px 0px 10px var(--color-6);
  }
  form .ql-toolbar{
     display: flex;
@@ -25,6 +26,7 @@ color: var(--color-10);
     min-height: 300px;
     color: var(--color-10);
     background-color: var(--color-10);
+    margin-bottom: 15px;
  }
  .ql-editor{ 
     overflow-wrap: break-word;
@@ -38,8 +40,10 @@ color: var(--color-10);
     
     background-color: var(--color-2);
  }
- .ql-editor::placeholder{
-  color: var(--color-11);
+ .ql-editor.ql-blank::placeholder{
+  color: var(--color-11) ;
+  font-style: normal;
+  opacity: 1;
  }
  form .ql-container{
     width: 100%; 
@@ -53,7 +57,7 @@ color: var(--color-10);
    padding: 10px;
    outline: none;
    border-radius: 5px;
-   border: 2px solid black;
+   border: 2px solid var(--color-9) !important;
    font-size: 16px;
  }
  .container{
@@ -67,10 +71,10 @@ color: var(--color-10);
    height: 300px;
    place-self: center;
    cursor: pointer;
+   border-radius: 20px;
  }
  .container h1{
    text-align: center;
    color: var(--color-10);
    margin-bottom: 15px;
  }
- 
