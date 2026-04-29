@@ -37,7 +37,7 @@ body, html {
     margin-bottom: 6px;
     font-size: 1.75rem;
     letter-spacing: 0.05em;
-    color: #fff;
+    color: var(--color-10);
 }
 .profile-blogs h2::after{
     display: block;
@@ -70,6 +70,10 @@ body, html {
 .clickable-link-profile{
     width: 150px;
     text-decoration: none;
+}
+.clickable-link-profile h1{
+    
+    color: var(--color-10);
 }
 .content-profile-image{
     flex: 0 0 auto;
@@ -108,6 +112,9 @@ body, html {
     margin-top: 6px;
     font-weight: 700;
     color: #f9f9f9;
+}
+.blog-profile-profile{
+    color: var(--color-10);
 }
 .love-comment-profile{
     display: flex;

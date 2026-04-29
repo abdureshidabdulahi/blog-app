@@ -168,8 +168,8 @@ useEffect(() => {
                 <h2>My Profile</h2>
                 <img src={`http://localhost:5137/userImage/${users.profileImage}`} alt="profile-phot" width={150} height={150}/>
                 <p>@{users.userName || 'Add UserName'}</p>
-                <p>{myBlogs.length} blogs - 0 reads</p>
-                <Link to={'/profile/settings'}  className='edit'>Edit Profile</Link>  
+                <p>{myBlogs.length} Blogs - 0 Reads</p>
+                <Link to={'/profile/settings'}>Edit Profile</Link>  
                 <p className='bio'>{users?.social_media?.bio || 'no bio'}</p>
                 <p><span style={{fontWeight:'bold'}}>Joined At:</span> {(new Date(users.createdAt).toDateString())}</p>
 

@@ -101,7 +101,7 @@ const handleprofileClick =()=>{
                     <input onChange={handleChange} value={data.gmail}  name='gmail'  type="text" placeholder='Enter Gmail'/>
                     
                 </div>
-                <input onChange={handleChange} value={data.username} name='username' type="text" placeholder='Enter Username' className='input'/>
+                <input className='header-input' onChange={handleChange} value={data.username} name='username' type="text" placeholder='Enter Username' className='input'/>
                 <p>Username will be used to search the user and will be visible to all users.</p>
                 <textarea name='bio' onChange={handleChange} value={data.bio} placeholder="Write your Bio" rows={5} cols={10}/>
                 
