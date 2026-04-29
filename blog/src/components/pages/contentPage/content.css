@@ -5,7 +5,10 @@
 width: 40% !important;
 place-self: center;
 padding: 10px;
-color: black;
+color: var(--color-10);
+ }
+ form h2,h3{
+  margin: 10px;
  }
  form button{
    background-color: rgba(8, 70, 140, 0.861);
@@ -14,11 +17,14 @@ color: black;
     display: flex;
     flex-direction: row;
     width: 100%;
+    color: var(--color-10);
  }
  form .quill{
     width: 100%;
     margin: 0;
     min-height: 300px;
+    color: var(--color-10);
+    background-color: var(--color-10);
  }
  .ql-editor{ 
     overflow-wrap: break-word;
@@ -28,7 +34,12 @@ color: black;
     width: 100%;
     min-height: 300px; 
     font-size: 18px;
-    color: black;
+    color: var(--color-11);
+    
+    background-color: var(--color-2);
+ }
+ .ql-editor::placeholder{
+  color: var(--color-11);
  }
  form .ql-container{
     width: 100%; 
@@ -55,8 +66,11 @@ color: black;
    width: 40%;
    height: 300px;
    place-self: center;
+   cursor: pointer;
  }
  .container h1{
    text-align: center;
+   color: var(--color-10);
+   margin-bottom: 15px;
  }
  
