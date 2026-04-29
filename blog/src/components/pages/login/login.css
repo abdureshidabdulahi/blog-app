@@ -10,7 +10,7 @@
     justify-content: center;  
     position: fixed;
     width: 100%;
-    background-color: var(--primary-dark-brown);
+    background-color: var(--color-1);
     height: 100vh; 
     overflow-y: auto;
     z-index: 1000;
@@ -27,7 +27,6 @@
     border-radius: 5px;
     gap: 10px;
     color: white;
-    background-color: var( --secondary-light-yellow);
 
     
 }
