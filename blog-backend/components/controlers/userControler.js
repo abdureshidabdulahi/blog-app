@@ -43,23 +43,48 @@ const registerUser =async (req,res)=>{
 }
 
 const loginUser = async(req,res)=>{
-    const {email,password} =req.body
+    const {email,password} = req.body;
+
     try {
-        const user =await userModel.findOne({email})
+
+        const user = await userModel.findOne({email});
+
         if(!user){
-           return  res.json({success:false,message:'user does not exist!!'})
+            return res.status(401).json({
+                success:false,
+                message:'User does not exist'
+            });
         }
-        const passMatch = await bcrypt.compare(password,user.password)
+
+
+        const passMatch = await bcrypt.compare(password,user.password);
+
+
         if(!passMatch){
-           return  res.json({success:false,message:'invalid cridentials'})
+            return res.status(401).json({
+                success:false,
+                message:'Incorrect password'
+            });
         }
-        const token = createToken(user._id)
-        res.json({success:true,message:'you are logedin',token})
 
 
-    } catch (error) {
-        console.log(error)
-        res.json({success:false,message:'there is aproblem with the login'})
+        const token = createToken(user._id);
+
+        res.status(200).json({
+            success:true,
+            message:'You are logged in',
+            token
+        });
+
+
+    } catch(error){
+
+        console.log(error);
+
+        res.status(500).json({
+            success:false,
+            message:'There is a problem with login'
+        });
     }
 }
 

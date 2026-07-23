@@ -125,7 +125,7 @@ useEffect(() => {
               <p>
                 {item.createdAt ? formatDate(item.createdAt) : "Unknown date"}
                 {" • "}
-                <span>by {item.userName || "Unknown author"}</span>
+                <span>by {item?.userName || "Unknown author"}</span>
               </p>
             </div>
 
@@ -177,11 +177,11 @@ useEffect(() => {
 ) : (
   <AccountCircleIcon className="profile" />
 )}
-                <p>@{users.userName || 'Add UserName'}</p>
+                <p>@{users?.userName || 'Add UserName'}</p>
                 <p>{myBlogs.length} Blogs - 0 Reads</p>
                 <Link to={'/profile/settings'}>Edit Profile</Link>  
                 <p className='bio'>{users?.social_media?.bio || 'no bio'}</p>
-                <p><span style={{fontWeight:'bold'}}>Joined At:</span> {(new Date(users.createdAt).toDateString())}</p>
+                <p><span style={{fontWeight:'bold'}}>Joined At:</span> {(new Date(users?.createdAt).toDateString())}</p>
 
 
             </div>
