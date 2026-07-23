@@ -12,6 +12,7 @@ const Contexts = (props)=>{
     const [showlogin,setshowlogin] = useState(false)
     const [userId,setUserId] = useState(null)
     const [users,setUsers] = useState([])
+    const [contents,setContents] = useState([]);
     const [showCommentInput, setShowCommentInput] = useState(false);
 
     // Decode token to get userId
@@ -34,6 +35,8 @@ const Contexts = (props)=>{
             setUserId(null);
         }
     }, [token]);
+
+   
 
   
     // fetchContent from the backend
@@ -80,7 +83,7 @@ const context={
     userId,
     showCommentInput,
     setShowCommentInput,
-    users
+    users,
 }
     return(
         <storeContext.Provider value={context}>

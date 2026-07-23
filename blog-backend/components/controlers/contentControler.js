@@ -3,19 +3,62 @@ import contentModel from "../models/contentsModel.js"
 
 
 
-const contentFunction =async (req,res)=>{ 
-    console.log(req.body)
+const contentFunction = async (req,res)=>{
+
+    try {
+
+        console.log(req.body);
+
+
         const newContent = new contentModel({
+
             userId:req.userId,
+
             userName:req.username,
+
             title:req.body.title,
+
             category:req.body.category.toUpperCase(),
+
             author:req.body.author,
+
             description:req.body.contents,
-            image:req.file.filename
-        })
-        await newContent.save()
-} 
+
+            image:req.file ? req.file.filename : ""
+
+        });
+
+
+        await newContent.save();
+
+
+        res.status(201).json({
+
+            success:true,
+
+            message:"Content created successfully",
+
+            content:newContent
+
+        });
+
+
+    } catch(error){
+
+        console.log(error);
+
+
+        res.status(500).json({
+
+            success:false,
+
+            message:"Content creation failed"
+
+        });
+
+    }
+
+}
 const all_contentLists = async (req,res)=>{
     try{
        const listOfContents =  await contentModel.find({})
