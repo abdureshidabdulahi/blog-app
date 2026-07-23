@@ -2,8 +2,9 @@ import ReactQuill from "react-quill";
 import './content.css';
 import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState, useCallback } from "react";
 import { storeContext } from "../../context/storeContext";
+import Cropper from 'react-easy-crop';
 
 const BlogForm = () => {
 
@@ -12,21 +13,25 @@ const BlogForm = () => {
     const [image, setImage] = useState(null);
     const [previewUrl, setPreviewUrl] = useState(null);
 
+    const [crop, setCrop] = useState({ x: 0, y: 0 });
+    const [zoom, setZoom] = useState(1.2);
+    const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
+    const [showCrop, setShowCrop] = useState(false);
+
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
-
     const [content, setContent] = useState({
-        title:'',
-        author:'',
-        category:'',
-        contents:''
+        title: '',
+        author: '',
+        category: '',
+        contents: ''
     });
 
 
     const modules = {
-        toolbar:[
+        toolbar: [
             [{'header':[3,4,5]}],
             ['bold','italic','underline'],
             [{list:'ordered'}, {list:'bullet'}],
@@ -47,21 +52,80 @@ const BlogForm = () => {
     ];
 
 
-    const trigerFileInput = () => {
+    const triggerFileInput = () => {
         document.getElementById('input-file').click();
     };
 
 
-    const handlechange = (event) => {
+    const handleChange = (event) => {
 
         const file = event.target.files[0];
 
         if(!file) return;
 
-        const previewImage = URL.createObjectURL(file);
+        const imageUrl = URL.createObjectURL(file);
 
-        setImage(file);
-        setPreviewUrl(previewImage);
+        setPreviewUrl(imageUrl);
+        setCrop({x:0,y:0});
+        setZoom(1.2);
+        setShowCrop(true);
+    };
+
+
+    const onCropComplete = useCallback((croppedArea, croppedPixels) => {
+        setCroppedAreaPixels(croppedPixels);
+    }, []);
+
+
+    const createCroppedImage = async () => {
+
+        const image = new Image();
+        image.src = previewUrl;
+
+        await new Promise(resolve => {
+            image.onload = resolve;
+        });
+
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = croppedAreaPixels.width;
+        canvas.height = croppedAreaPixels.height;
+
+
+        ctx.drawImage(
+            image,
+            croppedAreaPixels.x,
+            croppedAreaPixels.y,
+            croppedAreaPixels.width,
+            croppedAreaPixels.height,
+            0,
+            0,
+            croppedAreaPixels.width,
+            croppedAreaPixels.height
+        );
+
+
+        canvas.toBlob((blob) => {
+
+            const croppedFile = new File(
+                [blob],
+                "profileImage.jpeg",
+                {type:"image/jpeg"}
+            );
+
+
+            setImage(croppedFile);
+
+            setPreviewUrl(
+                URL.createObjectURL(blob)
+            );
+
+            setShowCrop(false);
+
+        }, "image/jpeg");
+
     };
 
 
@@ -77,7 +141,7 @@ const BlogForm = () => {
     };
 
 
-    const handleQuill = (value)=>{
+    const handleQuill = (value) => {
 
         setContent({
             ...content,
@@ -87,21 +151,18 @@ const BlogForm = () => {
     };
 
 
-    const handleSubmit = async(event)=>{
+    const handleSubmit = async(event) => {
 
         event.preventDefault();
 
-
+        setLoading(true);
         setMessage('');
         setError('');
-        setLoading(true);
 
 
         try {
 
-
             const formData = new FormData();
-
 
             formData.append('title',content.title);
             formData.append('author',content.author);
@@ -109,9 +170,14 @@ const BlogForm = () => {
             formData.append('contents',content.contents);
 
 
-            if(image){
-                formData.append('image',image);
+            if(!image){
+                alert("Please crop your image first");
+                setLoading(false);
+                return;
             }
+
+
+            formData.append('image',image);
 
 
             const response = await axios.post(
@@ -125,15 +191,10 @@ const BlogForm = () => {
             );
 
 
-            // success message
-
             setMessage(
                 response.data.message || "Content created successfully"
             );
-            window.location.reload()
 
-
-            // clear form after success
 
             setContent({
                 title:'',
@@ -151,14 +212,12 @@ const BlogForm = () => {
 
             console.log(error);
 
-
             setError(
                 error.response?.data?.message ||
                 "Failed to create content"
             );
 
-
-        } finally{
+        } finally {
 
             setLoading(false);
 
@@ -167,13 +226,7 @@ const BlogForm = () => {
     };
 
 
-    useEffect(()=>{
-        console.log(content);
-    },[content]);
-
-
-
-    return(
+    return (
 
         <div className="container">
 
@@ -181,120 +234,138 @@ const BlogForm = () => {
 
 
             {
-                image ?
-                <img 
-                    src={previewUrl} 
-                    alt="previewphoto"
-                    onClick={trigerFileInput}
+                showCrop &&
+                <div className="crop-wrapper">
+
+                    <div className="crop-container">
+
+                        <Cropper
+                            image={previewUrl}
+                            crop={crop}
+                            zoom={zoom}
+                            aspect={1}
+                            cropShape="round"
+                            showGrid={false}
+                            objectFit="cover"
+                            onCropChange={setCrop}
+                            onZoomChange={setZoom}
+                            onCropComplete={onCropComplete}
+                        />
+
+                    </div>
+
+
+                    <input
+                        className="zoom-slider"
+                        type="range"
+                        value={zoom}
+                        min={1}
+                        max={3}
+                        step={0.1}
+                        onChange={(e)=>setZoom(Number(e.target.value))}
+                    />
+
+
+                    <button
+                        type="button"
+                        className="crop-button"
+                        onClick={createCroppedImage}
+                    >
+                        Crop Image
+                    </button>
+
+                </div>
+            }
+
+
+            {
+                !showCrop && previewUrl ?
+
+                <img
+                    className="profile-preview"
+                    src={previewUrl}
+                    alt="profile"
                 />
+
                 :
-                <img 
+
+                !showCrop &&
+
+                <img
+                    className="profile-preview"
                     src="/assets/upload_area.png"
                     alt="upload"
-                    onClick={trigerFileInput}
+                    onClick={triggerFileInput}
                 />
             }
 
 
+
             <form onSubmit={handleSubmit}>
 
-
-                <input 
-                    type="file"
+                <input
                     id="input-file"
-                    onChange={handlechange}
+                    type="file"
+                    onChange={handleChange}
                 />
 
 
-                <h3>Enter Your title Below</h3>
-
                 <input
                     className="inputs"
-                    type="text"
-                    placeholder="please enter title"
-                    value={content.title}
+                    placeholder="Enter title"
                     name="title"
+                    value={content.title}
                     onChange={handleInput}
-                    required
                 />
 
-
-
-                <h3>Enter The Author Below</h3>
 
                 <input
                     className="inputs"
-                    type="text"
-                    placeholder="please enter author"
-                    value={content.author}
+                    placeholder="Enter author"
                     name="author"
+                    value={content.author}
                     onChange={handleInput}
-                    required
                 />
 
-
-
-                <h3>Enter The Category Below</h3>
 
                 <input
                     className="category"
-                    type="text"
-                    placeholder="please enter category"
-                    value={content.category}
+                    placeholder="Enter category"
                     name="category"
+                    value={content.category}
                     onChange={handleInput}
-                    required
                 />
-
-
-
-                <h2>Enter Your Description Below</h2>
 
 
                 <ReactQuill
                     formats={formats}
                     modules={modules}
-                    placeholder="please write your descriptions here"
                     value={content.contents}
                     onChange={handleQuill}
                 />
 
 
-
                 {
                     message &&
-                    <p className="success-message">
-                        {message}
-                    </p>
+                    <p className="success-message">{message}</p>
                 }
 
 
                 {
                     error &&
-                    <p className="error-message">
-                        {error}
-                    </p>
+                    <p className="error-message">{error}</p>
                 }
 
 
-
-                <button type="submit" disabled={loading}>
-
-                    {
-                        loading ? "Saving..." : "Submit"
-                    }
-
+                <button disabled={loading}>
+                    {loading ? "Saving..." : "Submit"}
                 </button>
-
 
             </form>
 
-
         </div>
 
-    )
-
-}
-
+    );
+};
 
 export default BlogForm;

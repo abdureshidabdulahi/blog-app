@@ -1,93 +1,137 @@
-
-form{
+form {
     display: flex;
     flex-direction: column;
     width: 40% !important;
     place-self: center;
     padding: 10px;
     color: var(--color-10);
- }
- form h2,h3{
-  margin: 10px;
- }
- form button{
-  background: linear-gradient(to right,var(--color-5),var(--color-6));
-  box-shadow: 0px 0px 10px var(--color-6);
- }
- form .ql-toolbar{
+}
+
+form h2,
+form h3 {
+    margin: 10px;
+}
+
+form input {
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid var(--color-9) !important;
+    font-size: 16px;
+}
+
+form button {
+    background: linear-gradient(to right, var(--color-5), var(--color-6));
+    box-shadow: 0 0 10px var(--color-6);
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+form .ql-toolbar {
     display: flex;
     flex-direction: row;
     width: 100%;
-    color: var(--color-10);
- }
- form .quill{
+}
+
+form .quill {
     width: 100%;
-    margin: 0;
     min-height: 300px;
     color: var(--color-10);
     background-color: var(--color-10);
     margin-bottom: 15px;
- }
- .ql-editor{ 
+}
+
+.ql-editor {
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
     white-space: pre-wrap;
     width: 100%;
-    min-height: 300px; 
+    min-height: 300px;
     font-size: 18px;
     color: var(--color-11);
-    
     background-color: var(--color-2);
- }
- .ql-editor.ql-blank::placeholder{
-  color: var(--color-11) ;
-  font-style: normal;
-  opacity: 1;
- }
- form .ql-container{
-    width: 100%; 
+}
+
+.ql-container {
+    width: 100%;
     overflow-x: hidden;
     min-height: 300px;
- } 
- form #input-file{
-   display: none;
- }
- form input{
-   padding: 10px;
-   outline: none;
-   border-radius: 5px;
-   border: 2px solid var(--color-9) !important;
-   font-size: 16px;
- }
- .container{
-    width: 100%;
-    display: flex; 
-    flex-direction: column !important;
-    margin: 100px 0 0;
- }
- .container img{
-   width: 40%;
-   height: 300px;
-   place-self: center;
-   cursor: pointer;
-   border-radius: 20px;
- }
- .container h1{
-   text-align: center;
-   color: var(--color-10);
-   margin-bottom: 15px;
- }
+}
 
- 
-.success-message{
+.ql-editor.ql-blank::placeholder {
+    color: var(--color-11);
+    font-style: normal;
+    opacity: 1;
+}
+
+#input-file {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 100px 0 0;
+}
+
+.container h1 {
+    text-align: center;
+    color: var(--color-10);
+    margin-bottom: 15px;
+}
+
+
+/* Crop Section */
+
+.crop-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.crop-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: black;
+    overflow: hidden;
+}
+
+.zoom-slider {
+    width: 300px;
+    margin-top: 20px;
+}
+
+.crop-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+}
+
+
+/* Profile Preview */
+
+.profile-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+
+.success-message {
     color: green;
     font-weight: bold;
     margin-top: 10px;
 }
 
 
-.error-message{
+.error-message {
     color: red;
     font-weight: bold;
     margin-top: 10px;
