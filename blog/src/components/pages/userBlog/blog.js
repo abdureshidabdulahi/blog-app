@@ -103,6 +103,7 @@ useEffect(() => {
 }, [myBlogs, token, userId]);
   return ( 
     <div className="container-blogs">  
+     <h2 className="h2css">Your Blogs</h2>
       {Array.isArray(myBlogs) && myBlogs.length > 0 ? (
         myBlogs.map((item, index) => (
           <div className="each-content-container-myblog" key={index}>

@@ -7,7 +7,7 @@ export default function Home(){
             <h1>Share stories that matter.</h1>
             <p>welcom to <span className='span'>Blog</span> - amodern platform to write,read,and connect throught a powerfull content.</p> 
             <div className='search'><input type='text' placeholder='search ....'/></div>
-            <h2>Your Blogs</h2>
+           
         </div>
     )
 }

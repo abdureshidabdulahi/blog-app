@@ -26,7 +26,7 @@ function ScrollToTop() {
 }
 
 function App() {
-  const {showlogin} =useContext(storeContext)
+  const {showlogin,token} =useContext(storeContext)
   return (
     <div className='App'>
        <ScrollToTop />
@@ -36,7 +36,7 @@ function App() {
         <Route path='/' element={ 
          <>
           <Home/>    
-          <Blog/>
+         {token &&  <Blog/>}
           </>
           }/>
           <Route path='blogs' element={<AllContent/>} />

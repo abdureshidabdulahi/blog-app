@@ -55,6 +55,7 @@ form .main {
     flex-direction: column;
     align-items: center;
     color: var(--color-10);
+    margin-bottom: 10px;
 }
 
 .main-profile img {
@@ -128,6 +129,7 @@ form input {
 .social-media input {
     outline: none;
     width: 100%;
+    margin: 10px 0;
 }
 .input-file{
     display: none;
