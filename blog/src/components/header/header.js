@@ -34,8 +34,16 @@ export default function Header(){
                     </p>
                     </div>
                         <div className='profile-lists'>
-                            {<img src={`http://localhost:5137/userImage/${users.profileImage}` } width={50} height={50} alt='dkjfd' 
-                            /> ||<AccountCircleIcon className='profile'/> }
+                            {users?.profileImage ? (
+                            <img
+                            src={`http://localhost:5137/userImage/${users.profileImage}`}
+                            width={50}
+                            height={50}
+                            alt="Profile"
+                            />
+                            ) : (
+                            <AccountCircleIcon className="profile" />
+                            )}
                            <div className='uls'>
                              <ul>
                                 <li onClick={()=>navigate('/profile')}>Profile</li> 

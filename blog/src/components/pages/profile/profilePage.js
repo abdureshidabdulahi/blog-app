@@ -4,6 +4,7 @@ import { useContext,useEffect,useState } from 'react'
 import { storeContext } from '../../context/storeContext'
 import axios from "axios";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
@@ -166,7 +167,16 @@ useEffect(() => {
             </div>
             <div className="profile-profile"> 
                 <h2>My Profile</h2>
-                <img src={`http://localhost:5137/userImage/${users.profileImage}`} alt="profile-phot" width={150} height={150}/>
+                {users?.profileImage ? (
+  <img
+    src={`http://localhost:5137/userImage/${users.profileImage}`}
+    width={50}
+    height={50}
+    alt="Profile"
+  />
+) : (
+  <AccountCircleIcon className="profile" />
+)}
                 <p>@{users.userName || 'Add UserName'}</p>
                 <p>{myBlogs.length} Blogs - 0 Reads</p>
                 <Link to={'/profile/settings'}>Edit Profile</Link>  

@@ -55,6 +55,7 @@ const Contexts = (props)=>{
     const user = async()=>{
         const result = await axios.get('http://localhost:5137/api/users/users_list')
         const id = decodeToken(token)
+        console.log('thsi is the users i wanted ',result)
        const logedinUser =  result.data.users.find((item)=>{
             if(item._id === id){
                 return item
